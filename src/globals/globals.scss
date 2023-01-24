@@ -1,0 +1,141 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+*,
+::after,
+::before {
+    margin: 0%;
+}
+
+body {
+    width: 100%;
+    background-color: white;
+    font-family: 'Poppins';
+    overflow-x: hidden;
+}
+
+.body-page {
+    width: 90%;
+    margin: auto;
+    padding-top: 3rem;
+}
+
+.section {
+    width: 100%;
+    margin-bottom: 5rem;
+}
+
+.title-section {
+    font-size: 20px;
+    font-weight: 600;
+    width: max-content;
+    color: var(--dark)
+}
+
+.title-section  span {
+    margin-left: 1rem;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    font-size: 13px;
+    border: none !important;
+}
+
+p {
+    font-size: 13px;
+    color: var(--dark);
+}
+
+.d-none {
+    justify-content: space-between;
+}
+
+select, 
+button,
+input {
+    outline: none;
+}
+button {
+    cursor: pointer;
+}
+.show {
+    height: max-content !important;
+    overflow: auto !important;
+}
+
+.active {
+    color: var(--orange);
+}
+
+.hide {
+    height: 0vh;
+    overflow: hidden;
+}
+
+.learn-more {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    
+    button {
+        border: none;
+        font-size: 17px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        padding: 6px 0 6px;
+        background-color: var(--whitesmoke);
+
+        svg {
+            margin-left: 5px;
+        }
+    }
+}
+
+.section-seven {
+    display: flex;
+    flex-direction: column;
+
+    .centre-int {
+        display: flex;
+        justify-content: space-between;
+        
+        div {
+            display: flex;
+            align-items: center;
+            box-shadow: 0 0 3px var(--dark);
+            padding: 10px;
+            border-radius: 6px;
+            width: 22%;
+            h4 {
+                font-size: 15px;
+                color: var(--dark);
+                font-weight: 400;
+                margin-left: 10px;
+            }
+            img {
+                width: 50px;
+            }
+
+        }
+    }
+}

@@ -1,0 +1,175 @@
+footer {
+    background-color: var(--whitesmoke);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    p {
+        color: var(--dark);
+    }
+
+    .row1,
+    .row2 {
+        width: 100%;
+        margin: auto;
+    }
+
+    h2 {
+        font-size: 15px;
+        color: var(--dark);
+        margin-bottom: 5px;
+    }
+
+    .newsletter {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3rem;
+
+        form {
+            margin-top: 1rem;
+            width: max-content;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--orange);
+
+            input {
+                width: 400px;
+                height: 100%;
+                font-size: 14px;
+                padding: 0 5px 0 5px;
+                background: white;
+                border: none;
+            }
+
+            button {
+                height: 100%;
+                background: var(--orange-gradient);
+                font-size: 14px;
+                color: white;
+                padding: 0 1rem 0 1rem;
+                border: none;
+            }
+        }
+    }
+
+    .row1 {
+        height: 250px;
+        display: flex;
+        justify-content: space-between;
+        margin: 4rem 0 4rem;
+
+        .bar {
+            margin: 0 5px;
+            height: 100%;
+            width: 1px !important;
+            background-color: var(--whitesmoke-500);
+        }
+
+        .foot-div1,
+        .foot-div2,
+        .foot-div3,
+        .foot-div4 {
+            width: 18%;
+        }
+
+        .foot-div1 {
+            margin-left: 2rem;
+            img {
+                width: 120px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .foot-div2,
+        .foot-div3 {
+            ul {
+                display: flex;
+                flex-direction: column;
+                padding-left: 0%;
+                a {
+                    margin: 5px 0 5px;
+                    color: var(--dark);
+                    padding: 0 5px 0 0px;
+                }
+            }
+        }
+
+        .foot-div3 {
+            div {
+                width: 100%;
+                display: flex;
+
+                img {
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+        }
+
+        .foot-div4 {
+            width: 31%;
+            margin-right: 2rem;
+            .modepay {
+                div {
+                    width: max-content;
+                    display: flex;
+                    background: white;
+                    border: 1px solid var(--whitesmoke-500);
+                    padding: 10px 0 10px;
+                    margin-top: 10px;
+
+                    img {
+                       width: 115px;
+                       margin: 0 10px;
+
+                       &:not(:first-child) {
+                        width: 70px;
+                        height: 55px;
+                        
+                       }
+                    }
+                }
+            }
+
+            .socials {
+                margin-top: 1.5rem;
+                h4 {
+                    font-size: 14px;
+                }
+
+                ul {
+                    display: flex;
+                    align-items: center;
+                    width: max-content;
+                    padding-left: 0%;
+                    margin-top: 10px;
+                    a {
+                        padding-bottom: 0%;
+                        margin: 0 12px;
+                        margin-bottom: 0%;
+                        &:nth-child(1) {
+                            margin-left: 0 !important;
+                        }
+                        img {
+                            width: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .row2  {
+        background-color: var(--orange);
+        padding: 1rem 0 1rem;
+        text-align: center;
+
+        p {
+            color: white
+        }
+    }
+}
