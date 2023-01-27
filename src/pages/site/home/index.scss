@@ -194,8 +194,6 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
-
-
         }
     }
 
@@ -362,6 +360,11 @@
                     }
 
                     h4 {
+                        width: 90%;
+                        height: max-content !important;
+                        text-align: center;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
                         font-size: 14px;
                         font-weight: 400;
                         color: var(--dark);
@@ -379,19 +382,21 @@
     }
 
     .section-six {
+        background-image: url(../../../assets/images/svg/back.svg);
         .div-section-six {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 200px;
+            height: 230px;
             background: var(--red-gradient);
             border-radius: 6px;
+            
 
             h3 {
-                font-size: 20px;
+                font-size: 22px;
                 color: white;
-                margin: 1rem 0 1rem;
+                margin: 1rem 0 2rem;
             }
 
             button {

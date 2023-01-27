@@ -34,7 +34,7 @@ header {
                 border-radius: 4px;
 
                 a {
-                    color: var(--orange);
+                    color: var(--dark);
 
                 }
             }
@@ -69,7 +69,7 @@ header {
                 align-items: center;
 
                 a {
-                    color: var(--orange);
+                    color: var(--dark);
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -89,7 +89,7 @@ header {
     }
 
     .head-div2 {
-        background: url(../../assets/images/png/4347.jpg);
+        background: url(../../assets/images/svg/back2.svg);
         background-repeat: repeat-x;
         display: flex;
         justify-content: space-between !important;
@@ -229,40 +229,40 @@ header {
                 }
             }
 
-
-            div {
-                margin-left: 1rem;
-
-                button {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    background: none;
-                    border: none;
-                    position: relative;
-                    color: var(--dark);
-
-                    svg {
-                        margin-bottom: 3px;
-                        font-size: 30px;
-                    }
-
-                    .nb-product {
-                        position: absolute;
-                        left: 90%;
-                        top: -50%;
-                        font-size: 16px;
-                    }
-
-                    &:hover {
-                        color: var(--orange);
-
-                        .name {
-                            display: flex;
-                        }
+            button {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: none;
+                border: none;
+                position: relative;
+                color: var(--dark);
+        
+                svg {
+                    margin-bottom: 3px;
+                    font-size: 30px;
+                }
+        
+                .nb-product {
+                    position: absolute;
+                    left: 90%;
+                    top: -50%;
+                    font-size: 16px;
+                }
+        
+                &:hover {
+                    color: var(--orange);
+        
+                    .name {
+                        display: flex;
                     }
                 }
             }
+            
+            .cart-divs {
+                margin-left: 1rem;
+                position: relative;
+            }            
 
             .user-account {
                 img {

@@ -2,6 +2,8 @@
 
 export const HOME = "/";
 export const PRODUCT = "/product/:title";
+export const CART_SHOPPING = "/cart";
+export const PRODUCT_DETAILS = "/product/details/:title";
 export const APP_FEEXPAY = "app.feexpay.me";
 
 

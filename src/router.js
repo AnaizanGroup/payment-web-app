@@ -2,9 +2,11 @@ import React, { Suspense } from "react"
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 import Cookies from "universal-cookie"
 import Layout from "./layouts/layoutSite/Layout";
+import CartShopping from "./pages/site/cart/CartShopping";
 import Home from "./pages/site/home";
 import Product from "./pages/site/product/Product";
-import { HOME, PRODUCT } from "./settings/constant";
+import ProductDetails from "./pages/site/productDetails/ProductDetails";
+import { CART_SHOPPING, HOME, PRODUCT, PRODUCT_DETAILS } from "./settings/constant";
 
 
 function ProtectedRoutes({ children }) {
@@ -19,6 +21,8 @@ const ROUTES = () => {
     return (
         <Router>
             <Routes>
+
+                {/* home page */}
                 <Route path={HOME} element={
                     <ProtectedRoutes>
                         <Layout>
@@ -29,11 +33,34 @@ const ROUTES = () => {
                     </ProtectedRoutes>
                 } />
 
+                {/* product page */}
                 <Route path={PRODUCT} element={
                     <ProtectedRoutes>
                         <Layout>
                             <Suspense fallback="...">
                                 <Product />
+                            </Suspense>
+                        </Layout>
+                    </ProtectedRoutes>
+                } />
+
+                {/* product details */}
+                <Route path={PRODUCT_DETAILS} element={
+                    <ProtectedRoutes>
+                        <Layout>
+                            <Suspense fallback="...">
+                                <ProductDetails />
+                            </Suspense>
+                        </Layout>
+                    </ProtectedRoutes>
+                } />
+
+                {/* cart shopping */}
+                <Route path={CART_SHOPPING} element={
+                    <ProtectedRoutes>
+                        <Layout>
+                            <Suspense fallback="...">
+                                <CartShopping />
                             </Suspense>
                         </Layout>
                     </ProtectedRoutes>

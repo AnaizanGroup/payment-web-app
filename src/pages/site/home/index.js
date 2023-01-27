@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import CardProduct from "../../../components/cardProduct/CardProduct";
+import CardProduct2 from "../../../components/cardProduct2/CardProduct2"
 import ContentGroupProd from "../../../components/ContentGroupProd/ContentGroupProd";
 
 import shop4 from "../../../assets/images/png/shop4.png";
@@ -32,9 +33,12 @@ import g2 from "../../../assets/images/png/g2.png";
 
 import { APP_FEEXPAY } from "../../../settings/constant";
 import CardSectionProd from "../../../components/cardSectionProd/CardSectionProd";
+import { useSelector } from "react-redux";
 
 const Home = () => {
     const navigate = useNavigate();
+
+    const products = useSelector((state) => state.products.products)
 
     const categorie = [
         { img: cat1, name: 'Categorie name' },
@@ -43,41 +47,6 @@ const Home = () => {
         { img: cat4, name: 'Categorie name' },
         { img: cat5, name: 'Categorie name' },
         { img: cat6, name: 'Categorie name' },
-    ]
-
-    const products = [
-        {
-            img: cat1,
-            names: 'Product name',
-            price: 10000,
-            shop: "LVM Shop",
-            country: "Bénin",
-            code_country: "bj"
-        },
-        {
-            img: cat2,
-            names: 'Product name',
-            price: 10000,
-            shop: "LVM Shop",
-            country: "Bénin",
-            code_country: "bj"
-        },
-        {
-            img: cat3,
-            names: 'Product name',
-            price: 10000,
-            shop: "LVM Shop",
-            country: "Bénin",
-            code_country: "bj"
-        },
-        {
-            img: cat4,
-            names: 'Product name',
-            price: 10000,
-            shop: "LVM Shop",
-            country: "Bénin",
-            code_country: "bj"
-        }
     ]
 
     const shop = [
@@ -116,13 +85,12 @@ const Home = () => {
         arrows: false
     };
 
-
     const settings3 = {
         dots: false,
         infinite: true,
         autoplaySpeed: 3000,
         slidesToScroll: 1,
-        slidesToShow: 4,
+        slidesToShow: 5,
         autoplay: true,
         arrows: false
     };
@@ -218,8 +186,22 @@ const Home = () => {
                 <div className="section-head">
                     <h2 className="title-section"> Nos Produits <span>+120382</span> </h2>
                 </div>
-                <ContentGroupProd listProduct={products} />
-                <div className="learn-more"><button> Voir plus <FaAngleDoubleRight />  </button></div>
+                <Slider {...settings3} >
+                        {
+                            products && (
+                                products.map((list, index) => {
+                                    return <Link key={index} to={{ pathname: `/product/details/${list.names}` }} state={list}>
+                                        <CardProduct2 img={list.img} names={list.names}
+                                            reduce={list.reduce} price={list.price} />
+                                    </Link>
+                                })
+                            )
+                        }
+                        <CardProduct2 img={products[products.length - 1].img}
+                            names={products[products.length - 1].names}
+                            reduce={products[products.length - 1].reduce}
+                            price={products[products.length - 1].price} />
+                    </Slider>
             </section>
 
             <CardSectionProd text={"Les plus vendus"}

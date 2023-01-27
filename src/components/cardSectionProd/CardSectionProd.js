@@ -9,7 +9,7 @@ import "./CardSectionProd.scss"
 import { FaAngleDoubleRight } from "react-icons/fa";
 
 
-const CardSectionProd = ({ text, productFavorite, categorie, link, listProducts }) => {
+const CardSectionProd = ({props, text, productFavorite, categorie, link, listProducts }) => {
     
     const settings = {
         dots: false,
@@ -48,26 +48,18 @@ const CardSectionProd = ({ text, productFavorite, categorie, link, listProducts 
                     <span> <Link to=""> Voir plus <FaAngleDoubleRight /> </Link> </span>
                 </h3>
                 <div className="div-product">
+                    
                     {
                         listProducts.map((list, index) => {
-                            return <Link to="" key={index}>
+                            if (index < 8) {
+                                return <Link to="" key={index}>
                                 <div className="div-img">
                                     <img src={list.img} />
                                     <h4> {list.names} </h4>
                                     <b> {list.price} Fcfa </b>
                                 </div>
                             </Link>
-                        })
-                    }
-                    {
-                        listProducts.map((list, index) => {
-                            return <Link to="" key={index}>
-                                <div className="div-img">
-                                    <img src={list.img} />
-                                    <h4> {list.names} </h4>
-                                    <b> {list.price} Fcfa </b>
-                                </div>
-                            </Link>
+                            }
                         })
                     }
                 </div>
