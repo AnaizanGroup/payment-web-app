@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import "./CardProducts.scss";
 
-const CardProducts = ({ listProduct }, props) => {
+const CardProducts = ({ listProduct }) => {
     return (
         <>
             {

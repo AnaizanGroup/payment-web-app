@@ -1,0 +1,78 @@
+.box-account {
+    width: 280px !important;
+    height: max-content !important;
+    z-index: 2;
+    position: absolute;
+    right: -20%;
+    top: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--whitesmoke-500);
+    background: white !important;
+    padding: 1rem 0 2rem;
+
+    p {
+        width: 90%;
+        text-align: center;
+        margin: auto;
+        font-size: 13px;
+    }
+    .btn-connects {
+        width: 80%;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        background: none;
+
+
+        a {
+            height: 32px;
+            width: 100%;
+            border: none;
+            font-size: 13px;
+            cursor: pointer;
+
+            &:nth-child(1) {
+                background: var(--orange-gradient);
+                color: white;
+                margin-bottom: 12px;
+            }
+
+            &:nth-child(2) {
+                color: var(--orange);
+                background: var(--orange-transparent);
+            }
+        }
+    }
+
+    .bars {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+        background: none;
+        margin: 1rem 0 1rem;
+        div {
+            width: 20%;
+            height: 1px;
+            background-color: var(--whitesmoke-500);
+        }
+    }
+
+    .groups-sociaux {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        background: none;
+
+        a {
+            img {
+                width: 30px;
+            }
+        }
+    }
+}
+

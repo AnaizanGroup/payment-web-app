@@ -1,39 +1,13 @@
 /* All path to page */
 
-export const HOME = "/";
-export const PRODUCT = "/product/:title";
-export const CART_SHOPPING = "/cart";
-export const PRODUCT_DETAILS = "/product/details/:title";
 export const APP_FEEXPAY = "app.feexpay.me";
 
+export const RESETPWD = "/reinitialiser-votre-mot-de-passe"
+export const HOME = "/";
+export const PRODUCT = "/categories/products/:title";
+export const CART_SHOPPING = "/cart";
+export const PRODUCT_DETAILS = "/product/details/:title";
 
-/* link categorie and name */
-export const categories = [
-    {
-        nameCat:"T-shirt",
-        items: [
-            {type: 'Homme'},
-            {type: 'Femme'},
-            {type: 'Enfant'},
-        ]
-    },
-    {
-        nameCat:"Chaussures",
-        items: [
-            {type: 'Homme'},
-            {type: 'Femme'},
-            {type: 'Enfant'},
-        ]
-    },
-    {nameCat:"Habillement Femme"},
-    {nameCat:"Habillement Enfant"},
-    {nameCat:"Sports"},
-    {nameCat:"Sacs"},
-    {nameCat:"Chaussures"},
-    {nameCat:"Electronique"},
-    {nameCat:"Accessoire de cuisine"},
-    {nameCat:"Habillement Homme"},
-    {nameCat:"Habillement Homme"},
-    {nameCat:"Habillement Homme"},
-    {nameCat:"Habillement Homme"},
-]
+
+
+/* API URL */

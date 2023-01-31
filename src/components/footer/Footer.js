@@ -33,7 +33,7 @@ const Footer = () => {
                     </form>
                 </div>
                 <div className="row1">
-                    <div class="foot-div1">
+                    <div className="foot-div1">
                         <img src={logo} alt="" />
                             <p>
                                 FeexMarket vous offre la possibilité d'acheté et

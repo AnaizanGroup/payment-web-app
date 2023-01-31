@@ -13,10 +13,19 @@
             position: static;
             box-shadow: none;
 
+            .cart-empty {
+                margin: 1rem auto;
+                position: absolute;
+                svg {
+                    font-size: 35px !important;
+                }
+            }
+
             h2 {
+                background: var(--whitesmoke) !important;
                 padding: 10px 0 10px;
                 border-top-left-radius: 10px;
-                border-top-right-radius: 10px;
+                color: var(--dark);
 
                 span {
                     &:nth-child(2) {
@@ -26,6 +35,8 @@
             }
 
             .p {
+                margin-bottom: 2rem !important;
+
                 button {
                     display: none;
                 }
@@ -53,34 +64,45 @@
                     align-items: center;
                     justify-content: space-between;
                     padding: 1rem 0 1rem;
+                    border-top: 1px solid var(--whitesmoke-500);
 
                     img {
                         width: 120px;
-                        height: 120px;
                     }
 
                     &:nth-child(odd) {
-                        background-color: var(--whitesmoke);
+                        background: none !important;
+
                     }
 
                     .info {
                         width: 78%;
                         margin-right: 5px;
+                        position: relative;
 
                         h4 {
+                            width: 70%;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+
                             font-size: 16px;
-                            margin-bottom: 1rem;
+                            margin-bottom: 6px;
                         }
 
-                        b {
-                            font-size: 22px;
+                        .price {
+                            font-size: 16px;
                             color: var(--dark);
                         }
 
-                        p {
+                        .qty {
                             width: 100%;
                             margin-top: 0rem;
-                            justify-content: space-between;
+
+                            .label-qty {
+                                display: flex !important;
+                                margin-right: 10px;
+                            }
 
                             div {
                                 button {
@@ -104,20 +126,30 @@
                                     margin: 0 12px;
                                 }
                             }
+                        }
 
-                            .btn-trash {
-                                padding: 4px 8px 4px 8px;
-                                border-radius: 4px;
-                                border: 1px solid var(--whitesmoke-500);
-                                background-color: var(--whitesmoke);
+                        .btn-trash {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 110px;
+                            height: max-content;
+                            position: absolute;
+                            top: 1%;
+                            right: 2%;
+                            padding: 4px 8px 4px 8px;
+                            border-radius: 4px;
+                            border: 1px solid var(--whitesmoke-500);
+                            background-color: var(--whitesmoke);
 
-                                svg {
-                                    font-size: 20px !important;
-                                }
+                            svg {
 
-                                span {
-                                    display: block;
-                                }
+                                margin-right: 8px;
+                                font-size: 20px !important;
+                            }
+
+                            span {
+                                display: block;
                             }
                         }
 
@@ -131,8 +163,12 @@
                             }
                         }
 
+                        .color {
+                            margin-top: 8px !important;
+                        }
+
                         .size {
-                            margin-bottom: 10px;
+                            margin-bottom: 12px;
                         }
                     }
                 }
@@ -176,6 +212,7 @@
                 &:first-child {
                     text-decoration: underline;
                 }
+
                 &:last-child {
                     width: 95%;
                     margin-top: 2rem;

@@ -24,29 +24,32 @@ const CartShopping = () => {
     return (
         <div className="cart-page">
             <div className="div-carts">
-               <Cart cart={cart} para={`${cart.length} products présent`} />
-
+                <Cart para={`products présent`} />
             </div>
-            <div className="order-cart">
-                <h2> &nbsp;&nbsp;Ma Commande</h2>
-                <div className="infos-order">
-                    <p>
-                        Informations commande 
-                    </p>
-                    <p>
-                        Quantité total: <b> 0 </b>
-                    </p>
-                    <p>
-                        Prix Total: <b>0 fcfa</b>
-                    </p>
-                    <p>
-                        Prix Total TTC: <b>0 fcfa</b>
-                    </p>
-                    <p>
-                    <button> Valider ma commande </button>
-                    </p>
-                </div>
-            </div>
+            {
+                cart.length != 0 ? (
+                    <div className="order-cart">
+                        <h2> &nbsp;&nbsp;Résumé du Commande</h2>
+                        <div className="infos-order">
+                            <p>
+                                Informations commande
+                            </p>
+                            <p>
+                                Quantité total: <b> 0 </b>
+                            </p>
+                            <p>
+                                Prix Total: <b>0 fcfa</b>
+                            </p>
+                            <p>
+                                Prix Total TTC: <b>0 fcfa</b>
+                            </p>
+                            <p>
+                                <button> Valider ma commande </button>
+                            </p>
+                        </div>
+                    </div>
+                ) : ''
+            }
         </div>
     )
 }

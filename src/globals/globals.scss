@@ -34,7 +34,7 @@ body {
     color: var(--dark)
 }
 
-.title-section  span {
+.title-section span {
     margin-left: 1rem;
     font-weight: 400;
     font-size: 13px;
@@ -58,23 +58,26 @@ a {
     border: none !important;
 }
 
-p {
+p, label {
     font-size: 13px;
     color: var(--dark);
 }
+
 
 .d-none {
     justify-content: space-between;
 }
 
-select, 
+select,
 button,
 input {
     outline: none;
 }
+
 button {
     cursor: pointer;
 }
+
 .show {
     height: max-content !important;
     overflow: auto !important;
@@ -94,7 +97,7 @@ button {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
-    
+
     button {
         border: none;
         font-size: 17px;
@@ -118,7 +121,7 @@ button {
     .centre-int {
         display: flex;
         justify-content: space-between;
-        
+
         div {
             display: flex;
             align-items: center;
@@ -126,16 +129,128 @@ button {
             padding: 10px;
             border-radius: 6px;
             width: 22%;
+
             h4 {
                 font-size: 15px;
                 color: var(--dark);
                 font-weight: 400;
                 margin-left: 10px;
             }
+
             img {
                 width: 50px;
             }
 
         }
+    }
+}
+
+.select-size {
+    background: var(--orange-transparent) !important;
+    border: 1px solid var(--orange);
+    color: var(--orange) !important;
+    padding: 0 5px 0 5px;
+    font-size: 18px !important;
+}
+
+.select-color {
+    height: 30px !important;
+    width: 30px !important;
+}
+
+.active-sublink {
+    color: var(--orange) !important;
+    &::before {
+        background-color: var(--orange) !important;
+    }
+}
+
+.active-categorie {
+    color: var(--orange) !important;
+}
+
+.before-class-style {
+    &::before {
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        right: 0%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: var(--whitesmoke-500);
+    }
+
+    &:hover {
+        &::before {
+            background-color: var(--orange);
+        }
+    }
+}
+
+.radio-select {
+    &::before {
+        content: "";
+        position: absolute;
+        background-color: var(--orange);
+        height: 70%;
+        width: 70%;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.active-tabs-label {
+    color: var(--orange);
+    position: relative;
+    
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: -20%;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        border-radius: 30px;
+        background-color: var(--orange);
+    }
+}
+
+@keyframes dongle {
+    0% {
+        transform: translate(10px, 0);
+    }
+    10% {
+        transform: translate(0px, 0);
+    }
+    20% {
+        transform: translate(10px, 0);
+    }
+    30% {
+        transform: translate(0px, 0);
+    }
+    40% {
+        transform: translate(10px, 0);
+    }
+    50% {
+        transform: translate(0px, 0);
+    }
+    60% {
+        transform: translate(10px, 0);
+    }
+    70% {
+        transform: translate(0px, 0);
+    }
+    80% {
+        transform: translate(10px, 0);
+    }
+    90% {
+        transform: translate(0px, 0);
+    }
+    100% {
+        transform: translate(10px, 0);
     }
 }

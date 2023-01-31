@@ -1,7 +1,7 @@
 .box-cart {
     position: absolute;
     background-color: white;
-    top: 110%;
+    top: 100%;
     right: 0%;
     width: 300px;
     overflow: hidden;
@@ -11,6 +11,22 @@
     z-index: 1;
     border-radius: 5px;
 
+    .cart-empty {
+        width: 90%;
+        margin: auto;
+        font-size: 14px;
+        color: var(--whitesmoke-900);
+        padding: 10px 0 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            font-size: 25px !important;
+            color: var(--whitesmoke-900);
+        }
+    }
     h2 {
         font-size: 18px;
         font-weight: 500;
@@ -50,10 +66,11 @@
         justify-content: space-between;
 
         button {
+            background-color: var(--dark) !important;
             border: none;
             border-radius: 5px;
             background-color: var(--orange);
-            color: white;
+            color: white !important;
             font-size: 13px;
             padding: 0 8px 0 px;
             display: flex;
@@ -81,12 +98,12 @@
 
         .items {
             display: flex;
+            align-items: center;
             justify-content: space-between;
             padding: 5px 0 5px;
 
             img {
                 width: 90px;
-                height: 90px;
                 margin-left: 10px;
             }
 
@@ -97,9 +114,10 @@
             .info {
                 width: 55%;
                 margin-right: 5px;
+                position: relative;
 
                 h4 {
-                    width: 100%;
+                    width: 90%;
                     font-weight: 400;
                     font-size: 12px;
                     text-overflow: ellipsis;
@@ -108,7 +126,7 @@
                 }
 
                 b {
-                    font-size: 18px;
+                    font-size: 16px;
                     color: var(--dark);
                 }
 
@@ -142,22 +160,45 @@
                         }
                     }
 
-                    .btn-trash {
-                        background: none;
-                        margin-left: 3rem;
-                        display: flex;
-                        align-items: center;
-                
-                        span {
-                            display: none;
-                        }
-                        svg {
-                            margin-right: 5px;
-                            color: var(--dark);
-                            font-size: 15px !important;
-                        }
-                     
+                   
+                }
+
+                .color, .size {
+                    margin: 0% !important;
+
+                    b {
+                        font-size: 12px;
+                        margin-left: 10px;
                     }
+                }
+
+                .qty {
+                    display: flex;
+                    width: max-content;
+                    align-items: center;
+
+                    .label-qty {
+                        display: none;
+                    }
+                }
+                .btn-trash {
+                    background: none;
+                    margin-left: 3rem;
+                    display: flex;
+                    align-items: center;
+                    position: absolute;
+                    bottom: 1%;
+                    right: 3%;
+            
+                    span {
+                        display: none;
+                    }
+                    svg {
+                        margin-right: 5px;
+                        color: var(--dark);
+                        font-size: 17px !important;
+                    }
+                 
                 }
             }
         }

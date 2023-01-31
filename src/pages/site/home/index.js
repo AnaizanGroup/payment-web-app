@@ -35,19 +35,11 @@ import { APP_FEEXPAY } from "../../../settings/constant";
 import CardSectionProd from "../../../components/cardSectionProd/CardSectionProd";
 import { useSelector } from "react-redux";
 
-const Home = () => {
+const Home = (props) => {
     const navigate = useNavigate();
 
     const products = useSelector((state) => state.products.products)
-
-    const categorie = [
-        { img: cat1, name: 'Categorie name' },
-        { img: cat2, name: 'Categorie name' },
-        { img: cat3, name: 'Categorie name' },
-        { img: cat4, name: 'Categorie name' },
-        { img: cat5, name: 'Categorie name' },
-        { img: cat6, name: 'Categorie name' },
-    ]
+    const categories = useSelector((state) => state.products.categorie)
 
     const shop = [
         { img: shop1, names: 'LVM Shop', country: 'Bénin', code: 'bj' },
@@ -95,6 +87,12 @@ const Home = () => {
         arrows: false
     };
 
+    const goCategorieProductPage = (nameCat, index) => {
+        sessionStorage.setItem('nameCat', nameCat)
+        sessionStorage.setItem('indexCat', index)
+        window.location.href=`/categories/products/${nameCat}`;
+    }
+
     return (
         <div className="home-page">
             <section className="section-one section">
@@ -140,37 +138,35 @@ const Home = () => {
                 <div className="section-head">
                     <h2 className="title-section">
                         Nos Catégories
-                        <span>+12050</span>
+                        <span>+{categories.length}</span>
                     </h2>
                     <li> <a href="">Voir plus </a> <FaChevronRight /> </li>
                 </div>
                 <div className="div-categorie">
                     <Slider {...settings2}>
                         {
-                            categorie.map((list, index) => {
+                            categories.map(({img, nameCat}, index) => {
                                 return (
-                                    <Link to="" key={index}>
-                                        <a href="">
-                                            <div className="div-img">
-                                                <div className="img">
-                                                    <img src={list.img} alt="" />
-                                                    <h4 className="categorie-name"> {list.name} </h4>
-                                                </div>
+                                    <Link to={{pathname: `/categories/products/${nameCat}`}} state={nameCat} key={index}>
+                                        <div className="div-img">
+                                            <div className="img">
+                                                <img src={img} alt="" />
+                                                <h4 className="categorie-name"> {nameCat} </h4>
                                             </div>
-                                        </a>
+                                        </div>
                                     </Link>
                                 )
                             })
                         }
                         {
-                            categorie.map((list, index) => {
+                            categories.map(({img,nameCat}, index) => {
                                 return (
                                     <Link to="" key={index}>
                                         <a href="">
                                             <div className="div-img">
                                                 <div className="img">
-                                                    <img src={list.img} alt="" />
-                                                    <h4 className="categorie-name"> {list.name} </h4>
+                                                    <img src={img} alt="" />
+                                                    <h4 className="categorie-name"> {nameCat} </h4>
                                                 </div>
                                             </div>
                                         </a>
@@ -184,24 +180,24 @@ const Home = () => {
 
             <section className="section-three section">
                 <div className="section-head">
-                    <h2 className="title-section"> Nos Produits <span>+120382</span> </h2>
+                    <h2 className="title-section"> Nos Produits <span>+{products.length}</span> </h2>
                 </div>
                 <Slider {...settings3} >
-                        {
-                            products && (
-                                products.map((list, index) => {
-                                    return <Link key={index} to={{ pathname: `/product/details/${list.names}` }} state={list}>
-                                        <CardProduct2 img={list.img} names={list.names}
-                                            reduce={list.reduce} price={list.price} />
-                                    </Link>
-                                })
-                            )
-                        }
-                        <CardProduct2 img={products[products.length - 1].img}
-                            names={products[products.length - 1].names}
-                            reduce={products[products.length - 1].reduce}
-                            price={products[products.length - 1].price} />
-                    </Slider>
+                    {
+                        products && (
+                            products.map((list, index) => {
+                                return <Link key={index} to={{ pathname: `/categories/products/${list.nameCat}` }} state={list.nameCat}>
+                                    <CardProduct2 img={list.img} names={list.names}
+                                        reduce={list.reduce} price={list.price} />
+                                </Link>
+                            })
+                        )
+                    }
+                    <CardProduct2 img={products[products.length - 1].img}
+                        names={products[products.length - 1].names}
+                        reduce={products[products.length - 1].reduce}
+                        price={products[products.length - 1].price} />
+                </Slider>
             </section>
 
             <CardSectionProd text={"Les plus vendus"}
@@ -220,7 +216,7 @@ const Home = () => {
                     <h2 className="title-section"> Nos boutiques <span>+120382</span> </h2>
                 </div>
                 <div className="div-shop">
-                    <Slider {...settings3}>
+                    <Slider {...settings3} slidesToShow={4}>
                         {
                             shop.map(({ img, names, country, code }, index) => {
                                 return (

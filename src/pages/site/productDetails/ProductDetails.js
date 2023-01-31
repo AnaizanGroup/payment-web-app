@@ -1,10 +1,11 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { FiHeart, FiStar } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 import "./ProductDetails.scss"
 import "flag-icon-css/css/flag-icons.min.css"
@@ -22,15 +23,19 @@ import cat4 from "../../../assets/images/categories/cat4.png";
 import cat5 from "../../../assets/images/categories/cat5.png";
 import CardProducts from "../../../components/cardProducts/CardProducts";
 import CardProduct2 from "../../../components/cardProduct2/CardProduct2";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../../store/cart/cartSlice";
+import { Carousel } from "react-responsive-carousel";
+import session from "redux-persist/lib/storage/session";
 
 
 const ProductDetails = (props) => {
     const location = useLocation();
+    const dispatch = useDispatch();
     const data = location.state;
-    const colors = data ? (data.color) : [];
-    const sizes = data ? (data.size) : [];
-    console.log(data)
-
+    const colors = data ? (data.colors) : [];
+    const sizes = data ? (data.sizes) : [];
+    const [qty, setQty] = useState(1)
 
     const settings3 = {
         dots: false,
@@ -41,6 +46,12 @@ const ProductDetails = (props) => {
         autoplay: true,
         arrows: false
     };
+
+    const setting = {
+        showArrows: false,
+        showIndicators: false,
+        showStatus: false
+    }
 
     const products = [
         {
@@ -117,6 +128,79 @@ const ProductDetails = (props) => {
         }
     ]
 
+    const incrementQty = () => {
+        setQty(qty + 1)
+    }
+
+    const decrementQty = () => {
+        if (qty > 1) {
+            setQty(qty - 1)
+        }
+    }
+
+    /* method d'ajout au panier */
+    const handleAddToCart = (
+        idProd, img, names, description, price, quantity, size, color
+    ) => {
+        dispatch(addItem({
+            idProd, img, names, description, price, quantity, size, color
+        }))
+    }
+
+    const addToCart = () => {
+        let color = sessionStorage.getItem("color") ? sessionStorage.getItem("color") : ""
+        let size = sessionStorage.getItem("size") ? sessionStorage.getItem("size") : ""
+
+        handleAddToCart(
+            data.idProd,
+            data.img,
+            data.names,
+            data.description,
+            data.price,
+            qty,
+            size,
+            color
+        )
+    }
+
+    /* select color */
+    const handleSelectColor = (col) => {
+        let allColor = document.querySelectorAll(".col .child");
+        let alldiv = document.querySelectorAll(".col");
+        const color = colors.filter(
+            (item) => item === col
+        )
+        for (var i = 0; i < alldiv.length; i++) {
+            alldiv[i].classList.remove("select-color")
+            if (allColor[i].innerText == color) {
+                alldiv[i].classList.add("select-color")
+            }
+        }
+        sessionStorage.setItem('color', color)
+    }
+
+    /* select size */
+    const handleSelectSize = (siz) => {
+        let allSize = document.querySelectorAll(".size");
+
+        const size = sizes.filter(
+            (item) => item === siz
+        )
+
+        for (var i = 0; i < allSize.length; i++) {
+            allSize[i].classList.remove("select-size")
+            if (allSize[i].innerText == size) {
+                allSize[i].classList.add("select-size")
+            }
+        }
+        sessionStorage.setItem('size', size)
+    }
+
+    useEffect(() => {
+        handleSelectColor(data.color)
+        handleSelectSize(data.size)
+    })
+
     return (
         <div className="product-detail-page">
             <div className="div-details-product">
@@ -146,39 +230,43 @@ const ProductDetails = (props) => {
                             <span style={{ textDecoration: 'line-through' }}> {data.price} </span>
                             <span> -{data.reduce}% </span>
                         </p>
-                        <p className="color">
+                        <div className="color">
                             color:
                             <span className="colors">
                                 {
                                     colors && (
                                         colors.map((list, index) => {
-                                            return <div
-                                                style={{ background: `${list}` }} key={index}> </div>
+                                            return <div className="col"
+                                                style={{ background: `${list}` }} key={index}
+                                                onClick={() => handleSelectColor(list)}
+                                                value={list}> <span className="child">{list}</span> </div>
                                         })
                                     )
                                 }
                             </span>
-                        </p>
-                        <p className="size">
+                        </div>
+                        <div className="size">
                             Taille:
                             <div className="sizes">
                                 {
                                     sizes && (
                                         sizes.map((list, index) => {
-                                            return <div key={index}>
+                                            return <div key={index}
+                                                className="size"
+                                                onClick={() => handleSelectSize(list)}>
                                                 {list}
                                             </div>
                                         })
                                     )
                                 }
                             </div>
-                        </p>
+                        </div>
                         <p className="quantity">
                             Quantité:
                             <p>
-                                <button> <AiOutlineMinus /> </button>
-                                <span> {data.quantity}1 </span>
-                                <button> <AiOutlinePlus /> </button>
+                                <button onClick={decrementQty}> <AiOutlineMinus /> </button>
+                                <span> {qty} </span>
+                                <button onClick={incrementQty}> <AiOutlinePlus /> </button>
                             </p>
                         </p>
                         <p className="country-delivr">
@@ -195,7 +283,7 @@ const ProductDetails = (props) => {
                             <span> XOF 1290 </span>
                         </p>
                         <div className="btn-action">
-                            <button> Ajouter au panier </button>
+                            <button onClick={addToCart}> Ajouter au panier </button>
                             <button> Acheter </button>
                         </div>
                     </div>
