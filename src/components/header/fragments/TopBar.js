@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa'
-import { HOME } from '../../../settings/constant'
+import { HOME, SHOP_HOME } from '../../../settings/constant'
 import Auth from '../../authForms/Auth'
 import BoxAccount from '../../boxAccount/BoxAccount'
 
 import "../Header.scss"
 
 export const TopBar = () => {
+    const [part, isPart] = useState(false)
     const [openAuth, setOpenAuth] = useState(false)
     const [openForm, setOpenForm] = useState(0)
 
@@ -15,13 +16,29 @@ export const TopBar = () => {
         setOpenAuth(auth)
     }
 
+    useEffect(() => {
+        let path = window.location.pathname.split('/')[1]
+        if (path == SHOP_HOME.split('/')[1]) {
+            isPart(true)
+        }
+    })
+
+    const renders = () => {
+        if (!part) {
+            return (
+                <>
+                    <li><a href={HOME}>Accueil</a></li>
+                    <li><a href="">Comment créer mon boutique ?</a></li>
+                </>
+            )
+        }
+    }
     return (
         <>
             <div className="head-div1">
                 {openAuth ? <Auth formAuth={openForm} openAuth={setOpenAuth} /> : ''}
                 <ul>
-                    <li><a href={HOME}>Accueil</a></li>
-                    <li><a href="">Comment créer mon boutique ?</a></li>
+                    {renders()}
                 </ul>
                 <ul>
                     <li>

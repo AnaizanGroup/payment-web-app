@@ -4,18 +4,21 @@ import Cookies from "universal-cookie"
 import ResetForm from "./components/authForms/resetPwd/ResetForm";
 import LayoutCartCheckout from "./layouts/layoutSite/LayoutCartCheckout";
 import LayoutHome from "./layouts/layoutSite/LayoutHome";
+import LayoutShop from "./layouts/layoutSite/LayoutShop";
 import CartShopping from "./pages/site/cart/CartShopping";
 import Checkout from "./pages/site/checkout/Checkout";
 import Home from "./pages/site/home";
 import Product from "./pages/site/product/Product";
 import ProductDetails from "./pages/site/productDetails/ProductDetails";
+import Shop from "./pages/site/shop/Shop";
 import {
     CART_SHOPPING,
     CHECKOUT,
     HOME,
     PRODUCT,
     PRODUCT_DETAILS,
-    RESETPWD
+    RESETPWD,
+    SHOP_HOME
 } from "./settings/constant";
 
 
@@ -92,6 +95,17 @@ const ROUTES = () => {
                                 <Checkout />
                             </Suspense>
                         </LayoutCartCheckout>
+                    </ProtectedRoutes>
+                } />
+
+                {/* shop */}
+                <Route path={SHOP_HOME} element={
+                    <ProtectedRoutes>
+                        <LayoutShop>
+                            <Suspense fallback="...">
+                                <Shop />
+                            </Suspense>
+                        </LayoutShop>
                     </ProtectedRoutes>
                 } />
             </Routes>

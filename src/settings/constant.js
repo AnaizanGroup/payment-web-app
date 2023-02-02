@@ -7,8 +7,8 @@ export const HOME = "/";
 export const PRODUCT = "/categories/products/:title";
 export const CART_SHOPPING = "/cart";
 export const PRODUCT_DETAILS = "/product/details/:title";
-export const CHECKOUT = "/checkout/:title"
-
+export const CHECKOUT = "/checkout"
+export const SHOP_HOME = "/store/:id"
 
 
 /* API URL */

@@ -5,10 +5,11 @@ import "./Header.scss"
 import logo from "../../assets/images/svg/logo.svg";
 import { CART_SHOPPING, CHECKOUT, HOME } from "../../settings/constant"
 import { FaShoppingBag, FaShoppingBasket, FaShoppingCart } from "react-icons/fa";
-import { FiShoppingBag } from "react-icons/fi";
+import { FiShoppingBag, FiHeart } from "react-icons/fi";
+import { SearchBarShop } from "./fragments/SearchBarShop";
 
 
-const Header = ({ children1, children2, children3, children4 }) => {
+const Header = ({ children1, children2, children3, children4, children5 }) => {
 
     const [title, setTitle] = useState(1)
 
@@ -50,8 +51,10 @@ const Header = ({ children1, children2, children3, children4 }) => {
                         <img src={logo} alt="" />
                     </a>
                 </li>
-               { renderParty()}
+               {renderParty()}
+               {children5}
                 <div className="div2-child">
+                  
                     {children2}
                     {children3}
                 </div>

@@ -17,7 +17,7 @@ const Cart = ({ para }) => {
     const cart = useSelector((state) => state.cart.cartItem)
 
     useEffect(() => {
-
+        
     })
 
     return (
