@@ -12,6 +12,7 @@ import {
     PURGE,
     REGISTER
 } from 'redux-persist'
+import { userReducer } from "./userAuth/userSlice";
 
 
 const persistConfig = {
@@ -25,6 +26,7 @@ export const store = configureStore({
     reducer: {
         cart: persistedReducer,
         products: productReducer,
+        user: userReducer
     },
     middleware: (getDefaultMiddleware) => 
     getDefaultMiddleware({

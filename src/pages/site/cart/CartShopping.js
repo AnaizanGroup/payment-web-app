@@ -1,25 +1,32 @@
-import React from "react"
+import React, {useEffect} from "react"
 import "./CartShopping.scss";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { FiTrash } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-import { CART_SHOPPING } from "../../../settings/constant";
-
-
-import cat1 from "../../../assets/images/categories/cat1.png";
-import cat2 from "../../../assets/images/categories/cat2.png";
-import cat3 from "../../../assets/images/categories/cat3.png";
-import cat4 from "../../../assets/images/categories/cat4.png";
 
 import Cart from "../../../components/cart/Cart"
 import { useDispatch, useSelector } from "react-redux";
+import { MoyenPay } from "../../../components/moyenPay/MoyenPay";
+import { CHECKOUT } from "../../../settings/constant";
+import { SummaryOrder } from "../../../components/summaryOrder/SummaryOrder";
 
 const CartShopping = () => {
     const navigate = useNavigate()
-    const dispatch = useDispatch()
 
     const cart = useSelector((state) => state.cart.cartItem)
 
+    const returnQtyTotal = () => {
+        let qty=0;
+        let qtyTotal = cart.forEach(element => {
+            qty += element.quantity
+        });
+
+        return qtyTotal;
+    }
+
+    useEffect(() => {
+        alert(returnQtyTotal())
+    })
 
     return (
         <div className="cart-page">
@@ -28,26 +35,7 @@ const CartShopping = () => {
             </div>
             {
                 cart.length != 0 ? (
-                    <div className="order-cart">
-                        <h2> &nbsp;&nbsp;Résumé du Commande</h2>
-                        <div className="infos-order">
-                            <p>
-                                Informations commande
-                            </p>
-                            <p>
-                                Quantité total: <b> 0 </b>
-                            </p>
-                            <p>
-                                Prix Total: <b>0 fcfa</b>
-                            </p>
-                            <p>
-                                Prix Total TTC: <b>0 fcfa</b>
-                            </p>
-                            <p>
-                                <button> Valider ma commande </button>
-                            </p>
-                        </div>
-                    </div>
+                   <SummaryOrder />
                 ) : ''
             }
         </div>

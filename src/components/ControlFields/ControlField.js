@@ -91,12 +91,12 @@ function animeSpan(id) {
     } 
     else if ( type === "pwd" ) {
         if ( !value ) {
-            error.textContent = "Ce champ est vide...";
+            error.textContent = "Respecter le format...";
         animeSpan (id_error)
             return false;
         } 
         else if ( value.length < 6 ) {
-            error.textContent = "Mot de passe trop court... Au moins 6 caratères alphanumérique";
+            error.textContent = "Respecter le format...";
         animeSpan (id_error)
             return false;
         }

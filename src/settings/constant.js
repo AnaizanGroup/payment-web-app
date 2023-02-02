@@ -7,7 +7,9 @@ export const HOME = "/";
 export const PRODUCT = "/categories/products/:title";
 export const CART_SHOPPING = "/cart";
 export const PRODUCT_DETAILS = "/product/details/:title";
+export const CHECKOUT = "/checkout/:title"
 
 
 
 /* API URL */
+export const API_URL = ""

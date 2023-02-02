@@ -161,15 +161,15 @@ const Home = (props) => {
                         {
                             categories.map(({img,nameCat}, index) => {
                                 return (
-                                    <Link to="" key={index}>
-                                        <a href="">
+                                    <Link to={{pathname: `/categories/products/${nameCat}`}} state={nameCat} key={index}>
+                                    
                                             <div className="div-img">
                                                 <div className="img">
                                                     <img src={img} alt="" />
                                                     <h4 className="categorie-name"> {nameCat} </h4>
                                                 </div>
                                             </div>
-                                        </a>
+                                        
                                     </Link>
                                 )
                             })

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
+import { FcShop } from "react-icons/fc"
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-import { FiHeart, FiStar } from "react-icons/fi";
-import { Link, useLocation } from "react-router-dom"
+import { FiChevronRight, FiHeart, FiStar } from "react-icons/fi";
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -11,31 +12,25 @@ import "./ProductDetails.scss"
 import "flag-icon-css/css/flag-icons.min.css"
 import { FaStar } from "react-icons/fa";
 
-import feexpay from "../../../assets/images/svg/feexpay.svg";
-import mtn from "../../../assets/images/png/mtnPay.png";
-import moov from "../../../assets/images/png/moovPay.png";
-import visa from "../../../assets/images/png/visaPay.png";
-
-import cat1 from "../../../assets/images/categories/cat1.png";
-import cat2 from "../../../assets/images/categories/cat2.png";
-import cat3 from "../../../assets/images/categories/cat3.png";
-import cat4 from "../../../assets/images/categories/cat4.png";
-import cat5 from "../../../assets/images/categories/cat5.png";
-import CardProducts from "../../../components/cardProducts/CardProducts";
 import CardProduct2 from "../../../components/cardProduct2/CardProduct2";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../../../store/cart/cartSlice";
-import { Carousel } from "react-responsive-carousel";
-import session from "redux-persist/lib/storage/session";
+import { PopupLayout } from "../../../components/popupLayout/PopupLayout";
+import { CART_SHOPPING, PRODUCT } from "../../../settings/constant";
+import { MoyenPay } from "../../../components/moyenPay/MoyenPay";
 
 
 const ProductDetails = (props) => {
     const location = useLocation();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const data = location.state;
     const colors = data ? (data.colors) : [];
     const sizes = data ? (data.sizes) : [];
     const [qty, setQty] = useState(1)
+    const [popup, isPopup] = useState(false)
+
+    const products = useSelector((state) => state.products.products)
 
     const settings3 = {
         dots: false,
@@ -46,87 +41,6 @@ const ProductDetails = (props) => {
         autoplay: true,
         arrows: false
     };
-
-    const setting = {
-        showArrows: false,
-        showIndicators: false,
-        showStatus: false
-    }
-
-    const products = [
-        {
-            img: cat1,
-            names: 'Product name Product name',
-            price: 10000,
-            size: ['S', 'SM', 'X', 'XL', '2XL'],
-            color: ['blue', 'red', 'black', 'white', 'green'],
-            orders: 123,
-            sold: 123,
-            like: 1290,
-            reduce: 20,
-            reviews: 20,
-            description: '',
-            shop: "LVM Shop",
-            country: "Bénin",
-            code_country: "bj"
-        },
-        {
-            img: cat2,
-            names: 'Product name',
-            price: 10000,
-            size: ['S', 'SM', 'X', 'XL', '2XL'],
-            color: ['blue', 'red', 'black', 'white', 'green'],
-            orders: 123,
-            sold: 123,
-            like: 1290,
-            reduce: 20,
-            shop: "LVM Shop",
-            country: "Bénin",
-            code_country: "bj"
-        },
-        {
-            img: cat3,
-            names: 'Product name',
-            price: 10000,
-            size: ['S', 'SM', 'X', 'XL', '2XL'],
-            color: ['blue', 'red', 'black', 'white', 'green'],
-            orders: 123,
-            sold: 123,
-            like: 1290,
-            reduce: 20,
-            shop: "LVM Shop",
-            country: "Bénin",
-            code_country: "bj"
-        },
-        {
-            img: cat4,
-            names: 'Product name',
-            price: 10000,
-            size: ['S', 'SM', 'X', 'XL', '2XL'],
-            color: ['blue', 'red', 'black', 'white', 'green'],
-            orders: 123,
-            sold: 123,
-            like: 1290,
-            reduce: 20,
-            shop: "LVM Shop",
-            country: "Bénin",
-            code_country: "bj"
-        },
-        {
-            img: cat1,
-            names: 'Product name',
-            price: 10000,
-            size: ['S', 'SM', 'X', 'XL', '2XL'],
-            color: ['blue', 'red', 'black', 'white', 'green'],
-            orders: 123,
-            sold: 123,
-            like: 1290,
-            reduce: 20,
-            shop: "LVM Shop",
-            country: "Bénin",
-            code_country: "bj"
-        }
-    ]
 
     const incrementQty = () => {
         setQty(qty + 1)
@@ -140,14 +54,16 @@ const ProductDetails = (props) => {
 
     /* method d'ajout au panier */
     const handleAddToCart = (
-        idProd, img, names, description, price, quantity, size, color
+        idProd, img, names, description, price, quantity, size, color, shop
     ) => {
+
         dispatch(addItem({
-            idProd, img, names, description, price, quantity, size, color
+            idProd, img, names, description, price, quantity, size, color, shop
         }))
     }
 
     const addToCart = () => {
+        isPopup(true)
         let color = sessionStorage.getItem("color") ? sessionStorage.getItem("color") : ""
         let size = sessionStorage.getItem("size") ? sessionStorage.getItem("size") : ""
 
@@ -159,7 +75,8 @@ const ProductDetails = (props) => {
             data.price,
             qty,
             size,
-            color
+            color,
+            data.shop
         )
     }
 
@@ -203,6 +120,26 @@ const ProductDetails = (props) => {
 
     return (
         <div className="product-detail-page">
+            <PopupLayout closes={popup}>
+                <div className="popup-card">
+                    <p>Produit ajouté au panier avec succès !!
+                        Ouvrez le panier ou continuer... </p>
+                    <div className="btns-action">
+                        <button onClick={() => navigate(CART_SHOPPING)}> Ouvrir le panier</button>
+                        <button onClick={() => navigate(PRODUCT)}> Continuer </button>
+                    </div>
+                </div>
+            </PopupLayout>
+            <p className="head-prod-details">
+                product <FiChevronRight />
+                details <FiChevronRight />
+                {data && data.names}
+            </p>
+            <p className="shop-identity">
+                <FcShop />
+                <i className={`flag-icon flag-icon-${data.code_country}`}></i>
+                <b> {data.country}, {data.shop} </b>
+            </p>
             <div className="div-details-product">
                 <div className="products-details">
                     <div className="img">
@@ -307,12 +244,7 @@ const ProductDetails = (props) => {
                     </div>
                     <div className="mode-paie">
                         <p> Payer par: </p>
-                        <div>
-                            <img src={feexpay} />
-                            <img src={mtn} />
-                            <img src={moov} />
-                            <img src={visa} />
-                        </div>
+                       <MoyenPay />
                     </div>
                 </div>
             </div>

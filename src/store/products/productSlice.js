@@ -43,9 +43,9 @@ const products = [
         sold: 123,
         like: 1290,
         reduce: 20,
-        shop: "LVM Shop",
+        shop: "Marx Shop",
         country: "Bénin",
-        code_country: "bj"
+        code_country: "fr"
     },
     {
         idProd: 3,
@@ -55,14 +55,14 @@ const products = [
         description: 'Product',
         price: 10000,
         color: 'red',
-        size: 'black',
+        size: 'XL',
         sizes: ['S','SM','X','XL','2XL'],
         colors: ['blue','red','black','white','green'],
         orders: 123,
         sold: 123,
         like: 1290,
         reduce: 20,
-        shop: "LVM Shop",
+        shop: "Bénin mode",
         country: "Bénin",
         code_country: "bj"
     },
@@ -81,7 +81,7 @@ const products = [
         sold: 123,
         like: 1290,
         reduce: 20,
-        shop: "LVM Shop",
+        shop: "Viva Mode",
         country: "Bénin",
         code_country: "bj"
     },
@@ -93,6 +93,7 @@ const products = [
         description: 'Product',
         price: 10000,
         color: 'red',
+        size: '2XL',
         sizes: ['S','SM','X','XL','2XL'],
         colors: ['blue','red','black','white','green'],
         orders: 123,
@@ -118,7 +119,7 @@ const products = [
         sold: 123,
         like: 1290,
         reduce: 20,
-        shop: "LVM Shop",
+        shop: "Marx Shop",
         country: "Bénin",
         code_country: "bj"
     },
@@ -137,7 +138,7 @@ const products = [
         sold: 123,
         like: 1290,
         reduce: 20,
-        shop: "LVM Shop",
+        shop: "Bénin mode",
         country: "Bénin",
         code_country: "bj"
     },

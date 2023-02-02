@@ -8,7 +8,8 @@ import cat4 from "../../assets/images/categories/cat4.png";
 const cart = createSlice({
     name: "cart",
     initialState: {
-        cartItem: []
+        cartItem: [],
+        isSuccess: false,
     },
     reducers: {
         addItem: (state, action) => {
@@ -21,6 +22,8 @@ const cart = createSlice({
             } else {
                 state.cartItem.push({ ...action.payload});
             }
+
+            state.isSuccess=true
         },
         incrementQty: (state, action) => {
             const item = state.cartItem.find(

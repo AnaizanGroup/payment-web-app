@@ -2,16 +2,21 @@ import React, { Suspense } from "react"
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 import Cookies from "universal-cookie"
 import ResetForm from "./components/authForms/resetPwd/ResetForm";
-import Layout from "./layouts/layoutSite/Layout";
+import LayoutCartCheckout from "./layouts/layoutSite/LayoutCartCheckout";
+import LayoutHome from "./layouts/layoutSite/LayoutHome";
 import CartShopping from "./pages/site/cart/CartShopping";
+import Checkout from "./pages/site/checkout/Checkout";
 import Home from "./pages/site/home";
 import Product from "./pages/site/product/Product";
 import ProductDetails from "./pages/site/productDetails/ProductDetails";
-import { CART_SHOPPING, 
-    HOME, 
-    PRODUCT, 
+import {
+    CART_SHOPPING,
+    CHECKOUT,
+    HOME,
+    PRODUCT,
     PRODUCT_DETAILS,
-    RESETPWD } from "./settings/constant";
+    RESETPWD
+} from "./settings/constant";
 
 
 function ProtectedRoutes({ children }) {
@@ -38,44 +43,55 @@ const ROUTES = () => {
                 {/* home page */}
                 <Route path={HOME} element={
                     <ProtectedRoutes>
-                        <Layout>
+                        <LayoutHome>
                             <Suspense fallback="...">
                                 <Home />
                             </Suspense>
-                        </Layout>
+                        </LayoutHome>
                     </ProtectedRoutes>
                 } />
 
                 {/* product page */}
                 <Route path={PRODUCT} element={
                     <ProtectedRoutes>
-                        <Layout>
+                        <LayoutHome>
                             <Suspense fallback="...">
                                 <Product />
                             </Suspense>
-                        </Layout>
+                        </LayoutHome>
                     </ProtectedRoutes>
                 } />
 
                 {/* product details */}
                 <Route path={PRODUCT_DETAILS} element={
                     <ProtectedRoutes>
-                        <Layout>
+                        <LayoutHome>
                             <Suspense fallback="...">
                                 <ProductDetails />
                             </Suspense>
-                        </Layout>
+                        </LayoutHome>
                     </ProtectedRoutes>
                 } />
 
                 {/* cart shopping */}
                 <Route path={CART_SHOPPING} element={
                     <ProtectedRoutes>
-                        <Layout>
+                        <LayoutCartCheckout>
                             <Suspense fallback="...">
                                 <CartShopping />
                             </Suspense>
-                        </Layout>
+                        </LayoutCartCheckout>
+                    </ProtectedRoutes>
+                } />
+
+                {/* checkout */}
+                <Route path={CHECKOUT} element={
+                    <ProtectedRoutes>
+                        <LayoutCartCheckout>
+                            <Suspense fallback="...">
+                                <Checkout />
+                            </Suspense>
+                        </LayoutCartCheckout>
                     </ProtectedRoutes>
                 } />
             </Routes>

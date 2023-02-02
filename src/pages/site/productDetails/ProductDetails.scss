@@ -2,6 +2,32 @@
     width: 100%;
     margin-bottom: 5rem;
 
+    .head-prod-details,
+    .shop-identity {
+        display: flex;
+        align-items: center;
+        text-transform: capitalize;
+        margin-bottom: 12px;
+    }
+    .head-prod-details {
+        svg {
+            margin: 0 5px;
+        }
+    }
+
+    .shop-identity {
+        font-size: 15px;
+        margin-bottom: 6px !important;
+        i {
+            font-size: 1rem;
+            margin-right: 5px;
+        }
+
+        svg {
+            margin-right: 8px;
+            font-size: 1.5rem;
+        }
+    }
     .div-details-product {
         width: 100%;
         display: flex;
@@ -323,24 +349,6 @@
                     margin-bottom: 10px;
                     font-size: 13px;
                 }
-
-                div {
-                    
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin: 0% !important;
-                    padding: 0% !important;
-                
-                    img {
-                        width: 45px;
-
-                        &:nth-child(1) {
-                            width: 90px;
-                        }
-                    }
-                }
             }
         }
     }
@@ -358,6 +366,44 @@
             width: 100%;
 
            
+        }
+    }
+
+    .popup-card {
+        width: 45%;
+        padding: 1.5rem;
+        border-radius: 6px;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .btns-action {
+            display: flex;
+            align-items: center;
+
+            button {
+                height: 26px;
+                border: none;
+                font-size: 13px;
+                padding: 0 1rem 0 1rem;
+                margin: 0 12px;
+                border-radius: 6px;
+
+                &:nth-child(1) {
+                    background: var(--orange-gradient);
+                    color: white;
+                }
+
+                &:nth-child(2) {
+                    background: var(--orange-transparent);
+                    color: var(--orange);
+                }
+            }
         }
     }
 }

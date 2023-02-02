@@ -105,8 +105,12 @@ header {
         display: flex;
         justify-content: space-between !important;
         align-items: center;
-        padding: 1.6rem 0 1.6rem;
+        padding: 1.8rem 0 1.8rem;
 
+        .title-page {
+            font-size: 20px;
+            font-weight: 500;
+        }
         .logo-link {
             margin-left: 2rem;
 

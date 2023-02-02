@@ -1,0 +1,310 @@
+.checkout-page {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10rem;
+
+    .form-checkout {
+        width: 92%;
+        margin: 12px auto;
+
+        .div-input,
+        .div-inputs {
+            width: 100%;
+            margin-bottom: 1.5rem;
+
+            input {
+                border: none;
+                border-radius: 6px;
+                font-size: 13px;
+                padding: 0 5px 0 5px;
+                height: 34px;
+                background-color: var(--whitesmoke);
+            }
+
+            span {
+                color: var(--orange);
+                font-size: 12px;
+            }
+        }
+
+        .div-input {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .div-inputs {
+            display: flex;
+            justify-content: space-between;
+
+            p {
+                width: 35%;
+                display: flex;
+                flex-direction: column;
+
+                &:nth-child(1) {
+                    width: 62%;
+                }
+            }
+        }
+
+        .btn-send {
+            margin-top: 0rem;
+            border: none;
+            color: white;
+            font-size: 14px;
+            width: 22%;
+            height: 32px;
+            border-radius: 5px;
+            background: var(--orange);
+        }
+    }
+
+    .form-add {
+        padding: 1rem;
+        width: 500px;
+        border-radius: 10px;
+        background-color: var(--whitesmoke-500);
+        position: relative;
+
+        .close-times {
+            position: absolute;
+            top: 2%;
+            right: 3%;
+            font-size: 30px;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        h3 {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        .div-inputs {
+            p {
+                width: 34% !important;
+
+                &:nth-child(3) {
+                    width: 25% !important;
+                }
+
+                .select-country {
+                    height: 33px !important;
+                    border-radius: 6px;
+
+                    .selected {
+                        span {
+                            font-size: 4rem !important;
+                            color: var(--dark);
+
+                            &:nth-child(2) {
+                                font-size: 13px !important;
+                            }
+                        }
+                    }
+
+                    .options-select {
+                        .option {
+                            span {
+                                &:nth-child(1) {
+                                    font-size: 4rem !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .div-left-page {
+        width: 68%;
+
+        .div-bloc {
+            overflow: hidden;
+            border-radius: 10px;
+            width: 100%;
+            background-color: rgb(250, 250, 250);
+            margin-bottom: 1rem;
+
+            h2 {
+                width: 95%;
+                margin: auto;
+                padding: 8px 0 8px;
+                font-size: 16px;
+                font-weight: 500;
+                color: var(--dark);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-bottom: 1px solid var(--whitesmoke-500);
+
+                span {
+                    display: flex;
+                    align-items: center;
+                    svg {
+                        font-size: 18px;
+                        margin: 0 5px 0 0px;
+                    }
+                }
+
+                .add-addr {
+                    border: none;
+                    font-size: 13px;
+                    color: var(--orange);
+                    float: right;
+                    background: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .div-child {
+                width: 100%;
+
+                .edit-form-div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 90%;
+                    margin: 6px auto 6px;
+                    padding: 5px 0 5px;
+
+                    button {
+                        font-size: 14px;
+                        color: var(--orange);
+                        background: none;
+                        padding: 10px 1.2rem 10px 1.2rem;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        border: none;
+
+                        svg {
+                            font-size: 16px;
+                            margin-bottom: 10px;
+                        }
+
+                    }
+
+                    .infos-addr {
+                        width: 100% !important;
+                        background-color: white;
+                        padding: 5px;
+                        border-radius: 10px;
+
+                        p {
+                            margin-bottom: 5px;
+                        }
+                    }
+                }
+
+                .payments {
+                    width: 95%;
+                    margin: auto;
+                    display: flex;
+                    flex-direction: column;
+                    padding-bottom: 2rem;
+
+                    .mode-pay {
+                        margin-top: 1.5rem;
+
+                        h4 {
+                            margin-bottom: 10px;
+                            font-size: 13px;
+                            font-weight: 500;
+                            color: var(--dark);
+
+                            svg {
+                                font-size: 15px;
+                                margin-left: 5px;
+                            }
+                        }
+
+                        .moyen-pay {
+                            width: max-content;
+                            display: flex;
+                            align-items: center;
+
+                            div {
+                                width: max-content;
+                                margin-right: 2rem;
+                                display: flex;
+                                align-items: center;
+
+                                input {
+                                    height: 1rem;
+                                    width: 20px;
+                                    margin-right: 10px;
+                                }
+
+                                img {}
+                            }
+                        }
+                    }
+
+                    .form-card-infos {
+                        width: 45%;
+                        margin-top: 2rem;
+                        overflow: hidden;
+                        background-color: var(--whitesmoke-500);
+                        display: flex;
+                        flex-direction: column;
+                        padding: 1.5rem 0 10px;
+                        border-radius: 10px;
+
+                        h4 {
+                            background-color: var(--dark);
+                            width: 100%;
+                            padding: 8px 0 8px 8px;
+                            color: white;
+                            font-size: 14px;
+                            font-weight: 500;
+                            margin-bottom: 1rem;
+                        }
+                    }
+                }
+
+                .card-shop-verify {
+                    .box-cart {
+                        position: static;
+                        width: 100% !important;
+                        margin: auto;
+
+                        h2 {
+                            display: none;
+                        }
+
+                        .p {
+                            display: none;
+                        }
+
+                        .bloc-prod {
+                            .info {
+                                width: 80%;
+                                h4 {
+                                    font-size: 15px;
+                                }
+
+                                .shiping-infos {
+                                    display: flex;
+                                }
+
+                                .btn-trash {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .div-sommaire {
+        width: 25%;
+        border: 1px solid;
+    }
+}
