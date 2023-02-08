@@ -7,6 +7,7 @@
     border-radius: 6px;
     position: relative;
     padding: 0% !important;
+    cursor: pointer;
 
     .selected {
         height: 100%;
@@ -15,34 +16,32 @@
         align-items: center;
         justify-content: space-between;
         padding: 0 5px 0 5px;
-        font-size: 15px !important;
 
         .arrow {
             font-size: 17px;
-            margin-right: 1rem;
+            margin-right: 10px;
         }
-        
+
         .selected-item {
             width: auto;
             display: flex !important;
             flex-direction: row !important;
             align-items: center;
-        }
+            font-size: 12px !important;
 
-        span {
-            width: auto !important;
-            margin-left: 5px;
-            font-size: 4rem;
-            height: 20px;
-            width: 30px;
-            margin-right: 6px;
+            span {
+                width: auto !important;
+                margin-left: 5px;
+                height: 20px;
+                width: 30px;
+                margin-right: 6px;
 
-            &:nth-child(2) {
-                margin: 0% !important;
-                color: var(--dark);
-                font-size: 13px !important;
+                &:nth-child(2) {
+                    margin: 0% !important;
+                    color: var(--dark);
+                    font-size: 10px !important;
+                }
             }
-
         }
     }
 

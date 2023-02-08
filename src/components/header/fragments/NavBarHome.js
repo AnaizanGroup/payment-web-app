@@ -16,7 +16,7 @@ export const NavBarHome = () => {
         <>
             <div className="head-div3">
                 <div className="div-left">
-                    <DropCategorie listCategorie={categories} />
+                    <DropCategorie link={"/categories/products/"} listCategorie={categories} />
                     <li>
                         <a href="" className="link"> Accessoires </a>
                         <div className="div-sub-link">

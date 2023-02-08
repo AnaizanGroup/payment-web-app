@@ -1,0 +1,112 @@
+.shop-page {
+    width: 100%;
+
+    .div-promo-prod {
+        height: max-content;
+        border-radius: 6px;
+        background: var(--orange-gradient);
+        overflow: hidden;
+    }
+
+    .section-prod {
+        display: flex;
+        flex-direction: column;
+
+        .groups-cards-product {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .cards {
+                width: 38%;
+                height: 200px;
+                border-radius: 6px;
+                background-color: var(--whitesmoke-500);
+                display: flex !important;
+                justify-content: space-around;
+                align-items: center;
+
+                &:nth-child(1) {
+                    width: 22%;
+                    display: block !important;
+                    background: var(--red-gradient) !important;
+                    align-items: center;
+                    justify-content: center;
+
+                    h3 {
+                        font-size: 17px;
+                        font-weight: 500;
+                        color: white;
+                        margin: 10px 0 10px 1rem;
+                    }
+
+                    .slider-prods {
+                        padding-top: 12px;
+                        margin: auto;
+                        width: 70%;
+                        height: 60%;
+                        border-radius: 6px;
+                        background-color: white;
+
+                        div {
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            img {
+                                margin: auto;
+                                animation: anim infinite 2s linear;
+                            }
+
+                            @keyframes anim {
+                                from {
+                                    transform: scale(1);
+                                }
+
+                                to {
+                                    transform: scale(1.2);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .section-prod {
+        &:nth-child(3) {
+            .groups-cards-product {
+                .cards {
+                    &:nth-child(1) {
+                        background: var(--orange-gradient) !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .section4-shop {
+        .title-section {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+
+            div {
+                height: 1px;
+                width: 38%;
+                background-color: var(--whitesmoke-500);
+            }
+        }
+
+        .groups-prod-s4 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+        }
+    }
+}

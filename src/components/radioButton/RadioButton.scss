@@ -1,0 +1,28 @@
+.role {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+
+    .box-input {
+        margin-right: 1rem;
+        display: flex;
+        align-items: center;
+
+        label {
+            width: max-content !important;
+            font-size: 13px;
+            margin-bottom: 0% !important;
+        }
+
+        .radio-input {
+            border-radius: 50%;
+            height: 15px;
+            width: 15px;
+            padding: 0%;
+            border: 1px solid var(--orange);
+            position: relative;
+            cursor: pointer;
+            margin-right: 8px;
+        }
+    }
+}

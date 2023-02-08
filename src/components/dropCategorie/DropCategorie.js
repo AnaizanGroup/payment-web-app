@@ -4,12 +4,12 @@ import { VscListSelection } from "react-icons/vsc"
 
 import "./DropCategorie.scss"
 
-const DropCategorie = ({ listCategorie }) => {
+const DropCategorie = ({ listCategorie, link, nb }) => {
 
     const goCategorieProductPage = (nameCat, index) => {
         sessionStorage.setItem('nameCat', nameCat)
         sessionStorage.setItem('indexCat', index)
-        window.location.href=`/categories/products/${nameCat}`;
+        window.location.href=`${link}${nameCat}${nb == 1 ? "/:id":null}`;
     }
 
     return (
@@ -18,11 +18,12 @@ const DropCategorie = ({ listCategorie }) => {
             Catégories <FiChevronDown />
             <li className="box-categorie">
                 {
-                    listCategorie.map(({ nameCat }, index) => {
+                    listCategorie && 
+                    (listCategorie.map(({ nameCat }, index) => {
                         return <li key={index} onClick={() => goCategorieProductPage(nameCat,index)}>
                             {nameCat}
                         </li>
-                    })
+                    }))
                 }
             </li>
         </li>

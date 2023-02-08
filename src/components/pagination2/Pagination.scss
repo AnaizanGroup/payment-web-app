@@ -1,0 +1,43 @@
+.pagination2 {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 8px 0 8px;
+    background-color: var(--whitesmoke);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    .div-btn-pg {
+        display: flex;
+        align-items: center;
+        margin-right: 2rem;
+
+        span {
+            font-size: 15px;
+            color: var(--gray-color);
+        }
+
+        div {
+            margin-left: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        div button {
+            background-color: white;
+            border-radius: 50%;
+            font-size: 13px;
+            color: var(--dark);
+            border: 1px solid var(--whitesmoke-500);
+            padding: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+        }
+
+        div button:hover {
+            background: var(--gray-border-color);
+        }
+    }
+}

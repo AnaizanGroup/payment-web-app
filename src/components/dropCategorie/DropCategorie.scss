@@ -3,7 +3,6 @@
     font-size: 13px;
     margin-left: 0%;
     border-right: 1px solid var(--whitesmoke-500);
-    color: var(--dark);
     display: flex;
     align-items: center;
     justify-content: start;
@@ -11,7 +10,7 @@
     cursor: pointer;
     position: relative;
     background-color: white;
-    z-index: 1;
+    z-index: 5000;
 
     svg {
         margin-left: 5px;
@@ -34,11 +33,13 @@
         padding: 5px 0 5px;
 
         li {
+            width: 90% !important;
             margin-left: 0% !important;
-            padding-left: 1rem;
+            padding-left: 8px;
             padding-top: 7px;
             padding-bottom: 7px;
             position: relative;;
+            color: var(--dark) !important;
 
             &:nth-child(1) {
                 border-right: none;

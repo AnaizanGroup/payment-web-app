@@ -1,0 +1,249 @@
+.profil-dashboard-buyer {
+    width: 100%;
+    height: 100%;
+
+    .block-form {
+        padding: 10px 0 10px;
+        margin-top: 12px;
+        width: 100%;
+        height: max-content;
+        border-radius: 6px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 12px;
+
+        .block-div1 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        form {
+
+
+            .div-input {
+                width: 95%;
+                display: flex;
+                flex-direction: column;
+                padding: 12px 12px 12px;
+
+                &:nth-child(odd) {
+                    background-color: var(--whitesmoke);
+                }
+
+                p {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+
+                    label {
+                        font-size: 13px;
+                        width: 210px;
+                        text-align: end;
+                    }
+
+                    input {
+                        margin-left: 1.5rem;
+                        width: 50%;
+                        height: 33px;
+                        border-radius: 5px;
+                        background-color: var(--whitesmoke-500);
+                        border: none;
+                        padding: 0 10px 0 10px;
+                    }
+
+                    .select {
+                        background-color: var(--whitesmoke-500);
+                        border: none;
+                        width: 52%;
+                        height: 31px;
+                        border-radius: 5px;
+                        margin-left: 1.5rem;
+                        margin-right: 0;
+                        z-index: 0;
+                    }
+
+                    .select-country {
+                        width: 53.5%;
+                        height: 31px;
+                        background-color: var(--whitesmoke-500);
+                        border-radius: 5px;
+                        margin-left: 1.5rem;
+                    }
+
+                    .file-img {
+                        width: 50%;
+                        height: 60px;
+                        border-radius: 5px;
+                        background-color: rgba(82, 82, 255, 0.125);
+                        margin-left: 1.5rem;
+                        padding: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+
+                        span {
+                            text-align: center;
+                            width: 100%;
+                            font-size: 12px;
+                        }
+
+                        svg {
+                            font-size: 20px;
+                            margin-bottom: 6px;
+                        }
+
+                        input {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            width: 100%;
+                            opacity: 0;
+                        }
+
+                    }
+
+                    .role {
+                        margin-top: 0%;
+                        margin-left: 1.5rem;
+                    }
+
+                    .btn-click {
+                        font-size: 13px;
+                        border: none;
+                        color: var(--orange);
+                        background: none;
+                        margin-left: 20%;
+                    }
+
+                    .change-pwd-div {
+                        width: 400px;
+                        position: absolute;
+                        top: 180%;
+                        right: 0%;
+                        display: none;
+
+                        form {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+
+                            input {
+                                width: 50%;
+                                margin-left: 0% !important;
+                                margin-bottom: 12px !important;
+                            }
+
+                            button {
+                                height: 31px;
+                                width: 20%;
+                                border: none;
+                                background: var(--orange-gradient);
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .btn-update {
+                height: 31px;
+                border-radius: 5px;
+                padding: 0 12px 0 12px;
+                margin-top: 1rem;
+                border: none;
+                background: var(--orange-gradient);
+                color: white;
+                float: right;
+            }
+        }
+
+        .div1,
+        .div2 {
+            width: 46%;
+        }
+
+        .bars {
+            width: 1px;
+            height: 100%;
+            background-color: var(--whitesmoke-500);
+        }
+
+        .div1 {
+            margin-left: 1rem;
+        }
+
+        .div2 {
+            margin-right: 1rem;
+        }
+    }
+
+    .block-div2 {
+        width: 100%;
+        padding: 10px 0 10px;
+        background-color: white;
+        margin-top: 1.5rem;
+        border-radius: 6px;
+
+        h3 {
+            width: 97%;
+            margin: auto;
+        }
+
+        .block-div-addr {
+            width: 97%;
+            margin: 10px auto;
+
+            .div-addrs {
+                width: 100%;
+
+                .addr {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    padding: 6px 0 6px;
+                    margin-bottom: 1rem;
+
+                    &:nth-child(odd) {
+                        background-color: var(--whitesmoke);
+                    }
+                    div {
+                        width: max-content;
+                        margin-left: 10px;
+                        b {
+                            font-size: 15px;
+                        }
+                        p {
+                            margin-bottom: 5px;
+                        }
+                    }
+
+                    button {
+                        margin-right: 10px;
+                        background: none;
+                        font-size: 13px;
+                        color: var(--orange);
+                        border: none;
+
+                        svg {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+
+            .btn-add-addr {
+                width: 100%;
+                padding: 10px 0 10px;
+                font-size: 14px;
+                background-color: #ff770f20;
+                border: none;
+                color: var(--orange);
+            }
+        }
+    }
+}

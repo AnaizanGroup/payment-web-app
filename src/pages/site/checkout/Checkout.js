@@ -13,6 +13,7 @@ import { useSelector } from "react-redux"
 import { PopupLayout } from "../../../components/popupLayout/PopupLayout"
 import SelectCountryField from "../../../components/selectCountryField/SelectCountryField"
 import { SummaryOrder } from "../../../components/summaryOrder/SummaryOrder"
+import { FormAdresse } from "../../../components/formAdresse/formAdresse"
 
 
 const Checkout = () => {
@@ -32,41 +33,7 @@ const Checkout = () => {
     return (
         <div className="checkout-page">
             <PopupLayout closes={popup}  >
-                <form className="form-checkout form-add">
-                    <span className="close-times"
-                        onClick={() => isPopup(false)}>&times;</span>
-                    <h3> Adresse de livraison </h3>
-                    <div className="div-input">
-                        <label>Nom complet (Ex: Jean Hugues Houinssou)</label>
-                        <input type="text" name="" placeholder="..." />
-                        <span></span>
-                    </div>
-                    <div className="div-inputs">
-                        <p>
-                            {/*
-                            <input type="text" name="" placeholder="date expiration" />
-                            <span></span> */}
-                            <label>Pays/Région</label>
-                            <SelectCountryField />
-                        </p>
-                        <p>
-                            <label> Ville/Province </label>
-                            <input type="text" name="" placeholder="code" />
-                            <span></span>
-                        </p>
-                        <p>
-                            <label> Code postale </label>
-                            <input type="text" name="" placeholder="code" />
-                            <span></span>
-                        </p>
-                    </div>
-                    <div className="div-input">
-                        <label> Téléphone </label>
-                        <input type="text" name="" placeholder="Votre téléphone" />
-                        <span></span>
-                    </div>
-                    <button className="btn-send" type="submit"> Enrégistré </button>
-                </form>
+                <FormAdresse isPopup={isPopup} />
             </PopupLayout>
             <div className="div-left-page">
                 <LayoutBloc icon={<FaRegAddressCard />} title={'Adresse de livraison'}

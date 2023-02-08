@@ -1,0 +1,36 @@
+.home-dashboard-buyer {
+    width: 100%;
+    height: max-content;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1.5rem;
+    .card {
+        padding: 12px;
+        width: 95%;
+        height: 180px;
+        background-color: white;
+        border-radius: 10px;
+        display: inline-block;
+        justify-content: space-between;
+        position: relative;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.154);
+        b {
+            font-size: 25px;
+            font-weight: 500;
+            color: var(--orange);
+        }
+
+        p {
+            position: absolute;
+            bottom: 1%;
+            right: 2%;
+            font-size: 15px;
+            color: var(--orange);
+            
+            svg {
+                margin-right: 5px;
+                font-size: 17px;
+            }
+        }
+    }
+}

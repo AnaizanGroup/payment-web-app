@@ -137,24 +137,28 @@ header {
             p {
                 display: flex;
                 align-items: center;
-                margin-top: 2px;
+                margin-top: 1px;
+                font-size: 12px !important;
+                i {
+                    margin-right: 5px;
+                }
 
                 &:nth-child(2) {
                  .followers {
                     border-left: 1px solid var(--whitesmoke-900);
                     border-right: 1px solid var(--whitesmoke-900);
-                    padding: 0 12px 0 12px;
-                    margin-left: 1rem;        
+                    padding: 0 8px 0 8px;
+                    margin-left: 10px;        
                  }   
 
                  .btn-follo {
                     border: none;
-                    margin-left: 12px;
+                    margin-left: 10px;
                     background-color: var(--dark);
                     color: white;
                     border-radius: 30px;
                     padding: 0 10px 0 10px;
-                    height: 21px;
+                    height: 20px;
                  }
                 }
 
@@ -163,9 +167,10 @@ header {
                         background: none;
                         color: var(--orange);
                         padding: 0 12px 0 12px;
-                        height: 21px;
-                        margin-left: 12px;
+                        height: 20px;
+                        margin-left: 0px;
                         border: none;
+                        font-size: 12px;
                     }
                 }
             }
@@ -178,7 +183,7 @@ header {
 
             .search-bar-shop {
                 margin-right: 1rem;
-                height: 28px;
+                height: 25px;
                 display: flex;
                 align-items: center;
                 overflow: hidden;
@@ -695,4 +700,38 @@ header {
             }
         }
     }
+
+     .nav-bar-shop {
+         background: url(../../assets/images/svg/back2.svg);
+            height: 36px;
+            display: flex;
+            align-items: center;
+            background-color: var(--dark);
+            
+            li {
+                margin-right: 1.8rem;
+                display: inline-block;
+
+                a{
+                    color: white;
+                }
+            }
+
+            .li-drop-cat {
+                border-right: none !important;
+                display: flex !important;
+                align-items: center !important;
+                height: 100% !important;
+                background: none;
+                color: white;
+                padding-top: 2px;
+                padding-right: 0% !important;
+                svg {
+                    font-size: 20px !important;
+                    &:nth-child(1) {
+                        display: none;
+                    }
+                }
+            }
+        }
 }

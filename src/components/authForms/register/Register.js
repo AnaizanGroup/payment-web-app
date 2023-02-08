@@ -3,6 +3,7 @@ import { FiEye, FiEyeOff } from "react-icons/fi"
 import { useDispatch } from "react-redux"
 import { userRegister } from "../../../store/userAuth/userReducer"
 import { validInputText } from "../../controlFields/controlField"
+import { RadioButton } from "../../radioButton/RadioButton"
 import SelectCountryField from "../../selectCountryField/SelectCountryField"
 import { ShowPasswdText } from "../../showPasswdText/ShowPasswdText"
 
@@ -136,23 +137,7 @@ const Register = () => {
             </div>
             <div className="div-field">
                 <p> Définissez votre rôle</p>
-                <div className="role">
-                    <div className="box-input">
-                        <div className={`radio-input ${role=='Achecteur' ? 'radio-select':''}`}
-                        onClick={() => setRole("Achecteur")}></div>
-                        <label> Acheteur</label>
-                    </div>
-                    <div className="box-input">
-                        <div className={`radio-input ${role=='Vendeur' ? 'radio-select':''}`}
-                        onClick={() => setRole("Vendeur")}></div>
-                        <label> Vendeur</label>
-                    </div>
-                    <div className="box-input">
-                        <div className={`radio-input ${role=='Achecteur/Vendeur' ? 'radio-select':''}`}
-                        onClick={() => setRole("Achecteur/Vendeur")}></div>
-                        <label> Acheteur/Vendeur</label>
-                    </div>
-                </div>
+                <RadioButton role={role} setRole={setRole} />
             </div>
             <div className="btn-submit">
                 <button onClick={handleSubmit} type="submit">Soumettre</button>

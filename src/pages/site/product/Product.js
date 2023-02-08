@@ -14,6 +14,7 @@ import Pagination from "../../../components/pagination/Pagination";
 
 import CardProducts from "../../../components/cardProducts/CardProducts";
 import { useDispatch, useSelector } from "react-redux";
+import { SortList } from "../../../components/sortList/SortList";
 
 const Product = (props) => {
     const dispatch = useDispatch()
@@ -23,29 +24,6 @@ const Product = (props) => {
     const [prodName, setNameProd] = useState()
 
     const products = useSelector((state) => state.products.products)
-
-    const listOption1 = [
-        { label: 'Tout' },
-        { label: 'Les plus vendus', value: '' },
-        { label: 'Moins chère', value: '' },
-        { label: 'En promotion', value: '' },
-    ]
-
-    const listOption2 = [
-        { label: 'Tout' },
-        { label: 'Homme' },
-        { label: 'Femme' },
-        { label: 'Enfant' },
-    ]
-
-    const listOptionTaille = [
-        { label: 'Tout' },
-        { label: 'SM' },
-        { label: 'M' },
-        { label: 'X' },
-        { label: 'Xl' },
-        { label: 'lg' },
-    ]
 
     const categories = useSelector((state) => state.products.categorie)
 
@@ -128,19 +106,7 @@ const Product = (props) => {
                                     }
                                 </div>
                             </div>
-                            <Select listOption={listOption1} defaultText={'Trier par'}
-                                id={1} />
-
-                            <Select listOption={listOption2} defaultText={'Homme'}
-                                id={2} />
-                            <Select listOption={listOptionTaille} defaultText={'Taille'}
-                                id={3} />
-                            <div className="sort-price">
-                                <span>price</span>
-                                <input type="text" placeholder="Min_" />
-                                <span> <FiChevronLeft /> <FiChevronRight /> </span>
-                                <input type="text" placeholder="Max_" />
-                            </div>
+                            <SortList />
 
                             <div className="div-btns">
                                 <a></a>

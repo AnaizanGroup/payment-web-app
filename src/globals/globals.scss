@@ -24,12 +24,13 @@ body {
 
 .section {
     width: 100%;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 
 .title-section {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
+    margin-bottom: 1rem;
     width: max-content;
     color: var(--dark)
 }
@@ -165,6 +166,15 @@ button {
     }
 }
 
+.active-sublink {
+    color: var(--orange) !important;
+    &::before {
+        background-color: var(--orange) !important;
+    }
+}
+
+
+
 .active-categorie {
     color: var(--orange) !important;
 }
@@ -252,5 +262,80 @@ button {
     }
     100% {
         transform: translate(10px, 0);
+    }
+}
+
+.title-h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    color: var(--dark);
+    border-bottom: 1px solid var(--whitesmoke-500);
+}
+
+.title-tabs {
+    font-size: 18px;
+    font-weight: 500;
+    border-bottom: 1px solid var(--whitesmoke-500);
+    padding-bottom: 0px;
+    margin-top: 1rem;
+    margin-bottom: 12px;
+    color: var(--dark);
+}
+
+.table-data {
+    width: 100%;
+    height: max-content;
+
+    thead {
+        width: 100%;
+        background-color: var(--whitesmoke-500);
+        tr {
+            height: 30px;
+            th {
+                height: 100%;
+                font-size: 13px;
+                font-weight: 600;
+            }
+        }
+    }
+
+    tbody {
+        width: 100%;
+        tr {
+            &:nth-child(even) {
+                background-color: var(--whitesmoke);
+            }
+            td {
+                height: 40px;
+                font-size: 12px;
+                padding: 6px;
+                text-align: start;
+
+                &:nth-child(3) {
+                    width: 35%;
+                }
+
+                &:last-child {
+                    text-align: center;
+
+                    button {
+                        background: none;
+                        border: none;
+                        margin: 0 12px;
+                        svg {
+                            font-size: 15px;
+                            color: var(--orange);
+                        }
+
+                        &:last-child {
+                           svg {
+                             color: red;
+                           }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -1,0 +1,113 @@
+
+    .form-checkout {
+        width: 92%;
+        margin: 12px auto;
+
+        .div-input,
+        .div-inputs {
+            width: 100%;
+            margin-bottom: 1.5rem;
+
+            input {
+                border: none;
+                border-radius: 6px;
+                font-size: 13px;
+                padding: 0 5px 0 5px;
+                height: 34px;
+                background-color: var(--whitesmoke);
+            }
+
+            span {
+                color: var(--orange);
+                font-size: 12px;
+            }
+        }
+
+        .div-input {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .div-inputs {
+            display: flex;
+            justify-content: space-between;
+
+            p {
+                width: 35%;
+                display: flex;
+                flex-direction: column;
+
+                &:nth-child(1) {
+                    width: 62%;
+                }
+            }
+        }
+
+        .btn-send {
+            margin-top: 0rem;
+            border: none;
+            color: white;
+            font-size: 14px;
+            width: 22%;
+            height: 32px;
+            border-radius: 5px;
+            background: var(--orange);
+        }
+    }
+
+    .form-add {
+        padding: 1rem;
+        width: 500px;
+        border-radius: 10px;
+        background-color: var(--whitesmoke-500);
+        position: relative;
+
+        .close-times {
+            position: absolute;
+            top: 2%;
+            right: 3%;
+            font-size: 30px;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        h3 {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        .div-inputs {
+            p {
+                width: 34% !important;
+
+                &:nth-child(3) {
+                    width: 25% !important;
+                }
+
+                .select-country {
+                    height: 33px !important;
+                    border-radius: 6px;
+
+                    .selected {
+                        span {
+                            font-size: 4rem !important;
+                            color: var(--dark);
+
+                            &:nth-child(2) {
+                                font-size: 13px !important;
+                            }
+                        }
+                    }
+
+                    .options-select {
+                        .option {
+                            span {
+                                &:nth-child(1) {
+                                    font-size: 4rem !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
