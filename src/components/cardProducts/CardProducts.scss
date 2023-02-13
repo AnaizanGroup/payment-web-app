@@ -1,3 +1,5 @@
+@import "../../globals/mixins.scss";
+
 .card-product {
     border: 1px solid var(--whitesmoke-500);
     width: 100%;
@@ -163,6 +165,10 @@
                 transform: scale(1.2);
             }
         }
+
+        @include small {
+            height: 180px !important
+        }
     }
 
     .foot {
@@ -198,6 +204,21 @@
             i {
                 font-size: 13px;
                 margin-right: 8px;
+            }
+        }
+
+        @include small {
+            h4 {
+                font-size: 13px;
+            }
+
+            b {
+                font-size: 14px;
+            }
+
+            p {
+                margin-top: 8px;
+                font-size: 12px !important;
             }
         }
     }

@@ -25,7 +25,6 @@ const CartShopping = () => {
     }
 
     useEffect(() => {
-        alert(returnQtyTotal())
     })
 
     return (

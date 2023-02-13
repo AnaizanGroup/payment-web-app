@@ -1,3 +1,5 @@
+@import "../../../../globals/mixins.scss";
+
 .profil-dashboard-buyer {
     width: 100%;
     height: 100%;
@@ -16,10 +18,14 @@
         .block-div1 {
             display: flex;
             justify-content: space-between;
+
+            @include tablet {
+                align-items: center;
+                flex-direction: column !important;
+            }
         }
 
         form {
-
 
             .div-input {
                 width: 95%;
@@ -165,6 +171,13 @@
         .div1,
         .div2 {
             width: 46%;
+
+            @include tablet {
+                width: 95%;
+                margin-bottom: 4rem !important;
+                margin-left: 0% !important;
+                margin-right: 0% !important;
+            }
         }
 
         .bars {

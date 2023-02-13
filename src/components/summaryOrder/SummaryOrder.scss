@@ -1,3 +1,4 @@
+@import "../../globals/mixins.scss";
 
     .order-cart {
         width: 30%;
@@ -60,5 +61,13 @@
             img {
                 margin: 0 4px !important;
             }
+        }
+
+        @include tablet {
+            width: 400px;
+        }
+
+        @include phone {
+            width: 80%;
         }
     }

@@ -1,3 +1,5 @@
+@import "../../globals/mixins.scss";
+
 .pagination {
     width: 100%;
     display: flex;
@@ -63,6 +65,18 @@
                 margin-left: 1rem;
                 border: 1px solid var(--dark);
             }
+        }
+    }
+
+    @include small {
+        .btn-group {
+            button  {
+                height: 30px;
+                width: 30px;
+            }
+        }
+        .page {
+            display: none;
         }
     }
 }

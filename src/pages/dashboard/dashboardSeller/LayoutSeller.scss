@@ -1,3 +1,5 @@
+@import "../../../globals/mixins.scss";
+
 .dashboard-seller-home {
     width: 100%;
     height: 100vh !important;
@@ -10,34 +12,22 @@
         flex-direction: column;
         background-color: var(--whitesmoke);
 
-        .head-main {
-            height: 8%;
-            background: white;
-            display: flex;
-            align-items: center;
-
-            .logo {
-                margin-left: 1rem;
-
-                img {
-                    width: 120px;
-                }
-            }
-        }
 
         .main-center {
-            height: 100%;
+            border: 1px solid;
+            padding-bottom: 2rem;
+            height: max-content;
             display: flex;
             justify-content: space-between;
 
             .nav-bar {
                 width: 210px;
-                height: 100%;
+                height: 100vh;
                 display: flex;
                 align-items: center;
                 flex-direction: column;
                 padding-top: 0px;
-                background-color: white;
+                background: white;
                 box-shadow: 0 5px 5px var(--dark);
                 position: relative;
 
@@ -45,7 +35,9 @@
                     width: 100%;
                     padding: 5px 0 5px;
                     margin-bottom: 12px;
+
                     background: url(../../../assets/images/svg/back.svg);
+                    background-color: white;
 
                     img {
                         width: 120px;
@@ -54,14 +46,14 @@
                 }
 
                 .shop {
-                    width: 90%;
+                    width: 100%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     padding: 4px 0 4px;
                     margin-top: 12px;
-                    border-top: 1px solid var(--whitesmoke-500);
-                    border-bottom: 1px solid var(--whitesmoke-500);
+                    //border-top: 1px solid var(--whitesmoke-500);
+                    //border-bottom: 1px solid var(--whitesmoke-500);
 
                     h4 {
                         font-size: 14px;
@@ -79,12 +71,14 @@
                 }
 
                 .btn-change-shop {
-                    width: 90%;
+                    width: 70%;
                     border: none;
-                    border-bottom: 1px solid var(--whitesmoke-500);
-                    padding: 7px 0 7px;
-                    color: var(--orange);
-                    background: none;
+                    border-radius: 30px;
+                    //border-bottom: 1px solid var(--whitesmoke-500);
+                    padding: 6px 0 6px;
+                    margin-top: 5px;
+                    color: white;
+                    background: var(--red-gradient2);
 
                     &:hover {
                         text-decoration: underline;
@@ -116,7 +110,8 @@
 
                 .nav {
                     width: 100%;
-                    padding-top: 12px;
+                    margin-top: 1rem;
+
                     .bar {
                         height: 1px;
                         width: 100%;
@@ -127,46 +122,73 @@
                     .nav-ul {
                         display: flex;
                         flex-direction: column;
-                        color: var(--dark);
                         position: relative;
                         cursor: pointer;
                         width: 100%;
                         padding: 0%;
                         padding-bottom: 0% !important;
 
-                        p {
-                            
+                        .link-p {
+                            color: var(--dark);
                             padding: 8px 0 8px 10px;
                             width: 95%;
+                            height: max-content;
                             display: flex;
                             align-items: center;
+                            position: relative;
                             justify-content: space-between;
-                            
+
                             span {
+                                display: flex;
+                                align-items: center;
                                 font-size: 14px;
+
                                 svg {
-                                    font-size: 15px;
+                                    font-size: 17px;
                                 }
                             }
+
                             svg {
                                 font-size: 15px;
                                 margin-right: 10px;
                             }
+
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                height: 100%;
+                                width: 5px;
+                                background: var(--red-gradient2);
+                                top: 0%;
+                                left: 0;
+                                border-radius: 30px;
+                                display: none;
+                            }
+
+                            &:hover {
+                                &::before {
+                                    display: block;
+                                }
+                            }
                         }
 
                         .sub-ul {
-                            display: none;
                             width: 100% !important;
                             padding: 0%;
                             padding-left: 0%;
                             padding-bottom: 0% !important;
                             background-color: var(--whitesmoke-500);
-                            
+
                             li {
                                 padding: 7px 0 7px 12px;
                                 font-size: 13px;
                                 width: 94%;
                                 margin-bottom: 0% !important;
+                                color: var(--dark);
+
+                                &:hover {
+                                    color: var(--orange);
+                                }
                             }
                         }
                     }
@@ -183,60 +205,116 @@
                         text-overflow: ellipsis;
                     }
                 }
+
+                @include tablet {
+                    transition: 0.1s;
+                    width: 0;
+                    overflow: hidden;
+                }
             }
 
-            .content {
+            .body {
                 width: 84.5%;
+                height: 98%;
+                position: relative;
+                padding-bottom: 0rem;
+                border: 1px solid;
                 overflow-y: scroll;
 
-                .head {
-                    display: flex;
-                    justify-content: space-between;
-                    margin: auto;
-                    width: 95%;
-                    background: var(--orange-gradient);
-                    padding: 6px 10px 6px 10px;
-                    border-bottom-left-radius: 10px;
-                    border-bottom-right-radius: 10px;
-                    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+                .content-body {
+                    position: absolute;
+                    width: 100%;
+                    height: max-content;
+                    z-index: 2;
+                    padding-bottom: 5rem;
 
-                    h3 {
-                        font-size: 16px;
-                        font-weight: 500;
-                        color: white;
-                        font-style: italic;
-                    }
-
-                    li {
-                        font-size: 13px;
-                        color: white;
+                    .head {
                         display: flex;
-                        align-items: center;
+                        justify-content: space-between;
+                        margin: auto;
+                        width: 95%;
+                        background: var(--red-gradient2);
+                        padding: 6px 10px 6px 10px;
+                        border-bottom-left-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 
-                        span {
-                            margin: 0 5px;
+                        h3 {
+                            font-size: 16px;
+                            font-weight: 500;
+                            color: white;
+                            font-style: italic;
                         }
 
-                        svg {
-                            font-size: 18px;
+                        li {
+                            font-size: 13px;
+                            color: white;
+                            display: flex;
+                            align-items: center;
+
+                            &:nth-child(1) {
+                                svg {
+                                    font-size: 18px;
+                                    margin-right: 12px;
+                                    cursor: pointer;
+                                    display: none;
+                                }
+                            }
+
+                            span {
+                                margin: 0 5px;
+                            }
+
+                            svg {
+                                font-size: 18px;
+                            }
+                        }
+
+                        @include phone {
+                            h3 {
+                                font-size: 14px;
+                            }
+                        }
+
+                        @include tablet {
+                            width: 100%;
+                            border-bottom-left-radius: 0%;
+                            border-bottom-right-radius: 0%;
+
+                            li {
+                                &:nth-child(1) {
+                                    svg {
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .block-content {
+                        padding-bottom: 3rem;
+                        width: 96%;
+                        margin: 1rem auto;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        height: 82vh !important;
+
+                        .slider-prods {
+                            width: 100%;
+                            height: 120px;
+                            border: 1px solid;
+                            margin-bottom: 1rem;
+                        }
+
+                        @include tablet {
+                            width: 93%;
                         }
                     }
                 }
 
-                .block-content {
-                    width: 96%;
-                    height: 88%;
-                    margin: 1rem auto;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-
-                    .slider-prods {
-                        width: 100%;
-                        height: 120px;
-                        border: 1px solid;
-                        margin-bottom: 1rem;
-                    }
+                @include tablet {
+                    width: 100%;
                 }
             }
         }

@@ -1,10 +1,11 @@
 import React from "react"
 import { FaJediOrder } from "react-icons/fa"
 import { FiHeart, FiMessageSquare, FiShoppingBag } from "react-icons/fi"
+import { HeadTabs } from "../../../../components/headTab2/HeadTab2"
 
 import "./Home.scss"
 
-const Home = () => {
+const HomeBuyer = () => {
 
     const stats = [
         { label: 'Messages', nb: 0, icon: <FiMessageSquare /> },
@@ -15,7 +16,9 @@ const Home = () => {
     
     return (
         <div className="home-dashboard-buyer">
-            {stats.map((list, index) => {
+           <HeadTabs title={"tableau de bord"} />
+           <div className="home-block">
+           {stats.map((list, index) => {
                 return (
                     <div className="card" key={index}>
                         <b> {list.nb} </b>
@@ -25,8 +28,9 @@ const Home = () => {
                     </div>
                 )
             })}
+           </div>
         </div>
     )
 }
 
-export default Home
+export default HomeBuyer;

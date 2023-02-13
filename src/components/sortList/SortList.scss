@@ -1,9 +1,14 @@
+@import "../../globals/mixins.scss";
+
 .sort-lists {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 1.5rem;
-    margin-left: 2rem;
+
+    @include small {
+        flex-direction: column;
+        align-items: start;
+    }
 }
 .sort-price {
     display: flex;

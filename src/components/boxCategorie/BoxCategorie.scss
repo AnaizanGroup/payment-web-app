@@ -1,3 +1,5 @@
+@import "../../globals/mixins.scss";
+
 .categorie-box {
     width: 20%;
     height: max-content;
@@ -5,6 +7,7 @@
     box-shadow: 0 0 1px var(--dark);
     overflow: hidden;
     background-color: white;
+    box-shadow: 0 0 15px var(--box-shadow);
 
     h3 {
         font-size: 16px;
@@ -84,5 +87,12 @@
             }
             
         }
+    }
+
+    @include tablet {
+        position: absolute;
+        width: 300px;
+        z-index: 1000;
+        display: none;
     }
 }

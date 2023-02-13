@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { FiDownload, FiEdit, FiEdit2 } from "react-icons/fi"
 import { FormAdresse } from "../../../../components/formAdresse/formAdresse"
+import { HeadTabs } from "../../../../components/headTab2/HeadTab2"
 import { PopupLayout } from "../../../../components/popupLayout/PopupLayout"
 import { RadioButton } from "../../../../components/radioButton/RadioButton"
 import Select from "../../../../components/select/Select"
@@ -8,7 +9,7 @@ import SelectCountryField from "../../../../components/selectCountryField/Select
 
 import "./Profil.scss"
 
-const Profil = () => {
+const ProfilBuyer = () => {
     const [role, setRole] = useState('Achecteur')
     const [formAddr, isFormAddr] = useState(false)
     const [popup, isPopup] = useState(false)
@@ -80,7 +81,7 @@ const Profil = () => {
                     co={code}
                 />
             </PopupLayout>
-            <h2 className='title-tabs'> Profil </h2>
+            <HeadTabs title={"Profil"} />
             <div className="block-form">
                 <div className="block-div1">
                     <div className="div1">
@@ -211,4 +212,4 @@ const Profil = () => {
     )
 }
 
-export default Profil;
+export default ProfilBuyer;

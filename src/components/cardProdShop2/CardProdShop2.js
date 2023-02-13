@@ -1,12 +1,13 @@
 import React from "react"
-
+import { FiChevronRight } from "react-icons/fi"
 import "./CardProdShop2.scss"
 
-export const CardProdShop2 = ({ listProduct }) => {
+export const CardProdShop2 = ({ title, listProduct }) => {
     return (
         <section className="section-shop section">
             <h2 className="title-section">
-                Vêtements de nuit
+                {title}
+                
             </h2>
             <div className="groups-product-card">
                 <div className="cards">
@@ -18,8 +19,10 @@ export const CardProdShop2 = ({ listProduct }) => {
                                         <div className="div-imgs">
                                             <img src={list.img} />
                                         </div>
+                                        <div className="infos">
                                         <h4> {list.names} </h4>
                                         <b> XOF {list.price} </b>
+                                        </div>
                                     </div>
                                 )
                             }

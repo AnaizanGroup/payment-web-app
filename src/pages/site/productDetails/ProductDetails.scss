@@ -1,3 +1,5 @@
+@import "../../../globals/mixins.scss";
+
 .product-detail-page {
     width: 100%;
     margin-bottom: 5rem;
@@ -351,21 +353,53 @@
                 }
             }
         }
+
+        @include tablet {
+            flex-direction: column;
+
+            .products-details {
+                width: 100%;
+                margin-bottom: 1rem;
+
+                .img {
+                    height: 400px;
+                }
+            }
+
+            .div-right-detail {
+                width: 300px;
+            }
+        }
+
+        @include phone {
+            .products-details {
+                flex-direction: column;
+
+                .img {
+                    width: 100%;
+                    height: 350px;
+                    margin-bottom: 1rem;
+                }
+
+                .product-info {
+                    width: 100%;
+                }
+            }
+        }
     }
 
     .div-other-prod {
         display: flex;
         flex-direction: column;
         margin-top: 5rem;
+        overflow: hidden;
         h2 {
             font-size: 20px;
             font-weight: 500;
             margin-bottom: 1rem;
         }
-        .slider {
-            width: 100%;
-
-           
+        .sliderr {
+            width: 1200px;
         }
     }
 

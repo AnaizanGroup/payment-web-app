@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 import { FaPrint, FaSearch } from "react-icons/fa"
-import SearchBarStyle from "./SearchBar.module.css"
+import "./searchBar2.scss"
 
 const SearchBar = ({placeholderText, setValue, searchUser}) => {
     

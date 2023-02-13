@@ -107,10 +107,6 @@ const Product = (props) => {
                                 </div>
                             </div>
                             <SortList />
-
-                            <div className="div-btns">
-                                <a></a>
-                            </div>
                         </div>
                         <div className="sort-div2">
                             <div className="card-choice">

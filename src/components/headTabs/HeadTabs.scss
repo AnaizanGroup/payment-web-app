@@ -1,0 +1,52 @@
+
+.title-tabs {
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid var(--whitesmoke-500);
+    padding: 6px 0 6px 8px;
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 0 20px var(--box-shadow);
+    margin-top: 10px;
+    margin-bottom: 1.2rem;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+        margin-right: 5px;
+        display: flex;
+        align-items: center;
+        button {
+            margin-left: 10px;
+            background: none;
+            font-size: 14px;
+            color: var(--dark);
+            border: none;
+            display: flex;
+            align-items: center;
+            position: relative;
+            svg {
+                font-size: 18px;
+            }
+
+            &:nth-child(1) {
+                span {
+                    position: absolute;
+                    top: -40%;
+                    left: 90%;
+                }
+            }
+
+            &:nth-child(2) {
+                margin-left: 1rem;
+                padding-left: 13px;
+                border-left: 1px solid var(--dark);
+                svg {
+                    margin-right: 6px;
+                }
+            }
+        }
+    }
+}

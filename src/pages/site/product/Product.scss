@@ -1,3 +1,5 @@
+@import "../../../globals/mixins.scss";
+
 .product-page {
     display: flex;
     flex-direction: column;
@@ -36,13 +38,11 @@
 
             .sort-div {
                 display: flex;
-                align-items: center;
+                align-items: start;
                 padding: 0 10px 1rem 0px;
 
                 span {
-                    &:not(:first-child) {
-                        margin: 0 12px;
-                    }
+
 
                     select {
                         background: none;
@@ -54,123 +54,134 @@
 
                     }
                 }
-            }
-
-            .select-categorie {
-                width: max-content;
-                height: 29px;
-                padding: 0 5px 0 5px;
-                position: relative;
-                margin-right: 1.5rem;
-                border-radius: 3px;
-                border: 1px solid var(--whitesmoke-500);
-                z-index: 1;
 
 
-                span {
-                    width: 100%;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    font-size: 13px;
-                    cursor: pointer;
-
-                    svg {
-                        margin-left: 2rem;
-                        font-size: 18px;
-                    }
-
-                    .opt {
-                        width: max-content;
-                        height: max-content;
-                    }
-                }
-
-                .options-categorie {
-                    display: none;
-                    width: 220px;
-                    padding: 5px 0 5px;
+                .select-categorie {
+                    width: max-content;
+                    height: 29px;
+                    padding: 0 5px 0 5px;
+                    position: relative;
+                    margin-bottom: 0% !important;
                     border-radius: 3px;
-                    position: absolute;
-                    top: 110%;
-                    left: 0%;
-                    box-shadow: 0 0 10px var(--dark);
-                    background-color: white;
-
-                    .close {
-                        width: 0%;
-                        height: 0;
-                        position: absolute;
-                        bottom: 2%;
-                        right: 5%;
-                        font-size: 25px;
-                        color: var(--dark);
-                    }
-
-                    .li-categorie-box {
-                        width: 95%;
-                        font-size: 14px;
-                        padding: 5px 5px 5px 7px;
+                    border: 1px solid var(--whitesmoke-500);
+                    z-index: 1000;
+                    margin-right: 15px;
+                    span {
+                        width: 100%;
+                        height: 100%;
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
+                        font-size: 13px;
                         cursor: pointer;
-                        position: relative;
 
-                        &:hover {
-                            color: var(--orange);
+                        svg {
+                            margin-left: 2rem;
+                            font-size: 18px;
                         }
 
-                        span {
-                            width: 100%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: space-between;
-
-                            svg {
-                                font-size: 13px;
-                            }
-                        }
-
-                        .item-cat {
-                            width: 200px;
-                            position: absolute;
-                            left: 100%;
-                            top: 0%;
-                            background: white;
-                            padding: 0%;
-                            display: none;
-                            box-shadow: 0 0 8px var(--dark);
-                            border-radius: 5px;
-
-                            li {
-                                width: 90%;
-                                font-size: 14px;
-                                padding: 5px 0 5px 10px;
-                                display: flex;
-                                align-items: center;
-                                justify-content: space-between;
-                                cursor: pointer;
-                                position: relative;
-                                color: var(--dark) !important
-                            }
-                        }
-
-                        &:hover {
-                            .item-cat {
-                                display: block;
-                            }
+                        .opt {
+                            width: max-content;
+                            height: max-content;
                         }
                     }
 
+                    .options-categorie {
+                        display: none;
+                        width: 250px;
+                        z-index: 10000;
+                        padding: 5px 0 5px;
+                        border-radius: 3px;
+                        position: absolute;
+                        background-color: white;
+                        top: 110%;
+                        left: 0%;
+                        box-shadow: 0 0 10px var(--dark);
+                        background-color: white;
+
+                        .close {
+                            width: 0%;
+                            height: 0;
+                            position: absolute;
+                            bottom: 2%;
+                            right: 5%;
+                            font-size: 25px;
+                            color: var(--dark);
+                        }
+
+                        .li-categorie-box {
+                            width: 95%;
+                            font-size: 14px;
+                            padding: 5px 5px 5px 7px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            cursor: pointer;
+                            position: relative;
+
+                            &:hover {
+                                color: var(--orange);
+                            }
+
+                            span {
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+
+                                svg {
+                                    font-size: 13px;
+                                }
+                            }
+
+                            .item-cat {
+                                width: 200px;
+                                position: absolute;
+                                left: 100%;
+                                top: 0%;
+                                background: white;
+                                padding: 0%;
+                                display: none;
+                                box-shadow: 0 0 8px var(--dark);
+                                border-radius: 5px;
+
+                                li {
+                                    width: 90%;
+                                    font-size: 14px;
+                                    padding: 5px 0 5px 10px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    cursor: pointer;
+                                    position: relative;
+                                    color: var(--dark) !important
+                                }
+                            }
+
+                            &:hover {
+                                .item-cat {
+                                    display: block;
+                                }
+                            }
+                        }
+
+                    }
+
+                    &:hover {
+                        .options-categorie {
+                            display: block;
+                        }
+                    }
                 }
 
-                &:hover{
-                      .options-categorie {
-                    display: block;
+                @include phone {
+                    flex-direction: column;
+
+                    .select-categorie {
+                        width: 50%;
+                        margin-bottom: 10px !important;
+                    }
                 }
-            }
             }
         }
 
@@ -178,8 +189,20 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
+        }
 
+        @include tablet {
+            width: 100%;
 
+            .div-products {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @include small {
+            .div-products {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     }
 }

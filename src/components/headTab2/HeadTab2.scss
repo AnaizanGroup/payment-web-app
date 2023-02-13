@@ -1,0 +1,97 @@
+@import "../../globals/mixins.scss";
+
+.title-tabs {
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid var(--whitesmoke-500);
+    padding: 6px 10px 6px 8px;
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 0 20px var(--box-shadow);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+        display: flex;
+        align-items: center;
+
+        span {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 120px;
+                margin-right: 1.5rem;
+            }
+
+            svg {
+                cursor: pointer;
+                font-size: 20px;
+                margin-right: 10px;
+                display: none;
+            }
+        }
+
+        @include tablet {
+            span {
+                align-items: center;
+                svg {
+                    display: block;
+                }
+            }
+        }
+
+        @include phone {
+            flex-direction: column;
+
+            
+
+            span {
+                align-items: center;
+                flex-direction: row;
+
+                &:nth-child(1) {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+
+    p {
+        margin-right: 1rem !important;
+        display: flex;
+        align-items: center;
+
+        button {
+            margin-left: 0% !important;
+            background: none;
+            font-size: 14px;
+            color: var(--dark);
+            border: none;
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            svg {
+                font-size: 18px;
+            }
+
+            span {
+                position: absolute;
+                top: -40%;
+                left: 90%;
+            }
+        }
+
+        .bar {
+            height: 20px;
+            width: 1px;
+            margin: 0 10px !important;
+            background-color: var(--whitesmoke-900) !important;
+        }
+    }
+}

@@ -6,7 +6,6 @@ import "./BoxCategorie.scss"
 
 const BoxCategorie = ({ listCategorie, setNameCat, setNameProd }) => {
     const navigate = useNavigate()
-    const location = useLocation()
 
     const showSublink = (index, nameCat) => {
         setNameProd(null)

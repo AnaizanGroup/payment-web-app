@@ -1,20 +1,30 @@
 import React, { useEffect, useState } from "react";
-import { FaGlobe, FaUserCircle } from "react-icons/fa";
+import { FaGlobe, FaList, FaUserCircle } from "react-icons/fa";
 import { FiChevronDown, FiChevronRight, FiGlobe, FiHeart, FiHome, FiList, FiMessageSquare, FiShoppingBag, FiUser, FiUsers } from "react-icons/fi";
 import { FcShop } from "react-icons/fc"
+import { AiOutlineDashboard } from "react-icons/ai"
+import { } from "react-icons/ri"
+import { MdPayment } from "react-icons/md"
 
 import "./LayoutSeller.scss"
 
 import logo from "../../../assets/images/svg/logo.svg";
-import { DASHBOARD_SELLER, DASHBOARD_SELLER_ADD_PRODUCTS, DASHBOARD_SELLER_HOME, DASHBOARD_SELLER_MESSAGE, DASHBOARD_SELLER_ORDER, DASHBOARD_SELLER_PAYEMENT, DASHBOARD_SELLER_PRODUCTS, DASHBOARD_SELLER_PROFIL } from "../../../settings/constant";
+import { DASHBOARD_BUYER_HOME,
+    DASHBOARD_SELLER_ADD_PRODUCTS, 
+    DASHBOARD_SELLER_COBEILLE, 
+    DASHBOARD_SELLER_HOME, 
+    DASHBOARD_SELLER_MESSAGE, 
+    DASHBOARD_SELLER_PAYEMENT, 
+    DASHBOARD_SELLER_PRODUCTS, 
+    DASHBOARD_SELLER_PROFIL, 
+    DASHBOARD_SELLER_SALLE } from "../../../settings/constant";
 import { useNavigate } from "react-router-dom";
 
-const LayoutSeller = ({children}) => {
+const LayoutSeller = ({ children }) => {
     const navigate = useNavigate()
     const [tabIndex, setTabIndex] = useState(0)
     const [indexDashboard, setIndexDashboard] = useState()
-
- 
+    const [showMenuMobile, isShowMenuMobile] = useState(false)
 
     const activeLink = (index) => {
         setTabIndex(index)
@@ -35,17 +45,17 @@ const LayoutSeller = ({children}) => {
         {
             label: 'Tableau de bord',
             url: DASHBOARD_SELLER_HOME,
-            icon: <FiHome />,
+            icon: <AiOutlineDashboard />,
         },
         {
             label: 'Profil',
-            url:DASHBOARD_SELLER_PROFIL,
+            url: DASHBOARD_SELLER_PROFIL,
             icon: <FiUser />
         },
         {
             label: 'Messages',
-            url:DASHBOARD_SELLER_MESSAGE,
-            icon: <FiUser />
+            url: DASHBOARD_SELLER_MESSAGE,
+            icon: <FiMessageSquare />
         },
         {
             label: 'Produits',
@@ -54,24 +64,49 @@ const LayoutSeller = ({children}) => {
             submenu: [
                 { label2: 'Liste des produits', url2: DASHBOARD_SELLER_PRODUCTS },
                 { label2: 'Ajouter un produit', url2: DASHBOARD_SELLER_ADD_PRODUCTS },
+                { label2: 'Cobeille', url2: DASHBOARD_SELLER_COBEILLE },
             ]
         },
         {
             label: 'Ventes',
-            url: DASHBOARD_SELLER_ORDER,
+            url: DASHBOARD_SELLER_SALLE,
             icon: <FiList />
         },
         {
             label: 'Paramètre Paiement',
             url: DASHBOARD_SELLER_PAYEMENT,
-            icon: <FiList />
+            icon: <MdPayment />
         }
     ]
 
-    const navigateUrl = (url) => {
-        navigate(url)
+    const navigateUrl = (url, index) => {
+        window.location.href=url
+        sessionStorage.setItem('menuId', index)
+
+        let allLink = document.querySelectorAll(".link-p")
+
+        for (var i = 0; i < allLink.length; i++) {
+            allLink[i].classList.remove("active-menu")
+        }
+        let menuId = sessionStorage.getItem('menuId')
+
+        //if( allLink[menuId].className.split(" ").length != 2) {
+        allLink[menuId].classList.add("active-menu")
+        /*    } else {
+               allLink[menuId].classList.remove("active-menu")
+           } */
     }
 
+    const showMenu = () => {
+        let menu = document.querySelector(".nav-bar")
+
+            if(menu.style.width == "300px") {
+                menu.style.width = "0px"
+            } else {
+                menu.style.width = "300px"
+            }
+        
+    }
     const navigateUrl2 = (url) => {
         navigate(url)
     }
@@ -87,27 +122,28 @@ const LayoutSeller = ({children}) => {
                 <div className="main-center">
                     <div className="nav-bar">
 
-                        <div className="logo">
+                        <div className="logo z-index bg-white">
                             <img src={logo} />
                         </div>
                         {/*  <div className="div-user">
                             <FaUserCircle />
                             <h2> Jean Hugues HOUINSSOU</h2>
                         </div> */}
-                        <div className="switch-role">
+                        <div className="switch-role z-index">
                             <button>Acheteur</button>
-                            <button>Vendeur</button>
+                            <button onClick={() => navigate(DASHBOARD_BUYER_HOME)}>Vendeur</button>
                         </div>
-                        <div className="shop">
+                        <div className="shop z-index ">
                             <FcShop />
                             <h4> LVM Shop Industrie SARL </h4>
                         </div>
-                        <button className="btn-change-shop">Changer de boutique</button>
-                        <div className="nav">
+                        <button className="btn-change-shop z-index">Changer de boutique</button>
+                        <div className="nav z-index">
                             {
                                 menu.map(({ label, url, icon, submenu }, index) => {
                                     return <div className="nav-ul" key={index}>
-                                        <p onClick={() => navigateUrl(url)}>
+                                        <p onClick={() => navigateUrl(url, index)}
+                                            className="link-p">
                                             <span> {icon} {label} </span>
                                             {submenu ? <FiChevronRight /> : null}
                                         </p>
@@ -116,7 +152,7 @@ const LayoutSeller = ({children}) => {
                                                 {
                                                     submenu.map((list, index2) => {
                                                         return <li onClick={() => navigateUrl(list.url2)}
-                                                        key={index2}>
+                                                            key={index2}>
                                                             {list.label2}
                                                         </li>
                                                     })
@@ -134,15 +170,20 @@ const LayoutSeller = ({children}) => {
                         </div>
                     </div>
 
-                    <div className="content">
-                        <div className="head">
-                            <h3> Bienvenu dans votre espace personnel </h3>
-                            <li> <FiGlobe /> <span>fr</span> <FiChevronDown /> </li>
-                        </div>
+                    <div className="body">
+                        <div className="content-body">
+                            <div className="head">
+                                <li>
+                                <FaList onClick={showMenu} />
+                                <h3> Bienvenu dans votre espace personnel </h3>
+                                </li>
+                                <li> <FiGlobe /> <span>fr</span> <FiChevronDown /> </li>
+                            </div>
 
-                        <div className="block-content">
+                            <div className="block-content">
 
-                            {children}
+                                {children}
+                            </div>
                         </div>
                     </div>
 

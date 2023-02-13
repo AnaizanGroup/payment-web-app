@@ -32,6 +32,7 @@ const CardSectionProd = ({props, text, productFavorite, categorie, link, listPro
                         {
                             productFavorite.map((list, index) => {
                                 return <div key={index}>
+                                    <span> {list.reduce} </span>
                                     <img src={list.img} />
                                 </div>
                             })
@@ -54,9 +55,9 @@ const CardSectionProd = ({props, text, productFavorite, categorie, link, listPro
                             if (index < 8) {
                                 return <Link to="" key={index}>
                                 <div className="div-img">
+                                    <h5> -{list.reduce}% </h5>
                                     <img src={list.img} />
                                     <h4> {list.names} </h4>
-                                    <b> {list.price} Fcfa </b>
                                 </div>
                             </Link>
                             }

@@ -1,9 +1,11 @@
+@import "../../globals/mixins.scss";
+
 .select {
     width: max-content;
     height: 29px;
     padding: 0 5px 0 5px;
     position: relative;
-    margin-right: 1.5rem;
+    margin-right: 15px;
     border-radius: 3px;
     border: 1px solid var(--whitesmoke-500);
     z-index: 1;
@@ -64,5 +66,11 @@
                 font-size: 16px;
             }
         }
+    }
+
+    @include small {
+        margin-bottom: 10px;
+        border: none;
+        border-bottom: 1px solid var(--whitesmoke-500);
     }
 }

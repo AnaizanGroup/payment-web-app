@@ -1,0 +1,25 @@
+.payement-settings {
+    width: 100%;
+
+    .payement-block {
+        overflow: none !important;
+        p {
+            margin-bottom: 1rem;
+        }
+        .block-child {
+            width: max-content;
+            margin-bottom: 1.5rem;
+
+            h4 {
+                font-size: 14px;
+                font-weight: 400;
+                margin-bottom: 1rem;
+                color: var(--dark);
+            }
+
+            .moyen {
+                width: max-content;
+            }
+        }
+    }
+}

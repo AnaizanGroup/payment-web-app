@@ -1,7 +1,8 @@
-
+@import "../../globals/mixins.scss";
     .form-checkout {
-        width: 92%;
+        width: 500 !important;
         margin: 12px auto;
+        border: 1px solid;
 
         .div-input,
         .div-inputs {
@@ -48,10 +49,21 @@
             border: none;
             color: white;
             font-size: 14px;
-            width: 22%;
+            width: max-content;
             height: 32px;
             border-radius: 5px;
             background: var(--orange);
+        }
+
+        @include phone {
+            width: 85% !important;
+
+            .div-input,
+            .div-inputs {
+                label {
+                    font-size: 12px !important;
+                }
+            }
         }
     }
 

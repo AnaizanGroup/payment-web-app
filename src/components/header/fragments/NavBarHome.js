@@ -12,92 +12,30 @@ export const NavBarHome = () => {
 
     const categories = useSelector((state) => state.products.categorie)
 
+    const showCategorie = () => {
+        let drop = document.querySelector(".head-div3")
+
+        if (drop.style.width == "0vh") {
+            drop.style.width ="100%"
+        }else {
+            drop.style.width ="0vh"
+        }
+    }
+
     return(
         <>
             <div className="head-div3">
+            <span onClick={showCategorie} className="close-x">&times;</span>
                 <div className="div-left">
                     <DropCategorie link={"/categories/products/"} listCategorie={categories} />
                     <li>
-                        <a href="" className="link"> Accessoires </a>
-                        <div className="div-sub-link">
-                            <ul>
-                                <h3> Accessoires </h3>
-                                <li>
-                                    <div className="title-link">home</div>
-                                    <div className="sublink">
-                                        <div>
-                                            <h3> home </h3>
-                                            <a href="">lien</a>
-                                            <a href="">lien</a>
-                                            <a href="">lien</a>
-                                            <a href="">lien</a>
-                                        </div>
-                                        <div>
-                                            <h3> home </h3>
-                                            <a href="">lien</a>
-                                            <a href="">lien</a>
-                                            <a href="">lien</a>
-                                            <a href="">lien</a>
-                                        </div>
-                                        <div>
-                                            <h3> home </h3>
-                                            <a href="">lien</a>
-                                            <a href="">lien</a>
-                                            <a href="">lien</a>
-                                            <a href="">lien</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="title-link">home</div>
-                                    <div className="sublink">
-                                        <div>
-                                            <h3> homes </h3>
-                                            <a href="">lien</a>
-                                            <a href="">lien</a>
-                                            <a href="">lien</a>
-                                            <a href="">lien</a>
-                                        </div>
-                                        <div>
-                                            <h3> home </h3>
-                                            <a href="">lien</a>
-                                            <a href="">lien</a>
-                                            <a href="">lien</a>
-                                            <a href="">lien</a>
-                                        </div>
-                                        <div>
-                                            <h3> home </h3>
-                                            <a href="">lien</a>
-                                            <a href="">lien</a>
-                                            <a href="">lien</a>
-                                            <a href="">lien</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="title-link">home</div>
-                                </li>
-                                <li>
-                                    <div className="title-link">home</div>
-                                </li>
-                                <li>
-                                    <div className="title-link">home</div>
-                                </li>
-                            </ul>
-                        </div>
+                        <a href="" className="link"> Magasin </a> 
                     </li>
                     <li>
-                        <a href="" className="link"> Sports & Santé</a>
-
+                        <a href="" className="link"> % Promotion</a>
                     </li>
                     <li>
-                        <a href="" className="link"> Beauté & Santé</a>
-                    </li>
-                    <li>
-                        <a href="" className="link"> Culture africaine </a>
-                    </li>
-                    <li>
-                        <a href="" className="link"> Accessoires Informatique</a>
+                        <a href="" className="link"> Boutiques </a>
                     </li>
                 </div>
 

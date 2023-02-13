@@ -250,7 +250,7 @@ const ProductDetails = (props) => {
             </div>
             <div className="div-other-prod">
                 <h2> Autre product que vous pouvez aimé</h2>
-                <div className="slider">
+                <div className="sliderr">
                     <Slider {...settings3} >
                         {
                             products && (

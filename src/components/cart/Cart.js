@@ -43,10 +43,10 @@ const Cart = ({ para }) => {
                             {
                                 cart.map(({ idProd, img, names, price, shop, quantity, size, color }, index) => {
                                     return <div className="items" key={index}>
-                                        <div className="shop-name">
+                                        {/* <div className="shop-name">
                                             <BsShop />
                                             <span> {shop}</span>
-                                        </div>
+                                        </div>  */}
                                         <div className="bls">
                                             <img src={img} />
                                             <div className="info">

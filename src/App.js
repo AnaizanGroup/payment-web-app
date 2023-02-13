@@ -5,9 +5,9 @@ import ROUTES from './router';
 
 function App() {
   return (
-    <>
+    <div className="parent-body">
       <ROUTES />
-    </>
+    </div>
   );
 }
 
