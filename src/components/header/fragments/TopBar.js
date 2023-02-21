@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPinterest, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { HOME, SHOP_HOME } from '../../../settings/constant'
 import Auth from '../../authForms/Auth'
 import BoxAccount from '../../boxAccount/BoxAccount'
@@ -41,9 +41,6 @@ export const TopBar = () => {
                     {renders()}
                 </ul>
                 <ul>
-                    <li>
-                        <a href="">Aide</a>
-                    </li>
                     <div></div>
                     <li className="user-account">
                         <a href=""> Mon compte</a>
@@ -55,11 +52,11 @@ export const TopBar = () => {
                     </li>
                     <div></div>
                     <li>
-                        <a href=""> <FaTwitter /> </a>
+                        <a href=""> <FaPinterest /> </a>
                     </li>
                     <div></div>
                     <li>
-                        <a href=""> <FaLinkedinIn /> </a>
+                        <a href=""> <FaInstagram /> </a>
                     </li>
                     <div></div>
                     <li>

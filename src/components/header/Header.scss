@@ -667,7 +667,7 @@ header {
             width: max-content;
             margin-right: 2rem;
 
-            .li {
+            .divs {
                 position: relative;
                 padding: 0 5px 0 5px;
 
@@ -683,7 +683,6 @@ header {
                 }
 
                 .lang {
-                    display: none;
                     width: 260px;
                     position: absolute;
                     right: 0%;
@@ -732,7 +731,6 @@ header {
                         }
 
                         .child2 {
-                            position: absolute;
                             top: 100%;
                             left: 0%;
                             width: 100%;
@@ -791,12 +789,20 @@ header {
                 }
 
                 &:nth-child(3) {
+                    z-index: 1000;
                     .lang {
+                        display: flex !important;
+                        flex-direction: column;
+
                         .div-select {
                             .child2 {
                                 height: 150px;
                                 overflow-y: scroll;
                                 overflow-x: hidden;
+                            }
+
+                            &:nth-child(3) {
+                                margin-top: 1rem;
                             }
                         }
                     }

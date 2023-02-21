@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import 'flag-icon-css/css/flag-icons.min.css'
+import axios from "axios"
 
 import "./Header.scss"
 import logo from "../../assets/images/svg/logo.svg";
@@ -52,6 +53,21 @@ const Header = ({ children1, children2, children3, children4, children5 }) => {
             drop.style.width ="0vh"
         }
     }
+
+    //creating function to load ip address from the API
+    const getData = async()=>{
+        const res = await axios.get('https://geolocation-db.com/json/')
+        console.log(res.data)
+        sessionStorage.setItem('code_country', res.data.code_country)
+        sessionStorage.setItem('country', res.data.country)
+        sessionStorage.setItem('city', res.data.city)
+    }
+    
+    useEffect(()=>{
+        //passing getData method to the lifecycle method
+        getData()
+    },[])
+
 
     return (
         <header>

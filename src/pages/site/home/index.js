@@ -1,8 +1,9 @@
-import React from "react"
+import React, {useState,useEffect} from "react"
 import { FaAngleDoubleRight, FaChevronRight, FaICursor, FaMousePointer } from "react-icons/fa";
 import { MdAddShoppingCart } from "react-icons/md"
 import { Link, useNavigate } from "react-router-dom";
 import { FcShop } from "react-icons/fc";
+import axios from "axios"
 
 import "./index.scss";
 
@@ -93,6 +94,7 @@ const Home = (props) => {
         sessionStorage.setItem('indexCat', index)
         window.location.href = `/categories/products/${nameCat}`;
     }
+
 
     return (
         <div className="home-page">
@@ -257,24 +259,24 @@ const Home = (props) => {
 
             <section className="section-seven section">
                 <div className="section-head">
-                    <h2 className="title-section"> Nos Centres d'intèrêts </h2>
+                    <h2 className="title-section"> Nos Valeurs </h2>
                 </div>
                 <div className="centre-int">
                     <div>
                         <img src={g2} />
-                        <h4>Communication digitale</h4>
+                        <h4>Respect de nos engagement</h4>
                     </div>
                     <div>
                         <img src={g2} />
-                        <h4>Community management</h4>
+                        <h4>Sécurité des transactions</h4>
                     </div>
                     <div>
                         <img src={g2} />
-                        <h4>Graphisme</h4>
+                        <h4>Rapidité de livraison</h4>
                     </div>
                     <div>
                         <img src={g2} />
-                        <h4>Référencement web</h4>
+                        <h4>Ecoute de la clientèle</h4>
                     </div>
                 </div>
             </section>
