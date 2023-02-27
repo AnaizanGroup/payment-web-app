@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react"
 import AuthContext from "../../../context/AuthContext"
 import { REGISTER, RESETFORM } from "../../../settings/constant"
 import BoxAccount from "../../boxAccount/BoxAccount"
-import { validInputText } from "../../controlFields/ControlField"
+import { ControlField } from "../../controlField/ControlField"
 import Auth from "../Auth"
 
 import "../auth.scss"
@@ -25,7 +25,7 @@ const Login = ({ setForm }) => {
     const handleSubmit = e => {
         e.preventDefault()
 
-        if (validInputText(value.email, 'email-error', 'email')) {
+        if (ControlField(value.email, 'email-error', 'email')) {
             let email = value.email,
                 password = value.password;
             loginUser(email, password, isDone)
@@ -42,7 +42,7 @@ const Login = ({ setForm }) => {
                         name="email"
                         value={value.email}
                         onChange={handleChange}
-                        onKeyUp={() => validInputText(value.email, 'email-error', 'email')} />
+                        onKeyUp={() => ControlField(value.email, 'email-error', 'email')} />
                     <span className="span" id="email-error"></span>
                 </div>
                 <div className="div-field">

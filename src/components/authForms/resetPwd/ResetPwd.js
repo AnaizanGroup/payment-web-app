@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { validInputText } from "../../controlFields/ControlField"
+import { ControlField } from "../../controlField/ControlField"
 import Auth from "../Auth"
 
 
@@ -19,7 +19,7 @@ const ResetPwd = () => {
     const handleSubmit = e => {
         e.preventDefault()
 
-        if (validInputText(value.email, 'email-error', 'email')) {
+        if (ControlField(value.email, 'email-error', 'email')) {
             let email = value.email,
                 password = value.password;
 
@@ -35,7 +35,7 @@ const ResetPwd = () => {
                         name="email"
                         value={value.email}
                         onChange={handleChange}
-                        onKeyUp={() => validInputText(value.email, 'email-error', 'email')} />
+                        onKeyUp={() => ControlField(value.email, 'email-error', 'email')} />
                     <span className="span" id="email-error"></span>
                 </div>
                 <div className="btn-submit">

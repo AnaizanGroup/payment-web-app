@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { FiEye, FiEyeOff } from "react-icons/fi"
-import { validInputText } from "../../controlFields/ControlField"
+import { ControlField } from "../../controlField/ControlField"
 import { ShowPasswdText } from "../../showPasswdText/ShowPasswdText"
 import { Spinner } from "../../spinner/Spinner"
 import Auth from "../Auth"
@@ -26,7 +26,7 @@ const ResetForm = () => {
     const handleSubmit = e => {
         e.preventDefault()
 
-        if (validInputText(value.password, 'pwd-error', 'pwd')) {
+        if (ControlField(value.password, 'pwd-error', 'pwd')) {
 
             if (value.passwordC == value.password) {
                 let password = value.password;
@@ -60,7 +60,7 @@ const ResetForm = () => {
                                         id="password"
                                         value={value.password}
                                         onChange={handleChange}
-                                        onKeyUp={() => validInputText(value.password, 'pwd-error', 'pwd')} />
+                                        onKeyUp={() => ControlField(value.password, 'pwd-error', 'pwd')} />
                                     <span className="span" id="pwd-error"></span>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@ const ResetForm = () => {
                                     name="passwordC"
                                     value={value.passwordC}
                                     onChange={handleChange}
-                                    onKeyUp={() => validInputText(value.passwordC, 'pwdC-error', 'pwd')} />
+                                    onKeyUp={() => ControlField(value.passwordC, 'pwdC-error', 'pwd')} />
                                 <span className="span" id="pwdC-error"></span>
                             </div>
                             <div className="btn-submit">

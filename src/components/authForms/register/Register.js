@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react"
 import { FiEye, FiEyeOff } from "react-icons/fi"
 import { useDispatch } from "react-redux"
 import { userRegister } from "../../../store/userAuth/userReducer"
-import { validInputText } from "../../controlFields/ControlField"
+import { ControlField } from "../../controlField/ControlField"
 import { countries } from "../../countrylist/countrylist"
 import { RadioButton } from "../../radioButton/RadioButton"
 import SelectCountryField from "../../selectCountryField/SelectCountryField"
@@ -44,11 +44,11 @@ const Register = () => {
     const handleSubmit = e => {
         e.preventDefault()
 
-        if (validInputText(value.firstname, 'firstname-error', 'text')
-            && validInputText(value.lastname, 'lastname-error', 'text')
-            && validInputText(value.telephone, 'tel-error', 'tel')
-            && validInputText(value.email, 'email-error', 'email')
-            && validInputText(value.password, 'pwd-error', 'pwd')) {
+        if (ControlField(value.firstname, 'firstname-error', 'text')
+            && ControlField(value.lastname, 'lastname-error', 'text')
+            && ControlField(value.telephone, 'tel-error', 'tel')
+            && ControlField(value.email, 'email-error', 'email')
+            && ControlField(value.password, 'pwd-error', 'pwd')) {
             if (value.passwordC == value.password) {
                 let firstname = value.firstname,
                     lastname = value.lastname,

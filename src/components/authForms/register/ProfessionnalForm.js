@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { LOGIN } from "../../../settings/constant"
-import { validInputText } from "../../controlFields/ControlField"
+import { ControlField } from "../../controlField/ControlField"
 import { countries } from "../../countrylist/countrylist"
 import SelectCountryField from "../../selectCountryField/SelectCountryField"
 import { ShowPasswdText } from "../../showPasswdText/ShowPasswdText"
@@ -37,11 +37,11 @@ const ProfessionnalForm = () => {
     const handleSubmit = e => {
         e.preventDefault()
 
-        if (validInputText(value.firstname, 'firstname-error', 'text')
-            && validInputText(value.lastname, 'lastname-error', 'text')
-            && validInputText(value.telephone, 'tel-error', 'tel')
-            && validInputText(value.email, 'email-error', 'email')
-            && validInputText(value.password, 'pwd-error', 'pwd')) {
+        if (ControlField(value.firstname, 'firstname-error', 'text')
+            && ControlField(value.lastname, 'lastname-error', 'text')
+            && ControlField(value.telephone, 'tel-error', 'tel')
+            && ControlField(value.email, 'email-error', 'email')
+            && ControlField(value.password, 'pwd-error', 'pwd')) {
             if (value.passwordC == value.password) {
                 let firstname = value.firstname,
                     lastname = value.lastname,
@@ -83,7 +83,7 @@ const ProfessionnalForm = () => {
                             name="email"
                             value={value.email}
                             onChange={handleChange}
-                            onKeyUp={() => validInputText(value.email, 'email-error', 'email')} />
+                            onKeyUp={() => ControlField(value.email, 'email-error', 'email')} />
                         <span className="span" id="email-error"></span>
                     </>
                 ) : (
@@ -96,7 +96,7 @@ const ProfessionnalForm = () => {
                                 name="telephone"
                                 value={value.telephone}
                                 onChange={handleChange}
-                                onKeyUp={() => validInputText(value.telephone, 'tel-error', 'tel')} />
+                                onKeyUp={() => ControlField(value.telephone, 'tel-error', 'tel')} />
                         </div>
                     </div>
                 )}
@@ -109,7 +109,7 @@ const ProfessionnalForm = () => {
                             name="firstname"
                             value={value.firstname}
                             onChange={handleChange}
-                            onKeyUp={() => validInputText(value.firstname, 'firstname-error', 'text')} />
+                            onKeyUp={() => ControlField(value.firstname, 'firstname-error', 'text')} />
                         <span className="span" id="firstname-error"></span>
                     </p>
                     <p>
@@ -138,7 +138,7 @@ const ProfessionnalForm = () => {
                             id="password"
                             value={value.password}
                             onChange={handleChange}
-                            onKeyUp={() => validInputText(value.password, 'pwd-error', 'pwd')} />
+                            onKeyUp={() => ControlField(value.password, 'pwd-error', 'pwd')} />
                         <ShowPasswdText id="password" />
                         <span className="span" id="pwd-error"></span>
                     </p>
@@ -147,7 +147,7 @@ const ProfessionnalForm = () => {
                             name="passwordC"
                             value={value.passwordC}
                             onChange={handleChange}
-                            onKeyUp={() => validInputText(value.firstname, 'pwdC-error', 'pwd')} />
+                            onKeyUp={() => ControlField(value.firstname, 'pwdC-error', 'pwd')} />
                         <span className="span" id="pwdC-error"></span>
                     </p>
                 </div>
