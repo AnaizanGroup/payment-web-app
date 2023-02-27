@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { FiEye, FiEyeOff } from "react-icons/fi"
-import { validInputText } from "../../controlFields/controlField"
+import { validInputText } from "../../controlFields/ControlField"
 import { ShowPasswdText } from "../../showPasswdText/ShowPasswdText"
 import { Spinner } from "../../spinner/Spinner"
 import Auth from "../Auth"

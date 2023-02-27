@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react"
 import AuthContext from "../../../context/AuthContext"
 import { REGISTER, RESETFORM } from "../../../settings/constant"
 import BoxAccount from "../../boxAccount/BoxAccount"
-import { validInputText } from "../../controlFields/controlField"
+import { validInputText } from "../../controlFields/ControlField"
 import Auth from "../Auth"
 
 import "../auth.scss"

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { validInputText } from "../../controlFields/controlField"
+import { validInputText } from "../../controlFields/ControlField"
 import Auth from "../Auth"
 
 

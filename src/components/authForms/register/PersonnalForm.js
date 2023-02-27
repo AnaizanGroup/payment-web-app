@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { LOGIN } from "../../../settings/constant"
-import { validInputText } from "../../controlFields/controlField"
+import { validInputText } from "../../controlFields/ControlField"
 import { countries } from "../../countrylist/countrylist"
 import SelectCountryField from "../../selectCountryField/SelectCountryField"
 import { ShowPasswdText } from "../../showPasswdText/ShowPasswdText"
