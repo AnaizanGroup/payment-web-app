@@ -4,36 +4,31 @@ import "./auth.scss"
 import Login from "./login/Login"
 import Register from "./register/Register"
 import ResetPwd from "./resetPwd/ResetPwd"
+import logo from "../../assets/images/svg/logo.svg"
+import { FiChevronDown, FiChevronsDown, FiCircle, FiGlobe } from "react-icons/fi"
+import BoxAccount from "../boxAccount/BoxAccount"
 
-const Auth = ({openAuth, formAuth}) => {
+const Auth = ({ children }) => {
 
-    const [form, setForm] = useState(formAuth)
-
-    const renderForm = () => {
-        if (form == 0) {
-            return <Register />
-        } else if (form == 1) {
-            return <Login setForm={setForm} />
-        } else if (form==2) {
-            return <ResetPwd />
-        }
-    }
     return (
         <div className="background-form">
-            <div className="block-form">
-                <span onClick={() => openAuth(false)}
-                className="close">&times;</span>
-                <form>
-                    <p> Bienvenu sur <b>FeexMarket</b></p>
-                    <div className="btn-tabs"
-                        style={form == 2 ? {display: 'none'}:{display: 'flex'}}>
-                        <h3 className={`${form == 0 ? 'active-tabs-label':''}` } 
-                        onClick={() => setForm(0)}> Inscrivez-vous</h3>
-                        <h3 className={`${form == 1 ? 'active-tabs-label':''}` }
-                        onClick={() => setForm(1)}> Connectez-vous</h3>
+            <div className="head-forms-page">
+                <img className="logo" src={logo} />
+                <p>
+                    <div className="div-select-lang">
+                        <span>
+                            <FiGlobe />
+                            <span>Fr</span>
+                            <FiChevronDown />
+                        </span>
                     </div>
-                    {renderForm()}
-                </form>
+                    <div className="bar"></div>
+                    <button><FiCircle /></button>
+                </p>
+            </div>
+            <div className="block-forms">
+               
+                {children}
             </div>
         </div>
     )

@@ -16,15 +16,16 @@ export const userRegister = createAsyncThunk(
         email, password, isDone },
         { rejectedWithValue }) => {
         try {
-            const { data } = await axios.post(`${API_URL}register`, {
-                firstname: firstname,
-                lastname: lastname,
-                country: country,
-                telephone: telephone,
-                email: email,
-                password: password
+            const { data } = await axios.post(`${API_URL}accounts/register`, {
+                firstname: 'MaxGeeks',
+                lastname: 'Luciano',
+                country: 'Benin',
+                phone: '+2299392992',
+                email: 'ttot@gmail.com',
+                password: '123455'
             }, config)
 
+            console.log(data)
             return data
         } catch (error) {
             console.log(error)

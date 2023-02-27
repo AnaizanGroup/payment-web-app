@@ -2,13 +2,14 @@
 
 .select {
     width: max-content;
-    height: 29px;
-    padding: 0 5px 0 5px;
+    height: 28px;
+    padding: 0 5px 0 15px;
     position: relative;
     margin-right: 15px;
-    border-radius: 3px;
+    border-radius: 30px;
     border: 1px solid var(--whitesmoke-500);
     z-index: 1;
+    background: var(--dark-500);
 
     span {
         width: 100%;
@@ -17,20 +18,22 @@
         align-items: center;
         justify-content: space-between;
         font-size: 13px;
+        
         cursor: pointer;
          svg {
-            margin-left: 2rem;
-            font-size: 18px;
+            margin-left: 0px !important;
+            font-size: 16px;
          }
 
          span {
+            font-size: 14px;
             width: max-content;
             height: max-content;
          }
     }
 
     .options {
-        width: 220px;
+        width: 130px;
         padding: 5px 0 5px;
         border-radius: 3px;
         position: absolute;
@@ -45,8 +48,9 @@
             position: absolute;
             bottom: 2%;
             right: 5%;
-            font-size: 25px;
-            color: var(--dark);
+            font-size: 25px !important;
+            background: var(--dark-900) !important;
+            color: var(--dark-500) !important;
         }
 
         li {

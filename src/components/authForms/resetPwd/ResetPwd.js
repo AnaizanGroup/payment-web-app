@@ -1,5 +1,6 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import { validInputText } from "../../controlFields/controlField"
+import Auth from "../Auth"
 
 
 const ResetPwd = () => {
@@ -25,21 +26,23 @@ const ResetPwd = () => {
         }
     }
     return (
-        <>
-        <h3 className="title-reset-pwd"> Réinitialiser votre Mot de passe</h3>
-            <div className="div-field reset-pwd-email">
-                <label>Renseigner l'email du compte</label>
-                <input type="email" placeholder="votre email..."
-                    name="email"
-                    value={value.email}
-                    onChange={handleChange}
-                    onKeyUp={() => validInputText(value.email, 'email-error', 'email')} />
-                <span className="span" id="email-error"></span>
-            </div>
-            <div className="btn-submit">
-                <button type="submit" onClick={handleSubmit}>Continuer</button>
-            </div>
-        </>
+        <Auth>
+            <form>
+                <h2 className="title-reset-pwd"> Réinitialiser votre Mot de passe</h2>
+                <div className="div-field reset-pwd-email">
+                    <label> Email or Phone Number</label>
+                    <input type="email" placeholder="votre email..."
+                        name="email"
+                        value={value.email}
+                        onChange={handleChange}
+                        onKeyUp={() => validInputText(value.email, 'email-error', 'email')} />
+                    <span className="span" id="email-error"></span>
+                </div>
+                <div className="btn-submit">
+                    <button type="submit" onClick={handleSubmit}>Continuer</button>
+                </div>
+            </form>
+        </Auth>
     )
 }
 

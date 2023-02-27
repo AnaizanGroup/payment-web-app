@@ -3,6 +3,7 @@ import { FiEye, FiEyeOff } from "react-icons/fi"
 import { validInputText } from "../../controlFields/controlField"
 import { ShowPasswdText } from "../../showPasswdText/ShowPasswdText"
 import { Spinner } from "../../spinner/Spinner"
+import Auth from "../Auth"
 
 import '../auth.scss'
 
@@ -38,14 +39,12 @@ const ResetForm = () => {
 
 
     return (
-        <div className="background-form reset-pwd-form">
-            <div className="block-form">
+        <Auth>
                 {
                     reset ? (
                         <Spinner />
                     ) : (
                         <form>
-                            <p> Bienvenu sur <b>feexmarket</b> </p>
                             <h3 className="title-reset-pwd"
                                 style={{ marginBottom: '1.5rem' }}> Réinitialiser votre Mot de passe</h3>
                             <div className="div-field">
@@ -80,8 +79,8 @@ const ResetForm = () => {
                         </form>
                     )
                 }
-            </div>
-        </div>
+            
+        </Auth>
     )
 }
 

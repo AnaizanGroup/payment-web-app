@@ -1,19 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import { countries } from "../countrylist/countrylist";
+import { country } from "../currencyList/countries";
 
 import "./SelectCountryField.scss";
 
-const SelectCountryField = ({codes, countrys}) => {
-    const [country, setCountry] = useState(sessionStorage.getItem('country'))
+const SelectCountryField = () => {
+    const [countrys, setCountrys] = useState(sessionStorage.getItem('country'))
 
-    const [code, setCode] = useState(codes)
+    const [code, setCode] = useState(sessionStorage.getItem('code_country'))
 
     const selectedCountry = (id, name, code) => {
-        setCountry(name)
+        setCountrys(name)
         setCode(code.toLowerCase())
         sessionStorage.setItem("country", name)
-        sessionStorage.setItem("code", code.toLowerCase())
+        sessionStorage.setItem("code_country", code.toLowerCase())
+
+        console.log(name)
+        let currency = country.find(
+            (item) => item.countryName == name
+        )
+
+        console.log(currency)
+
+        sessionStorage.setItem("currency", currency.currencyCode)
+        sessionStorage.setItem("code_country", currency.countryCode.toLowerCase())
     }
 
     useEffect(() => {
@@ -22,21 +33,21 @@ const SelectCountryField = ({codes, countrys}) => {
     return (
         <ul className="select-country">
             <li className="selected">
-                <div className="selected-item">
-                    <span className={`flag-icon flag-icon-${code}`}>
-                    </span>
-                    <span> {country} </span>
+                <div className="selected-item-options">
+                    <i className={`flag-icon flag-icon-${code}`}>
+                    </i>
+                    <span> {countrys} </span>
                 </div>
                 <FiChevronDown className="arrow" />
             </li>
             <ul className="options-select">
                 {countries.map((list, index) => {
-                    return <span className="option"
+                    return <li className="option"
                         onClick={() => selectedCountry(index, list.name, list.code)}
                         key={index}>
-                        <span className={`flag-icon flag-icon-${list.code.toLowerCase()}`}></span>
+                        <i className={`flag-icon flag-icon-${list.code.toLowerCase()}`}></i>
                         <span>  {list.name} </span>
-                    </span>
+                    </li>
                 })}
             </ul>
         </ul>

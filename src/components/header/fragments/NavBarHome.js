@@ -13,7 +13,9 @@ export const NavBarHome = () => {
 
     const categories = useSelector((state) => state.products.categorie)
     const [codeCountry, setCodeCountry] = useState()
+    const [countrys, setCountrys] = useState()
     const [current, setCurrent] = useState()
+    const [city, setCity] = useState()
 
     const showCategorie = () => {
         let drop = document.querySelector(".head-div3")
@@ -28,24 +30,28 @@ export const NavBarHome = () => {
     const getData = async()=>{
         const res = await axios.get('https://geolocation-db.com/json/')
         console.log(res.data)
-        sessionStorage.setItem('code_country', res.data.code_country)
-        sessionStorage.setItem('country', res.data.country_name)
-        sessionStorage.setItem('city', res.data.city)
 
-        let countri = sessionStorage.getItem('country')
+        let countri = res.data.country_name
         let currency = country.find(
             (item) => item.countryName == countri
         )
 
-        console.log (currency)
+        setCurrent(currency.currencyCode)
 
-        setCodeCountry(sessionStorage.getItem('code_country').toLowerCase())
+        setCodeCountry(res.data.country_code.toLowerCase())
+        setCountrys(res.data.country_name)
+        setCity(res.data.city)
+        
+        sessionStorage.setItem('code_country', codeCountry)
+        sessionStorage.setItem('country', countrys)
+        sessionStorage.setItem('city', city)
+        sessionStorage.setItem('currency', current)
     }
-    
+
     useEffect(()=>{
         //passing getData method to the lifecycle method
-       //getData()
-    },[])
+       getData()
+    })
 
     return(
         <>
@@ -84,7 +90,7 @@ export const NavBarHome = () => {
                     </div>
                     <div className="bar"></div>
                     <div className="divs">
-                        <span> <i className={`flag-icon flag-icon-${codeCountry}`}></i> X0F <FiChevronDown /> </span>
+                        <span> <i className={`flag-icon flag-icon-${codeCountry}`}></i> {current} <FiChevronDown /> </span>
                         <div className="lang">
                             <p>Votre pays actuel est bien le <i className={`flag-icon flag-icon-${codeCountry}`}></i> ?
                                 sinon choisissez votre pays actuel...
@@ -98,20 +104,20 @@ export const NavBarHome = () => {
                                 </div>
                                 <div className="child2">
                                     {country.map((list, index) => {
-                                        return <a href="" key={index}> <i className={`flag-icon flag-icon-${list.countryCode.toLowerCase()}`}></i> {list.countryName} </a>
+                                        return <a href="#" key={index}> <i className={`flag-icon flag-icon-${list.countryCode.toLowerCase()}`}></i> {list.countryName} </a>
                                     })}
                                 </div>
                             </div>
                             <div className="div-select">
                                 <div className="child1">
                                     <span>
-                                        <i className={`flag-icon flag-icon-${codeCountry}`}></i> Bénin
+                                        <i className={`flag-icon flag-icon-${codeCountry}`}></i> {current}
                                     </span>
                                     <FiChevronDown />
                                 </div>
                                 <div className="child2">
                                     {country.map((list, index) => {
-                                        return <a href="" key={index}> <i className={`flag-icon flag-icon-${list.countryCode.toLowerCase()}`}></i> {list.code} </a>
+                                        return <a href="#" key={index}> <i className={`flag-icon flag-icon-${list.countryCode.toLowerCase()}`}></i> {list.currencyCode} </a>
                                     })}
                                 </div>
                             </div>

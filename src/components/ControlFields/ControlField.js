@@ -10,8 +10,8 @@ function animeSpan(id) {
 
  //function qui permet de vérifier la validité des champs
  export function validInputText ( value, id_error, type) {
-    var regex = /^[a-zA-ZéèêïÏ]*$/,
-        regexTel = /[+]+[0-9]*$/,
+    var regex = /^[a-zA-ZéèêïÏ\-]*$/,
+        regexTel = /[0-9]*$/,
         regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z]+\.[a-zA-Z]{2,4}$/,
         regexAlphaN = /^[a-zA-Z0-9]*$/,
         regexAlphaN = /[0-9]{2}$/,

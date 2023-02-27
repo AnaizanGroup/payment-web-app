@@ -1,10 +1,11 @@
 .select-country {
     margin-bottom: 0% !important;
+    margin-left: 0% !important;
     width: 100%;
-    height: 31px;
-    background-color: var(--whitesmoke);
-    border: 1px solid var(--whitesmoke-500);
-    border-radius: 6px;
+    height: 30px;
+    background-color: var(--dark-300);
+    border: 1px solid var(--dark-300);
+    border-radius: 30px;
     position: relative;
     padding: 0% !important;
     cursor: pointer;
@@ -15,37 +16,37 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 5px 0 5px;
+        padding: 0 0px 0 0px;
 
         .arrow {
             font-size: 17px;
             margin-right: 10px;
         }
 
-        .selected-item {
+        .selected-item-options {
             width: auto;
             display: flex !important;
             flex-direction: row !important;
             align-items: center;
-            font-size: 12px !important;
+            background: none;
+            color: var(--white-300);
 
+            i {
+                font-size: 14px;
+                margin: 0 5px 0 3px !important;
+            }
             span {
                 width: auto !important;
                 margin-left: 5px;
                 height: 20px;
                 width: 30px;
-                margin-right: 6px;
-
-                &:nth-child(2) {
-                    margin: 0% !important;
-                    color: var(--dark);
-                    font-size: 10px !important;
-                }
+                font-size: 12px;
             }
         }
     }
 
     .options-select {
+        margin-left: 0% !important;
         display: none;
         background-color: white;
         border: 1px solid var(--whitesmoke-500);
@@ -59,7 +60,7 @@
         padding-left: 0%;
         z-index: 1;
 
-        span {
+        li {
             width: 100%;
             display: flex;
             align-items: center;
@@ -71,21 +72,12 @@
                 background-color: var(--whitesmoke);
             }
 
+            i {
+                font-size: 10px;
+                margin: 0 8px 0 4px;
+            }
             span {
-                font-size: 4rem;
-                height: 20px;
-                width: 30px;
-                width: auto !important;
-                margin-right: 6px;
-
-                &:nth-child(1) {
-                    margin-left: 10px;
-                }
-
-                &:nth-child(2) {
-                    color: var(--dark);
-                    font-size: 12px !important
-                }
+                font-size: 12px;
             }
         }
     }

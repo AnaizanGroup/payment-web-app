@@ -8,10 +8,13 @@ import { CART_SHOPPING, CHECKOUT, HOME } from "../../settings/constant"
 import { FaShoppingBag, FaShoppingBasket, FaShoppingCart } from "react-icons/fa";
 import { FiShoppingBag, FiHeart, FiMenu } from "react-icons/fi";
 import { SearchBarShop } from "./fragments/SearchBarShop";
+import useAxios from "../../utils/useAxios";
 
 
 const Header = ({ children1, children2, children3, children4, children5 }) => {
 
+    const [res, setRes] = useState("");
+    const api = useAxios();
     const [title, setTitle] = useState(1)
 
     useEffect(() => {
@@ -62,10 +65,20 @@ const Header = ({ children1, children2, children3, children4, children5 }) => {
         sessionStorage.setItem('country', res.data.country)
         sessionStorage.setItem('city', res.data.city)
     }
-    
+
+    const fetchData = async () => {
+        try {
+          const response = await api.get("/test/");
+          setRes(response.data.response);
+        } catch {
+          setRes("Something went wrong");
+        }
+    };
+
     useEffect(()=>{
         //passing getData method to the lifecycle method
         getData()
+        fetchData();
     },[])
 
 

@@ -1,71 +1,31 @@
 .box-account {
-    width: 280px !important;
+    width: 230px !important;
     height: max-content !important;
-    z-index: 2;
-    position: absolute;
-    right: -20%;
-    top: 100%;
-    display: none;
     flex-direction: column;
     align-items: center;
-    border: 1px solid var(--whitesmoke-500);
-    background: white !important;
-    padding: 1rem 0 2rem;
+    background: none;
 
-    p {
-        width: 90%;
-        text-align: center;
-        margin: auto;
-        font-size: 13px;
-    }
-    .btn-connects {
-        width: 80%;
-        height: max-content;
-        display: flex;
-        flex-direction: column;
-        margin-top: 1rem;
-        background: none;
-
-
-        a {
-            height: 32px;
-            width: 100%;
-            border: none;
-            font-size: 13px;
-            cursor: pointer;
-
-            &:nth-child(1) {
-                background: var(--orange-gradient);
-                color: white;
-                margin-bottom: 12px;
-            }
-
-            &:nth-child(2) {
-                color: var(--orange);
-                background: var(--orange-transparent);
-            }
-        }
-    }
 
     .bars {
-        width: 90%;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 12px;
+        font-size: 14px;
         background: none;
-        margin: 1rem 0 1rem;
+        margin: 1rem 0 1.5rem;
+        color: var(--white-300);
         div {
-            width: 20%;
+            width: 25%;
             height: 1px;
-            background-color: var(--whitesmoke-500);
+            background-color: var(--white-300);
         }
     }
 
     .groups-sociaux {
         display: flex;
         justify-content: space-between;
-        width: 80%;
+        width: 100%;
         background: none;
 
         a {
