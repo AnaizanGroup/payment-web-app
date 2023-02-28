@@ -6,12 +6,15 @@ import Register from "./components/authForms/register/Register";
 import ResetForm from "./components/authForms/resetPwd/ResetForm";
 import ResetPwd from "./components/authForms/resetPwd/ResetPwd";
 import { Spinner } from "./components/spinner/Spinner";
+import Layout from "./layout/Layout";
 import Deposit from "./pages/dashboard/deposit/Deposit";
 import Invest from "./pages/dashboard/Invest/Invest";
 
 import LayoutDashboard from "./pages/dashboard/LayoutDashboard";
 import Payment from "./pages/dashboard/payment/Payement";
 import Index from "./pages/dashboard/transaction";
+import HomePage from "./pages/site/home";
+import Investiment from "./pages/site/investiment/Investiment";
 import PrivateRoute from "./PrivateRoute";
 import {
     DASHBOARD_DEPOSIT,
@@ -19,6 +22,8 @@ import {
     DASHBOARD_INVEST,
     DASHBOARD_PAYMENT,
     DASHBOARD_TRANSACTION,
+    HOME_PAGE,
+    INVESTIMENT,
     LOGIN,
     REGISTER,
     RESETFORM
@@ -37,6 +42,28 @@ const ROUTES = () => {
     return (
         <Router>
             <Routes>
+                {/* Home */}
+                <Route path={HOME_PAGE} element={
+                    <ProtectedRoutes>
+                        <Layout>
+                            <Suspense fallback={Spinner}>
+                                <HomePage />
+                            </Suspense>
+                        </Layout>
+                    </ProtectedRoutes>
+                } />
+
+                 {/* investiment */}
+                 <Route path={INVESTIMENT} element={
+                    <ProtectedRoutes>
+                        <Layout>
+                            <Suspense fallback={Spinner}>
+                                <Investiment />
+                            </Suspense>
+                        </Layout>
+                    </ProtectedRoutes>
+                } />
+
                 {/* Dashboard Home */}
                 <Route path={DASHBOARD_TRANSACTION} element={
                     <ProtectedRoutes>

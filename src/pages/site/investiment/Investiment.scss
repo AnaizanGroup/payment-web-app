@@ -1,0 +1,117 @@
+.first-section {
+    width: 100%;
+    height: 92vh;
+    display: flex;
+    justify-content: space-around;
+    background: var(--blue-gradient);
+    position: relative;
+
+    .left-div {
+        width: 40%;
+        margin-left: 3rem;
+
+        h6,
+        h1 {
+            color: var(--white);
+        }
+
+        h6 {
+            font-size: 13px;
+            margin-top: 10rem;
+        }
+
+        h1 {
+            font-size: 35px;
+            font-weight: 600;
+            margin: 1.5rem 0 1.2rem;
+        }
+
+        p {
+            color: var(--dark);
+            width: 90%;
+            text-align: justify;
+            margin-left: 1.2rem;
+
+            &:last-child {
+                display: flex;
+                align-items: center;
+                margin-top: 1.5rem;
+
+                a {
+                    font-size: 14px;
+                    height: 50px;
+                    width: 160px;
+                    background-color: var(--red);
+                    border-radius: 30px;
+                    margin-right: 2rem;
+                    color: var(--white);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                li {
+                    font-size: 15px;
+                    color: var(--dark);
+                }
+            }
+        }
+    }
+
+    .right-div {
+        width: 40%;
+        height: 100%;
+        margin-right: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        position: relative;
+
+        img {
+            position: absolute;
+
+            &:nth-child(1) {
+                width: 72%;
+            }
+
+            &:nth-child(2) {
+                width: 100%;
+                top: 10%;
+            }
+        }
+
+        .cards {
+            width: 32%;
+            background-color: white;
+            padding: 1.3rem;
+            position: absolute;
+            box-shadow: 0 0 20px rgba(22, 22, 149, 0.22);
+
+            h3 {
+                font-size: 16px;
+                font-weight: 500;
+            }
+
+            p {
+                font-size: 12px;
+            }
+
+            &:nth-child(3) {
+                left: 0%;
+                top: 65%;
+            }
+
+            &:nth-child(4) {
+                right: 0%;
+                bottom: 5%;
+            }
+        }
+    }
+
+    .motif {
+        width: 100%;
+        position: absolute;
+        bottom: -8%;
+        left: 0%;
+    }
+}

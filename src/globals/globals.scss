@@ -48,7 +48,7 @@ a {
 
 p, label {
     font-size: 14px;
-    color: var(--dark);
+    color: var(--dark-300);
 }
 
 
@@ -141,4 +141,41 @@ button {
 
 .active-menu {
     background: var(--dark-500) !important;
+}
+
+.section {
+    width: 75%;
+    margin: auto;
+    margin-bottom: 5rem;
+    text-transform: capitalize;
+
+    h2 {
+        font-size: 23px;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        position: relative;
+        width: max-content;
+
+        &::before {
+            content: "";
+            background-color: var(--red);
+            position: absolute;
+            bottom: 0%;
+            left: 0%;
+            width: 20%;
+            height: 4px;
+            border-radius: 30px;
+        }
+    }
+}
+
+.section-title-center {
+    margin: auto;
+
+        &::before {
+            width: 15%;
+            top: 105%;
+            left: 500%;
+            transform: translate(-50%, -50%);
+        }
 }

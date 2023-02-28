@@ -1,0 +1,193 @@
+.footer {
+    width: 100%;
+    background: linear-gradient(-180deg, #6a6ae6 2%, #1D0077  90%);
+    position: relative;
+    border-top-right-radius: 30PX;
+
+    .div1, .div2, .div3 {
+        width: 85%;
+        margin: auto;
+    }
+
+    .feed-top {
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        background-color: rgba(245, 245, 245, 0.367);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        position: absolute;
+        right: 3%;
+        bottom: 3%;
+    }
+
+    .div1 {
+        border-bottom: 1px solid var(--white);
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0 10px;
+
+        ul {
+            color: var(--white);
+            padding-left: 0%;
+            display: flex;
+            align-items: center;
+
+            span {
+                font-size: 12px;
+                margin-right: 1rem;
+            }
+            a {
+                color: var(--white);
+                margin: 0 10px;
+                &:nth-child(1) {
+                    margin-left: 0%;
+                }
+            }
+            
+            svg {
+                font-size: 15px;
+            }
+
+            &:nth-child(2) {
+               a {
+                height: 30px;
+                width: 30px;
+                transition: 0.4s;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.222);
+                }
+               }
+            }
+        }
+    }
+
+    .div2 {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 0 2rem;
+
+        ul {
+            width: max-content;
+            display: flex;
+            flex-direction: column;
+            padding-left: 0%;
+
+            h3 {
+                font-size: 16px;
+                font-weight: 500;
+                margin-bottom: 1rem;
+                color: var(--white);
+            }
+
+            a {
+                margin: 5px 0 5px;
+                color: var(--white-300);
+            }
+        }
+
+        .newsletter-div {
+            form {
+                display: flex;
+                flex-direction: column;
+
+                h4 {
+                    color: var(--white-300);
+                    font-size: 16px;
+                    font-weight: 500;
+                    margin-bottom: 1rem;
+                }
+
+                p {
+                    display: flex;
+                    align-items: center;
+                    height: 37px;
+                    margin-bottom: 1.2rem;
+                    background: rgba(255, 255, 255, 0.222);
+
+                    input {
+                        width: 240px;
+                        height: 100%;
+                        color: var(--white);
+                        background: none;
+                        border: none;
+                        padding: 0 8px 0 8px;
+                        
+                        &::placeholder {
+                            color: var(--white);
+                        }
+                    }
+
+                    button {
+                        background: none;
+                        height: 100%;
+                        color: var(--white);
+                        padding:  0 1rem 0 1rem;
+                          ;
+                    }
+                }
+            }
+
+            h3 {
+                color: var(--white);
+                margin-bottom: 12px;
+            }
+
+            p {
+                display: flex;
+                align-items: center;
+                color: var(--white);
+                font-size: 13px;
+
+                svg {
+                   font-size: 1.2rem;
+                   margin-right: 1rem;
+                }
+                margin-top: 12px;
+            }
+        }
+    }
+
+    .div3 {
+        padding: 7px 0 7px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid rgba(245, 245, 245, 0.367);
+
+        p {
+            color: var(--white);
+            font-size: 12px;
+        }
+
+        .div-div3 {
+            display: flex;
+            align-items: center;
+
+            div {
+                background-color: rgba(255, 255, 255, 0.222);
+                height: 32px;
+                padding: 0 1.1rem 0 1.1rem;
+                display: flex;
+                align-items: center;
+                color: var(--white);
+                font-size: 12px;
+                svg {
+                    font-size: 15px;
+                    margin-left: 12px;
+                }
+
+                &:nth-child(1) {
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+}
