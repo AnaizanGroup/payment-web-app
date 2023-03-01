@@ -1,6 +1,8 @@
 /* All path to page */
 export const HOME_PAGE = "/"
 export const INVESTIMENT = "/investiment"
+export const INVESTIMENT_START = "/investiment-start"
+
 /* dashboard */
 export const LOGIN = "/login"
 export const REGISTER = "/register"

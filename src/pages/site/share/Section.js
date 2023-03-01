@@ -1,5 +1,5 @@
 import React from "react"
-import { FaApple, FaAppStore, FaArrowLeft, FaGooglePay } from "react-icons/fa"
+import { FaApple, FaAppStore, FaArrowLeft, FaArrowRight, FaGooglePay } from "react-icons/fa"
 
 import "./Section.scss"
 
@@ -59,9 +59,7 @@ export const SectionShare = () => {
                         <button> Start Today </button>
                         <h3> Download the App</h3>
                         <p>
-                            ijhdoiuhe duheo juhihihihdfe ihiihe iuhihie iuhihde
-                            ihdiehid ihihoiz ihihihihe hihiehd ijijjhiiohih b
-                            juiehidehide
+                            Take classes on the go with the AnaizanPay app. Stream or download
                         </p>
                         <div className="div-btn-s8">
                             <div>
@@ -96,8 +94,8 @@ export const SectionShare = () => {
                     Our blog
                 </h2>
                 <p>
-                    oihoihidhidhhdhido
-                    <li>All Categorie <FaArrowLeft /> </li>
+                    See how you can up your career status
+                    <li>All Categorie <FaArrowRight /> </li>
                 </p>
                 <div className="group-card-s9">
                     {blogs && blogs.map((list, index) => {
@@ -105,7 +103,10 @@ export const SectionShare = () => {
                             <img src={list.img} />
                             <span> {list.date} </span>
                             <h4> {list.link} </h4>
-                            <p> {list.desc} </p>
+                            <p> 
+                                A complete guide to starting a small
+                                business online 
+                                </p>
                         </div>
                     })}
                 </div>

@@ -47,7 +47,7 @@ a {
 }
 
 p, label {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--dark-300);
 }
 
@@ -160,7 +160,7 @@ button {
             content: "";
             background-color: var(--red);
             position: absolute;
-            bottom: 0%;
+            bottom: -20%;
             left: 0%;
             width: 20%;
             height: 4px;

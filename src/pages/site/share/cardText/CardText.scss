@@ -1,0 +1,69 @@
+.left-div {
+    width: 40%;
+    margin-left: 3rem;
+
+    h6,
+    h1 {
+        color: var(--white);
+    }
+
+    h6 {
+        font-size: 13px;
+        margin-top: 10rem;
+    }
+
+    h1 {
+        font-size: 35px;
+        font-weight: 600;
+        margin: 1.5rem 0 1.2rem;
+    }
+
+    p {
+        color: var(--dark);
+        width: 90%;
+        text-align: justify;
+        margin-left: 1.2rem;
+
+        &:last-child {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+
+            a {
+                font-size: 14px;
+                height: 50px;
+                width: 160px;
+                background-color: var(--red);
+                border-radius: 30px;
+                margin-right: 3rem;
+                color: var(--white);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            li {
+                font-size: 14px;
+                color: var(--dark);
+                display: flex;
+                align-items: center;
+
+                button {
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                    background-color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 6px;
+
+                    svg {
+                        font-size: 13px;
+                        color: var(--dark);
+                    }
+                }
+            }
+        }
+    }
+}

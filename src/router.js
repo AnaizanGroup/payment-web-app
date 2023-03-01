@@ -15,6 +15,7 @@ import Payment from "./pages/dashboard/payment/Payement";
 import Index from "./pages/dashboard/transaction";
 import HomePage from "./pages/site/home";
 import Investiment from "./pages/site/investiment/Investiment";
+import InvestimentStart from "./pages/site/investimentStart/InvestimentStart";
 import PrivateRoute from "./PrivateRoute";
 import {
     DASHBOARD_DEPOSIT,
@@ -24,6 +25,7 @@ import {
     DASHBOARD_TRANSACTION,
     HOME_PAGE,
     INVESTIMENT,
+    INVESTIMENT_START,
     LOGIN,
     REGISTER,
     RESETFORM
@@ -59,6 +61,17 @@ const ROUTES = () => {
                         <Layout>
                             <Suspense fallback={Spinner}>
                                 <Investiment />
+                            </Suspense>
+                        </Layout>
+                    </ProtectedRoutes>
+                } />
+
+                 {/* investiment */}
+                 <Route path={INVESTIMENT_START} element={
+                    <ProtectedRoutes>
+                        <Layout>
+                            <Suspense fallback={Spinner}>
+                                <InvestimentStart />
                             </Suspense>
                         </Layout>
                     </ProtectedRoutes>

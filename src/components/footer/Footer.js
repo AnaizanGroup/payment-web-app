@@ -11,39 +11,38 @@ const Footer = () => {
             title: "About",
             items: [
                 {path:"/", label: "Carrers"},
-                {path:"/", label: "Carrers"},
-                {path:"/", label: "Carrers"},
-                {path:"/", label: "Carrers"},
-                {path:"/", label: "Carrers"},
-                {path:"/", label: "Carrers"},
-                {path:"/", label: "Carrers"},
+                {path:"/", label: "Press & News"},
+                {path:"/", label: "Partenership"},
+                {path:"/", label: "Privacy Policy"},
+                {path:"/", label: "Terms of service"},
+                {path:"/", label: "Investor relations"}
             ]
         },
         {
             title: "Products",
             items: [
-                {path:"/", label: "Carrers"},
-                {path:"/", label: "Carrers"},
-                {path:"/", label: "Carrers"},
-                {path:"/", label: "Carrers"},
-                {path:"/", label: "Carrers"},
-                {path:"/", label: "Carrers"},
-                {path:"/", label: "Carrers"},
+                {path:"/", label: "Payment gateway"},
+                {path:"/", label: "Payment pages"},
+                {path:"/", label: "Payment links"},
+                {path:"/", label: "QR Codes"},
+                {path:"/", label: "Subcription"},
+                {path:"/", label: "Invoices"},
             ]
         },
         {
             title: "Support",
             items: [
-                {path:"/", label: "Carrers"},
-                {path:"/", label: "Carrers"},
-                {path:"/", label: "Carrers"},
-                {path:"/", label: "Carrers"},
-                {path:"/", label: "Carrers"},
-                {path:"/", label: "Carrers"},
-                {path:"/", label: "Carrers"},
+                {path:"/", label: "help & Support"},
+                {path:"/", label: "Thrust & Safety"},
+                {path:"/", label: "Integration"},
+                {path:"/", label: "Docs"}
             ]
         },
     ]
+
+    const feedtop = () => {
+        window.scrollTo(0,0)
+    }
 
     useEffect(()=>{
 
@@ -82,7 +81,7 @@ const Footer = () => {
                             <button>Send</button>
                         </p>
                     </form>
-                    <h3>Apps</h3>
+                    <h4>Apps</h4>
                     <p> <FaApple /> IOS App </p>
                     <p> <FaAndroid /> Android App </p>
                 </div>
@@ -98,7 +97,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <button className="feed-top"> <FaChevronUp /> </button>
+            <button className="feed-top" onClick={feedtop}> <FaChevronUp /> </button>
         </footer>
     )
 }

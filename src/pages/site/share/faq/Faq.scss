@@ -1,0 +1,47 @@
+.section-faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h5 {
+        color: var(--red);
+        font-size: 13px;
+    }
+
+    h2 {
+        font-size: 25px;
+        font-weight: 500;
+        margin: 1rem 0 1rem;
+
+        &::before {
+            width: 0;
+        }
+    }
+
+    .subtitle-faq {
+        width: 60%;
+        text-align: center;
+    }
+
+    .group-faq {
+        width: 90%;
+        margin-top: 3rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            width: 94%;
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            border-radius: 5px;
+
+            h4 {
+                font-size:14px;
+                margin-bottom: 6px;
+            }
+        }
+    }
+}

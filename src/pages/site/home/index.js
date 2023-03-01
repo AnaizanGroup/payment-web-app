@@ -1,110 +1,93 @@
 import React from "react"
-import { FaApple, FaAppStore, FaArrowLeft, FaGooglePay } from "react-icons/fa"
+import { FaApple, FaAppStore, FaArrowLeft, FaCheckCircle, FaGooglePay } from "react-icons/fa"
 
 import "./index.scss"
 
 import woman from "../../../assets/images/png/woman.png"
 import user from "../../../assets/images/png/user.png"
 import girl from "../../../assets/images/png/girl.png"
-import girl2 from "../../../assets/images/png/girl2.png"
 import code_v from "../../../assets/images/png/code-view.png"
 import geo from "../../../assets/images/png/geo.png"
-import s4_image from "../../../assets/images/png/s4_image.png"
+import g1 from "../../../assets/images/png/g1.png"
+import g3 from "../../../assets/images/png/g3.png"
+import g4 from "../../../assets/images/png/g4.png"
+import g5 from "../../../assets/images/png/g5.png"
+import g6 from "../../../assets/images/png/g6.png"
 
 import banking from "../../../assets/images/svg/banking.svg"
 import shop from "../../../assets/images/svg/shop.svg"
+
+import check from "../../../assets/images/svg/check.svg"
+import badge from "../../../assets/images/svg/badge.svg"
+
 import { SectionShare } from "../share/Section"
+import { SectionJob } from "../share/sectionJob/SectionJob"
+import { Section3 } from "../share/Section3/Section3"
+import { CardText } from "../share/cardText/CardText"
 
 
 const HomePage = () => {
 
     const safety = [
         {
+            img: g1,
             title: 'Transfer Money',
             text: `
-            oihjozehdoihe ojozjojodz
-            kjzjdjjzoj kjzdz`
+            Share payment link via an email,
+            SMS, messenger, chatbot etc. and
+            get paid immediately
+`
         },
         {
-            img: banking,
+            img: g3,
             title: 'Banking',
             text: `
-            oihjozehdoihe ojozjojodz
-            kjzjdjjzoj kjzdz`
+            Share payment link via an email,
+SMS, messenger, chatbot etc. and
+get paid immediately`
         },
         {
+            img: g6,
             title: 'Manage groups of frien',
             text: `
-            oihjozehdoihe ojozjojodz
-            kjzjdjjzoj kjzdz`
+            Share payment link via an email,
+            SMS, messenger, chatbot etc. and
+            get paid immediately`
         },
         {
+            img: g5,
             title: 'Transfer Money',
             text: `
-            oihjozehdoihe ojozjojodz
-            kjzjdjjzoj kjzdz`
+            Share payment link via an email,
+SMS, messenger, chatbot etc. and
+get paid immediately`
         },
         {
             img: shop,
             title: 'Banking',
             text: `
-            oihjozehdoihe ojozjojodz
-            kjzjdjjzoj kjzdz`
+            Share payment link via an email,
+SMS, messenger, chatbot etc. and
+get paid immediately`
         },
         {
+            img: g4,
             title: 'Manage groups of frien',
             text: `
-            oihjozehdoihe ojozjojodz
-            kjzjdjjzoj kjzdz`
-        },
-    ]
-
-    const jobs = [
-        {
-            img: '',
-            title: 'Post a job',
-            text: `
-                oihoizhdhzieiodiz
-                izhjisizjjdizjidjzidizjd
-                dojzodjz hjidz dzidihz hdizhid
-            `
-        },
-        {
-            img: '',
-            title: 'Choose frelancers',
-            text: `
-                oihoizhdhzieiodiz
-                izhjisizjjdizjidjzidizjd
-                dojzodjz hjidz dzidihz hdizhid
-            `
-        },
-        {
-            img: '',
-            title: 'Pay Safely',
-            text: `
-                oihoizhdhzieiodiz
-                izhjisizjjdizjidjzidizjd
-                dojzodjz hjidz dzidihz hdizhid
-            `
+            Share payment link via an email,
+            SMS, messenger, chatbot etc. and
+            get paid immediately`
         },
     ]
 
     return (
         <div className="parent">
             <section className="first-section section">
-                <div className="left-div">
-                    <h6>ANAIZAN MAKES IT EASY</h6>
-                    <h1> Next generation <br /> Payments Ways</h1>
-                    <p>
-                        ihgiushgogdousgousgoishoihoiss
-                        oiuhsoihhpihspoipoihppophpohpohpo
-                        iugsiuohohoihihihoihoihoihoihoihh
-                    </p>
-                    <p>
-                        <a href="">Get Started</a>
-                        <li>Watch video</li>
-                    </p>
-                </div>
+                <CardText title1={"Next generation "} title2={"Payments Ways"}
+                para={`Curabitur dictum euismod risus, eget eleifend nulla malesuada ut.
+                Fusce egestas urna facilisis, venenatis quam nec, tristique mauris.
+                Proin lacus dolor, aliquam quis enim eu,`} />
+                
                 <div className="right-div">
                     <img src={woman} />
                     <img src={user} />
@@ -125,32 +108,33 @@ const HomePage = () => {
                         All-in-one Payment solutions easy to use and more secure
                     </h2>
                     <div className="div-text-card">
-                        <im src="" />
+                        <img src={badge} />
                         <div>
                             <h4>Proof of quality</h4>
                             <p>
-                                ijdijidhihihhoiuhihohohoi
-                                ihdihihihiihihihihihihihihh
+                                Check any pro’s work samples, client reviews, and
+                                identity verification.
                             </p>
                         </div>
                     </div>
                     <div className="div-text-card">
-                        <im src="" />
+                        <img src="" />
                         <div>
                             <h4>No cost until you hire</h4>
                             <p>
-                                ijdijidhihihhoiuhihohohoi
-                                ihdihihihiihihihihihihihihh
+                                Interview potential fits for your job, negotiate rates,
+                                and only pay for work you approve.
                             </p>
                         </div>
                     </div>
                     <div className="div-text-card">
-                        <im src="" />
+                        <img src={check} />
                         <div>
                             <h4>safe and secure</h4>
                             <p>
-                                ijdijidhihihhoiuhihohohoi
-                                ihdihihihiihihihihihihihihh
+                                ocus on your work knowing we help protect your
+                                data and privacy. We’re here with 24/7 support if
+                                you need it.
                             </p>
                         </div>
                     </div>
@@ -159,20 +143,20 @@ const HomePage = () => {
                     <img src={girl} />
                     <div className="cards-text-z">
                         <p>
-                            <img src="" />
-                            uihhhhoihhihhi
+                            <FaCheckCircle />
+                            Multiple currency payment
                         </p>
                         <p>
-                            <img src="" />
-                            uihhhhoihhihhi
+                            <FaCheckCircle />
+                            Quality work done quickly
                         </p>
                         <p>
-                            <img src="" />
-                            uihhhhoihhihhi
+                            <FaCheckCircle />
+                            Protected payments, every time
                         </p>
                         <p>
-                            <img src="" />
-                            uihhhhoihhihhi
+                            <FaCheckCircle />
+                            24/7 support
                         </p>
                     </div>
                 </div>
@@ -198,67 +182,31 @@ const HomePage = () => {
                     })}
                 </div>
             </section>
-
-            <section className="section-four section">
-                <img src={s4_image} />
-                <div className="div-right-s4">
-                    <h2 className="section-title">
-                        Invest Money for the long term
-                    </h2>
-                    <p>
-                        ijiidioijiojoij
-                        dijijojojjojoojo dijijjiiiji jdjj
-                        ihjijjiji hdihihihih ihdihihihiihihihihihihihihh
-                    </p>
-                    <div>
-                        <p>ihihhiiihiidh jdu</p>
-                        <p>ihihhiiihiidh jdu</p>
-                        <p>ihihhiiihiidh jdu</p>
-                        <p>ihihhiiihiidh jdu</p>
-                    </div>
-                    <button>Learn More</button>
-                </div>
-            </section>
-
-            <section className="section-five section">
-                <div className="div-parent-back">
-                    <img className="img-girl" src={girl2} />
-                    <div className="div-z1">
-                        <h4> Need something done !</h4>
-                        <p>ihihhdsih dhihih ihjijjiu hihjihi</p>
-                        <div className="group-card-s5">
-                            {jobs && jobs.map((list, index) => {
-                                return <div className="card-s5" key={index}>
-                                    <img src={list.img} />
-                                    <h5> {list.title} </h5>
-                                    <p> {list.text} </p>
-                                </div>
-                            })}
-                        </div>
-
-                    </div>
-                </div>
-            </section>
+            <SectionJob />
+            <Section3 title={"Invest money for the long term"} />
 
             <section className="section-six section">
                 <h2 className="section-title section-title-center">
                     Seamless Integration
                 </h2>
+                <p className="text-same">
+                    Integrating with Razorpay is as simple as it can get,
+                    with feather-light SDKs and RESTful APIs that is embedded
+                </p>
                 <div className="div-parent-s6">
                     <div className="div-left-s6">
                         <div className="block-div-s6">
                             <div>
                                 <h4>Easy Integration & plugins</h4>
                                 <p>
-                                    ojodjejfoe eijfdojeof ijodeojfoe
-                                    jojeoofeo
+                                    Get access to convenient plugins for all major platforms and languages.
                                 </p>
                             </div>
                             <div>
                                 <h4>Easy Integration & plugins</h4>
                                 <p>
-                                    ojodjejfoe eijfdojeof ijodeojfoe
-                                    jojeoofeo
+                                    ccept payments on mobile apps using auto-updating SDKs. So, the next time
+                                    a new wallet or bank enters the market, you’ll be automatically covered.
                                 </p>
                             </div>
                         </div>
@@ -275,21 +223,21 @@ const HomePage = () => {
                             We have many users over the word
                         </h2>
                         <p>
-                            ijihiiohih iuoiuheoizhfoie ijoejojfoe jojojde
-                            iugiuuh oihoihjoipoi ihihoihoi ohjpoihoih
+                            ed ut perspiciatis unde omnis iste natus error sit
+                            voluptatem accusantium doloremque laudantium.
                         </p>
                         <div className="stats">
                             <div>
                                 <h3> 98M+</h3>
-                                <p>ihjoioipojpojp</p>
+                                <p> Happy Customers </p>
                             </div>
                             <div>
                                 <h3> 29kM+</h3>
-                                <p>ihjoioipojpojp</p>
+                                <p> Registered Companies </p>
                             </div>
                             <div>
                                 <h3> 19M+</h3>
-                                <p>ihjoioipojpojp</p>
+                                <p>Registered Countries</p>
                             </div>
                         </div>
                     </div>
