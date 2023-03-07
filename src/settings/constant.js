@@ -2,12 +2,17 @@
 export const HOME_PAGE = "/"
 export const INVESTIMENT = "/investiment"
 export const INVESTIMENT_START = "/investiment-start"
+export const INVEST_GOLD = "/invest-gold"
+export const PAYMENT_LINK = "/payment-link"
+export const PAYMENT_SCAN = "/payment-scan"
+export const PAYMENT_GATEWAY = "/payment-gateway"
 
 /* dashboard */
 export const LOGIN = "/login"
 export const REGISTER = "/register"
 export const RESETFORM = "/reset-email"
 export const RESETPWD = "/reset-password"
+export const VERIFY = "/verification"
 export const DASHBOARD_HOME= "/dashboard"
 export const DASHBOARD_TRANSACTION= "/dashboard/transaction"
 export const DASHBOARD_PAYMENT= "/dashboard/payment"

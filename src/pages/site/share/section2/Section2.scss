@@ -1,0 +1,99 @@
+.section-three {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+       
+        &::before {
+            width: 15%;
+            top: 105%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .text {
+        width: 50%;
+        text-align: center;
+        margin: 5px 0 1rem;
+    }
+
+    .group-card-s2 {
+        margin-top: 6rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        row-gap: 8rem;
+
+        .cards-s2 {
+            width: 95%;
+            padding: 5px;
+            border-top-left-radius: 70px;
+            border-bottom-right-radius: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            padding-bottom: 2rem;
+            transition: 0.4s;
+
+            li {
+                font-size: 13px;
+                cursor: pointer;
+            }
+
+            img {
+                position: absolute;
+                width: 90px;
+                transform: translate(-50%, -50%);
+                left: 50%;
+            }
+
+            h5 {
+                margin: 5rem 0 1rem;
+            }
+
+            p {
+                font-size: 12px;
+                margin-bottom: 2rem;
+                width: 90%;
+                text-align: center;
+            }
+
+            &:nth-child(1) {
+                box-shadow: 0px -3px 2px  var(--red);
+            }
+
+
+            &:nth-child(2) {
+                box-shadow: 0px -3px 2px var(--dark);
+            }
+
+
+            &:nth-child(3) {
+                box-shadow: 0px -3px 2px var(--green);
+            }
+
+
+            &:nth-child(4) {
+                box-shadow: 0px -3px 2px var(--blues);
+            }
+
+
+            &:nth-child(5) {
+                box-shadow: 0px -3px 2px var(--green-200);
+            }
+
+
+            &:nth-child(6) {
+                box-shadow: 0px -3px 2px var(--yellow);
+            }
+
+            
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+    }
+}

@@ -5,7 +5,7 @@ import { country } from "../currencyList/countries";
 
 import "./SelectCountryField.scss";
 
-const SelectCountryField = () => {
+const SelectCountryField = ({ setCountry }) => {
     const [countrys, setCountrys] = useState(sessionStorage.getItem('country'))
 
     const [code, setCode] = useState(sessionStorage.getItem('code_country'))
@@ -20,9 +20,10 @@ const SelectCountryField = () => {
         let currency = country.find(
             (item) => item.countryName == name
         )
-
-        console.log(currency)
-
+        let dial = countries.find(
+            (item) => item.name = name
+        )
+        setCountry(name)
         sessionStorage.setItem("currency", currency.currencyCode)
         sessionStorage.setItem("code_country", currency.countryCode.toLowerCase())
     }

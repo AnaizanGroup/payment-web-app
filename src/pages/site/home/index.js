@@ -24,6 +24,7 @@ import { SectionShare } from "../share/Section"
 import { SectionJob } from "../share/sectionJob/SectionJob"
 import { Section3 } from "../share/Section3/Section3"
 import { CardText } from "../share/cardText/CardText"
+import { Section2 } from "../share/section2/Section2"
 
 
 const HomePage = () => {
@@ -84,10 +85,10 @@ get paid immediately`
         <div className="parent">
             <section className="first-section section">
                 <CardText title1={"Next generation "} title2={"Payments Ways"}
-                para={`Curabitur dictum euismod risus, eget eleifend nulla malesuada ut.
+                    para={`Curabitur dictum euismod risus, eget eleifend nulla malesuada ut.
                 Fusce egestas urna facilisis, venenatis quam nec, tristique mauris.
                 Proin lacus dolor, aliquam quis enim eu,`} />
-                
+
                 <div className="right-div">
                     <img src={woman} />
                     <img src={user} />
@@ -162,26 +163,8 @@ get paid immediately`
                 </div>
             </section>
 
-            <section className="section-three section">
-                <h2 className="section-title section-title-center">
-                    we provider the best service for your safety
-                </h2>
-
-                <div className="group-card-s2">
-                    {safety && safety.map((list, index) => {
-                        return (
-                            <div className="cards-s2" key={index}>
-                                <img src={list.img} />
-                                <h5> {list.title} </h5>
-                                <p>
-                                    {list.text}
-                                </p>
-                                <li> know more </li>
-                            </div>
-                        )
-                    })}
-                </div>
-            </section>
+            <Section2 title={" we provider the best service for your safety"}
+            subtitle={null} array={safety} />
             <SectionJob />
             <Section3 title={"Invest money for the long term"} />
 

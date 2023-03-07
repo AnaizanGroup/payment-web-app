@@ -1,9 +1,9 @@
 .first-section {
     width: 100%;
-    height: 92vh;
+    height: 100vh !important;
     display: flex;
     justify-content: space-around;
-    background: var(--blue-gradient);
+    background: var(--blue-gradient) !important;
     position: relative;
 
     .right-div-invest {
@@ -14,109 +14,9 @@
         align-items: center;
 
         img {
-            width: 100%;
-            margin-right: 8rem;
+            width: 150% !important;
+            margin-right: 8rem !important;
         }
     }
 }
 
-
-.section-two-start {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    h2 {
-        margin-bottom: 1rem;
-
-        &::before {
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-    }
-
-    .subtitle-s2-start {
-        width: 50%;
-        text-align: center;
-    }
-
-    .groups-card-s2-stat {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        margin-top: 3rem;
-        gap: 2rem;
-
-        .card-s2-start {
-            width: 100%;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.273);
-
-            img {
-                width: 100%;
-            }
-
-            .infos {
-                display: flex;
-                flex-direction: column;
-                width: 90%;
-                margin: auto;
-                padding-top: 10px;
-                padding-bottom: 10px;
-
-                h3 {
-                    font-size: 15px;
-                    font-weight: 500;
-                    margin-bottom: 2px;
-                }
-
-                .desc-comp {
-                    margin: 1rem 0 1rem;
-                }
-
-                .div-progress {
-                    width: 100%;
-
-                    .progress {
-                        width: 100%;
-                        height: 5px;
-                        background: var(--white-300);
-
-                        div {
-                            width: 50%;
-                            height: 100%;
-                            background-color: var(--dark);
-                        }
-                    }
-
-                    p {
-                        width: 100%;
-                        font-size: 13px !important;
-                        margin-top: 3px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-
-                        span {
-                            font-size: 13px !important;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    .view-all {
-        padding: 0 2rem 0 2rem;
-        height: 40px;
-        color: var(--red);
-        border: 1px solid var(--red);
-        background: none;
-        font-size: 15px;
-        margin-top: 4rem;
-        transition: 0.4s;
-
-        &:hover {
-            background-color: var(--red-transparent);
-        }
-    }
-
-}

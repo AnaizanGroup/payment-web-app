@@ -3,8 +3,8 @@ import React from "react"
 
 const ChoiceContact = ({option, setOption}) => {
     const active = {
-        background: "var(--orange-400)",
-        color: "var(--white-500)"
+        background: "var(--dark)",
+        color: "var(--white)"
     }
     
     return(

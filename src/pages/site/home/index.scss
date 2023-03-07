@@ -1,6 +1,6 @@
 .first-section {
     width: 100%;
-    height: 92vh;
+    height: 100vh;
     display: flex;
     justify-content: space-around;
     background: var(--blue-gradient);
@@ -175,92 +175,6 @@
                     color: white;
                     font-size: 16px;
                 }
-            }
-        }
-    }
-}
-
-.section-three {
-
-    h2 {
-        margin: auto;
-
-        &::before {
-            width: 15%;
-            top: 105%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-    }
-
-    .group-card-s2 {
-        margin-top: 6rem;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-        row-gap: 8rem;
-
-        .cards-s2 {
-            width: 95%;
-            padding: 5px;
-            border-top-right-radius: 50px;
-            border-bottom-left-radius: 50px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            padding-bottom: 2rem;
-
-            li {
-                font-size: 13px;
-                cursor: pointer;
-            }
-
-            img {
-                position: absolute;
-                width: 90px;
-                transform: translate(-50%, -50%);
-                left: 50%;
-            }
-
-            h5 {
-                margin: 5rem 0 1rem;
-            }
-
-            p {
-                font-size: 12px;
-                margin-bottom: 2rem;
-                width: 90%;
-                text-align: center;
-            }
-
-            &:nth-child(1) {
-                box-shadow: 0px -1px 2px  var(--red);
-            }
-
-
-            &:nth-child(2) {
-                box-shadow: 0px -1px 2px var(--dark);
-            }
-
-
-            &:nth-child(3) {
-                box-shadow: 0px -1px 2px var(--green);
-            }
-
-
-            &:nth-child(4) {
-                box-shadow: 0px -1px 2px var(--blues);
-            }
-
-
-            &:nth-child(5) {
-                box-shadow: 0px -1px 2px var(--green-200);
-            }
-
-
-            &:nth-child(6) {
-                box-shadow: 0px -1px 2px var(--yellow);
             }
         }
     }

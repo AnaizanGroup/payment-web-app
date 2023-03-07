@@ -1,12 +1,12 @@
 
 
-export const Timer = ({hours, minutes, seconds, completed}) => {
+export const Timer = ({width, hours, minutes, seconds, completed}) => {
     if (completed) {
         return <Completionist />
     } else {
         return (
             <div className="minut">
-                <span> {hours} </span> : <span> {minutes} </span> : <span> {seconds} </span>
+                <span> {seconds} </span>
             </div>
         )
     }

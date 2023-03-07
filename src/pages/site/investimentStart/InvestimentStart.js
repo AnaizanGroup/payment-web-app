@@ -3,13 +3,13 @@ import { CardText } from "../share/cardText/CardText";
 
 import "./InvestimentStart.scss"
 
-
 import investiment from "../../../assets/images/png/image3.png"
 import img1 from "../../../assets/images/png/img1.png"
 import img2 from "../../../assets/images/png/img2.png"
 import img3 from "../../../assets/images/png/img3.png"
 import img4 from "../../../assets/images/png/img4.png"
 import img5 from "../../../assets/images/png/img5.png"
+
 import { SectionJob } from "../share/sectionJob/SectionJob";
 import { SectionShare } from "../share/Section";
 import { Faq } from "../share/faq/Faq";
@@ -68,6 +68,7 @@ const InvestimentStart = () => {
             price: 0,
         },
     ]
+    
     return (
         <div className="parent">
             <section className="first-section section">
@@ -90,7 +91,7 @@ const InvestimentStart = () => {
                 </p>
                 <div className="groups-card-s2-stat">
                     {offering && offering.map((list, index) => {
-                        return <div className="card-s2-start">
+                        return <div className="card-s2-start" key={index}>
                             <img src={list.img} />
                             <div className="infos">
                                 <h3> {list.company} </h3>

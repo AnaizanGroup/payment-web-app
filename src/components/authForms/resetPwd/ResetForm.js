@@ -40,46 +40,43 @@ const ResetForm = () => {
 
     return (
         <Auth>
-                {
-                    reset ? (
-                        <Spinner />
-                    ) : (
-                        <form>
-                            <h3 className="title-reset-pwd"
-                                style={{ marginBottom: '1.5rem' }}> Réinitialiser votre Mot de passe</h3>
-                            <div className="div-field">
+            {
+                reset ? (
+                    <Spinner />
+                ) : (
+                    <form>
+                        <h3 className="title-reset-pwd"
+                            style={{ marginBottom: '1.5rem' }}>
+                            Create a new Password
+                        </h3>
+                        <div className="div-field">
+                            
+                            <input type="password" placeholder="New Password..."
+                                name="password"
+                                id="password"
+                                value={value.password}
+                                onChange={handleChange}
+                                onKeyUp={() => ControlField(value.password, 'pwd-error', 'pwd')} />
+                                <ShowPasswdText id={"pwd-error"} />
+                            <span className="span" id="pwd-error"></span>
+                        </div>
+                        <div className="div-field">
+                            
+                            <input type="password" placeholder="Re-enter your password..."
+                                name="passwordC"
+                                value={value.passwordC}
+                                onChange={handleChange}
+                                onKeyUp={() => ControlField(value.passwordC, 'pwdC-error', 'pwd')} />
+                            <span className="span" id="pwdC-error"></span>
+                          
+                        </div>
+                        <div className="btn-submit">
+                            <button onClick={handleSubmit} type="submit">Réinitialiser</button>
+                        </div>
+                    </form>
+                )
+            }
 
-                                <div className="div-field">
-                                    <label>Nouveau Mot de passe</label>
-                                    <span className="notice-pwd" id="notice-pwd">
-                                        Au mois six (06) caractères alphanumérique
-                                        (Ex: Mon012x0)
-                                    </span>
-                                    <input type="password" placeholder="Créer votre mot de passe..."
-                                        name="password"
-                                        id="password"
-                                        value={value.password}
-                                        onChange={handleChange}
-                                        onKeyUp={() => ControlField(value.password, 'pwd-error', 'pwd')} />
-                                    <span className="span" id="pwd-error"></span>
-                                </div>
-                            </div>
-                            <div className="div-field">
-                                <label>Retaper le Mot de passe</label>
-                                <input type="password" placeholder="Confirmer votre mot de passe..."
-                                    name="passwordC"
-                                    value={value.passwordC}
-                                    onChange={handleChange}
-                                    onKeyUp={() => ControlField(value.passwordC, 'pwdC-error', 'pwd')} />
-                                <span className="span" id="pwdC-error"></span>
-                            </div>
-                            <div className="btn-submit">
-                                <button onClick={handleSubmit} type="submit">Réinitialiser</button>
-                            </div>
-                        </form>
-                    )
-                }
-            
         </Auth>
     )
 }
