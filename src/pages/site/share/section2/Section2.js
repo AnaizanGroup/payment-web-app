@@ -5,7 +5,7 @@ import "./Section2.scss"
 export const Section2 = ({ title, subtitle, array }) => {
     return (
         <section className="section-three section">
-            <h2 className="section-title section-title-center">
+            <h2 className="section-title  text-align">
                {title}
             </h2>
             <p className="text">{subtitle}</p>

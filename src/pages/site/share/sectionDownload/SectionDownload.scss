@@ -23,6 +23,11 @@
                 font-size: 15px;
                 padding: 0 1.4rem 0 1.4rem;
                 margin: 3rem 0 2rem;
+                
+
+                &:hover {
+                    background: rgb(172, 165, 165);
+                }
             }
 
             h3 {
@@ -50,6 +55,11 @@
                     padding: 0 1.6rem 0 1.6rem;
                     height: 43px;
                     border-radius: 6px;
+                    transition: 0.7s;
+
+                    &:hover {
+                        background: var(--red-hover);
+                    }
 
                     svg {
                         font-size: 1.5rem;

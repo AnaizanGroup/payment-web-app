@@ -82,16 +82,16 @@ const InvestimentStart = () => {
                 </div>
             </section>
             <section className="section-two-start section">
-                <h2 className="section-title">
+                <h2 className="section-title text-align before-center">
                     Offerings open for investment
                 </h2>
-                <p className="subtitle-s2-start">
+                <p className="subtitle">
                     Explore pre-vetted investment opportunities available in a growing
                     number of industry categories.
                 </p>
-                <div className="groups-card-s2-stat">
+                <div className="groups-card-s2-starts">
                     {offering && offering.map((list, index) => {
-                        return <div className="card-s2-start" key={index}>
+                        return <div className="card-s2-starts" key={index}>
                             <img src={list.img} />
                             <div className="infos">
                                 <h3> {list.company} </h3>
@@ -111,7 +111,7 @@ const InvestimentStart = () => {
                         </div>
                     })}
                 </div>
-                <button className="view-all"> View all project </button>
+                <button className="view-all button-hover-red"> View all project </button>
             </section>
             <SectionJob />
             <Section3 title={"Looking to raise capital for your growing business ?"}

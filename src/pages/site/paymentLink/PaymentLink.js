@@ -11,6 +11,9 @@ import img from "../../../assets/images/png/ims.png"
 import p1 from "../../../assets/images/png/p1.png"
 import p2 from "../../../assets/images/png/p2.png"
 import p3 from "../../../assets/images/png/p3.png"
+import tik_red from "../../../assets/images/png/link-red.png"
+import tik_blue from "../../../assets/images/png/link-blue.png"
+
 import { Faq } from "../share/faq/Faq"
 
 const PaymentLink = () => {
@@ -62,9 +65,12 @@ const PaymentLink = () => {
             </section>
 
             <section className="section-two-plink section">
-                <h2 className="section-title">
+                <h2 className="section-title text-align">
                     Accept Payment Via Payments Links
                 </h2>
+                <img src={tik} className="tik" />
+                <img src={tik_red} className="tik tik-red" />
+                <img src={tik_blue} className="tik tik-blue" />
                 <div className="div-s2-plink">
                     <div className="d1-plink">
                         <div className="progress">
@@ -106,7 +112,7 @@ const PaymentLink = () => {
                         <button>Create a demo payment link</button>
                     </form>
                 </div>
-                <img src={tik} className="tik" />
+                
             </section>
 
             <section className="section-three-plink section">

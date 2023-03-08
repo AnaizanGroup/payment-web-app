@@ -34,7 +34,7 @@ export const Faq = () => {
     return (
         <section className="section-faq section">
             <h5> POPURLAR QUESTIONS </h5>
-            <h2> Frequently Asked Question </h2>
+            <h2 className="section-title"> Frequently Asked Question </h2>
             <p className="subtitle-faq">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic explicabo
                 voluptas nisi iste reiciendis, tempore commodi necessitatibus, laborum

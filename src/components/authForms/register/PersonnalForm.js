@@ -124,7 +124,7 @@ const PersonnalForm = () => {
                 </div>
             </div>
             <div className="div-field">
-                <label>Paasword</label>
+                <label>Password</label>
 
                 <input type="password" placeholder="..."
                     name="password"

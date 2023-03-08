@@ -4,6 +4,7 @@ import { CardText } from "../share/cardText/CardText";
 import "./PaymentScan.scss"
 
 import { Faq } from "../share/faq/Faq";
+import Brands from "../share/brands/Brands";
 
 import p_link from "../../../assets/images/png/p-lnik.png"
 import tik from "../../../assets/images/png/tiktik.png"
@@ -13,9 +14,7 @@ import scan_m from "../../../assets/images/png/scan-merchand.png"
 import screen from "../../../assets/images/png/screen.png"
 import f from "../../../assets/images/svg/feu.svg"
 import c from "../../../assets/images/svg/cir.svg"
-import form from "../../../assets/images/png/forms1.png"
-
-import Brands from "../share/brands/Brands";
+import { RadioButton } from "../../../components/radioButton/RadioButton";
 
 
 const PaymentScan = () => {
@@ -65,8 +64,30 @@ const PaymentScan = () => {
                             </div>
                         </div>
                     </div>
-                    <img src={form} />
+                    <form>
+                        <h3>Create QR Code</h3>
+                        <p>
+                            <label>QR Usage</label>
+                            <RadioButton label1={"Multiple Payment"}
+                             label2={"Single Payment"} />
+                        </p>
+                        <p>
+                            <label>Accept only fixed amount on this OR ?</label>
+                            <RadioButton label1={"Yes"}
+                             label2={"No"} />
+                        </p>
+                        <label>Customer Details</label>
+                        <li>Generate Demo QR Code</li>
+                        <input type="text" placeholder="Business name" />
+                        <input type="email" placeholder="Description (Optional)" />
+                        
+                        <button>Create QR Code</button>
+                    </form>
                 </div>
+                <img src={tik} className="tik" />
+                <img src={tik_red} className="tik tik-red" />
+                <img src={tik_blue} className="tik tik-blue"  />
+        
             </section>
 
             <section className="section-four-pscan section">
@@ -143,7 +164,7 @@ const PaymentScan = () => {
                 </div>
             </section>
             <Faq />
-        </div>
+        </div >
     )
 }
 

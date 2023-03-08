@@ -5,6 +5,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import "./PaymentGateway.scss"
 
 import { SectionDownload } from "../share/sectionDownload/SectionDownload";
+import { Faq } from "../share/faq/Faq";
 
 import p_gat from "../../../assets/images/png/pay-gateway.png"
 import Brands from "../share/brands/Brands";
@@ -16,8 +17,6 @@ import p4 from "../../../assets/images/png/p4.png"
 import p5 from "../../../assets/images/png/p5.png"
 import p6 from "../../../assets/images/png/p6.png"
 import check from "../../../assets/images/png/check.svg"
-
-import { Faq } from "../share/faq/Faq";
 
 
 const PaymentGateway = () => {
@@ -58,7 +57,7 @@ const PaymentGateway = () => {
 
             <Brands />
             <section className="section-three-pgat section">
-                <h2 className="section-title">
+                <h2 className="section-title text-align">
                     A System Designed to Handle
                     End to End Payments
                 </h2>
@@ -118,7 +117,7 @@ const PaymentGateway = () => {
             </section>
 
             <section className="section-four-pgat section">
-                <h2 className="section-title">
+                <h2 className="section-title text-align">
                     Boost your sales with the
                     AnaizanPay payment gateway
                 </h2>
@@ -191,7 +190,7 @@ const PaymentGateway = () => {
             </section>
             <SectionDownload />
             <section className="section-eight-pgat section">
-                <h2 className="section-title">
+                <h2 className="section-title text-align">
                     Choose the integration that
                     fits your platform
                 </h2>
@@ -235,7 +234,7 @@ const PaymentGateway = () => {
             </section>
 
             <section className="section-five-plink section ">
-                <h2 className="section-title">
+                <h2 className="section-title text-align">
                     Simple pricing, no hidden charges
                 </h2>
                 <p className="text">

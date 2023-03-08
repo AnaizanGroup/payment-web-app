@@ -37,7 +37,7 @@
                     margin-top: 5px;
                     border-bottom: 1px solid var(--dark-500);
                     img {
-                        width: 160px;
+                        width: 140px;
                     }
                 }
 
@@ -49,7 +49,7 @@
                     padding: 3px 0 3px 10px;
                     display: flex;
                     align-items: center;
-                    font-size: 16px;
+                    font-size: 14px;
                     font-weight: 600;
                     margin: 10px 0 5px;
                     svg {
@@ -90,17 +90,17 @@
                             span {
                                 display: flex;
                                 align-items: center;
-                                font-size: 14px;
+                                font-size: 13px;
 
                                 img {
-                                    width: 22px;
-                                    margin-right: 10px;
+                                    width: 20px;
+                                    margin-right: 12px;
                                 }
                             }
 
                             svg {
-                                font-size: 15px;
-                                margin-right: 10px;
+                                font-size: 15px !important;
+                                margin-right: 12px;
                             }
 
                             &::before {

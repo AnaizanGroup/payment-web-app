@@ -141,7 +141,7 @@ const Login = ({ setForm }) => {
                 </div>
                 <button className="btn-click-connect"
                     onClick={() => isPopup(true)}>
-                    <li> <img src={user_icon} /> </li>
+                   {/*  <li> <img src={user_icon} /> </li> */}
                     Sign in whith phone or email
                 </button>
                 <BoxAccount />

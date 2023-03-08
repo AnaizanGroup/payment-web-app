@@ -65,7 +65,19 @@ input {
 button {
     border: none;
     cursor: pointer;
-    transition: 0.4s;
+    transition: 0.7s;
+}
+
+.button-hover-blue {
+    &:hover {
+        background: var(--blue-hover) !important;
+    }
+}
+
+.button-hover-red {
+    &:hover {
+        background: var(--red-hover) !important;
+    }
 }
 
 
@@ -147,12 +159,12 @@ button {
 .section {
     width: 75%;
     margin: auto;
-    margin-bottom: 4rem;
+    margin-bottom: 7rem;
     text-transform: capitalize;
 
     h2 {
-        font-size: 23px;
-        font-weight: 500;
+        font-size: 28px;
+        font-weight: 600;
         width: 400px;
         margin-bottom: 2rem;
         position: relative;
@@ -161,7 +173,7 @@ button {
             content: "";
             background-color: var(--red);
             position: absolute;
-            bottom: -20%;
+            bottom: -5%;
             left: 0%;
             width: 20%;
             height: 4px;
@@ -179,4 +191,16 @@ button {
             left: 500%;
             transform: translate(-50%, -50%);
         }
+}
+
+.text-align {
+    text-align: center;
+}
+
+
+.before-center{
+    &::before {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }

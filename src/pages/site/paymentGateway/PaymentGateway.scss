@@ -37,6 +37,7 @@
     align-items: center;
 
     h2 {
+        width: 500px;
         &::before {
             left: 50%;
             transform: translate(-50%, -50%);
@@ -118,6 +119,7 @@
     align-items: center;
 
     h2 {
+        width: 500px;
         &::before {
             left: 50%;
             transform: translate(-50%, -50%);
@@ -206,7 +208,7 @@
             p {
                 margin-bottom: 12px;
 
-                
+
                 img {
                     width: 15px;
                     margin-right: 10px;
@@ -316,7 +318,7 @@
                 p {
                     width: 100%;
 
-                    
+
                     img {
                         width: 15px;
                         margin-right: 10px;

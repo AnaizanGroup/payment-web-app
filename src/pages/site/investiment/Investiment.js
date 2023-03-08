@@ -106,7 +106,7 @@ const Investiment = () => {
             </section>
 
             <section className="section-two-invest section">
-                <h2 className="section-title">
+                <h2 className="section-title text-align">
                     We offer the best features for you
                 </h2>
                 <p className="subtitle">
@@ -163,7 +163,7 @@ const Investiment = () => {
             </section>
 
             <section className="section-five-invest section">
-                <h2 className="section-title">
+                <h2 className="section-title text-align">
                     We offer the best
                     features for you
                 </h2>
@@ -187,10 +187,10 @@ const Investiment = () => {
             <section className="section-six-invest section">
                 <div className="group-card-s6-inv">
                     <div className="card-text-s6-inv">
-                        <h3>
+                        <h2 className="section-title">
                             A whole world of freelance
                             talent at your fingertips
-                        </h3>
+                        </h2>
 
                         <div className="groups-text">
                             {freelance_talent && freelance_talent.map((list, index) => {

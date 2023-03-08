@@ -8,7 +8,7 @@
     }
 
     h6 {
-        font-size: 13px;
+        font-size: 12px;
         margin-top: 10rem;
         display: flex;
         align-items: center;
@@ -20,7 +20,7 @@
     }
 
     h1 {
-        font-size: 35px;
+        font-size: 38px;
         font-weight: 600;
         margin: 1.5rem 0 1.2rem;
     }
@@ -29,7 +29,7 @@
         color: var(--dark);
         width: 90%;
         text-align: justify;
-        margin-left: 1.2rem;
+        margin-left: 0rem;
 
         &:last-child {
             display: flex;
@@ -47,6 +47,11 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                transition: 0.7s;
+
+                &:hover {
+                    background: var(--red-hover);
+                }
             }
 
             li {
@@ -69,6 +74,8 @@
                         font-size: 13px;
                         color: var(--dark);
                     }
+
+                    
                 }
             }
         }

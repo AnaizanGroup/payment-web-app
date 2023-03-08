@@ -5,59 +5,6 @@
     justify-content: space-around;
     background: var(--blue-gradient);
 
-    .left-div {
-        width: 40%;
-        margin-left: 3rem;
-
-        h6,
-        h1 {
-            color: var(--white);
-        }
-
-        h6 {
-            font-size: 13px;
-            margin-top: 10rem;
-        }
-
-        h1 {
-            font-size: 35px;
-            font-weight: 600;
-            text-transform: capitalize;
-            margin: 1.5rem 0 1.2rem;
-        }
-
-        p {
-            color: var(--dark);
-            width: 90%;
-            text-align: justify;
-            margin-left: 1.2rem;
-
-            &:last-child {
-                display: flex;
-                align-items: center;
-                margin-top: 1.5rem;
-
-                a {
-                    font-size: 14px;
-                    height: 50px;
-                    width: 160px;
-                    background-color: var(--red);
-                    border-radius: 30px;
-                    margin-right: 2rem;
-                    color: var(--white);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-
-                li {
-                    font-size: 15px;
-                    color: var(--dark);
-                }
-            }
-        }
-    }
-
     .right-div {
         width: 40%;
         height: 100%;

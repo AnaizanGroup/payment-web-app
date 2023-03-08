@@ -169,7 +169,7 @@ get paid immediately`
             <Section3 title={"Invest money for the long term"} />
 
             <section className="section-six section">
-                <h2 className="section-title section-title-center">
+                <h2 className="section-title text-align">
                     Seamless Integration
                 </h2>
                 <p className="text-same">
@@ -193,7 +193,7 @@ get paid immediately`
                                 </p>
                             </div>
                         </div>
-                        <button>Sign in</button>
+                        <button className="button-hover-blue">Sign in</button>
                     </div>
                     <img src={code_v} />
                 </div>

@@ -50,6 +50,7 @@
         width: 100%;
         z-index: 2000;
         margin-top: 2rem;
+        
 
         .d1-plink {
             display: flex;
@@ -133,6 +134,7 @@
         }
 
         form {
+            background-color: white;
             width: 300px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.242);
             padding: 1rem;
@@ -221,6 +223,16 @@
         position: absolute;
         bottom: -10%;
         right: -10%;
+    }
+
+    .tik-blue {
+        top: 40%;
+        right: -5%;
+    }
+
+    .tik-red {
+        bottom: 20%;
+        right: 22%;
     }
 }
 
