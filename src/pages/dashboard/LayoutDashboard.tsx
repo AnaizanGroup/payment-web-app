@@ -42,7 +42,7 @@ const LayoutDashboard: React.FC<Props> = ({ children }) => {
 	const [current, setCurrent] = useState('');
 	const [city, setCity] = useState('');
 
-	const locales = [{ label: 'English' }, { label: 'French' }];
+	const locales = [{ label: 'English',value:'' }, { label: 'French',value:"" }];
 
 	const menu = [
 		{
@@ -187,12 +187,14 @@ const LayoutDashboard: React.FC<Props> = ({ children }) => {
 							<div className="head">
 								<div className="hdd">
 									<h3>YOU'RE TEST MODE</h3>
-									<Toggle />
+									<Toggle label={''} value={''} setValue={function (arg: any): void {
+										throw new Error('Function not implemented.');
+									} } />
 								</div>
 								<div className="right-head">
 									<p>
 										<span>Language:</span>
-										<Select defaultText={'English'} listOption={locales} />
+										<Select defaultText={'English'} listOption={locales} id={0} />
 									</p>
 									<li>
 										{' '}

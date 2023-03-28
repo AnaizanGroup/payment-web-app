@@ -69,12 +69,15 @@ const PaymentScan: React.FC = () => {
 							<label>QR Usage</label>
 							<RadioButton
 								label1={'Multiple Payment'}
-								label2={'Single Payment'}
-							/>
+								label2={'Single Payment'} role={''} setRole={function (args: any): void {
+									throw new Error('Function not implemented.');
+								} }							/>
 						</p>
 						<p>
 							<label>Accept only fixed amount on this OR ?</label>
-							<RadioButton label1={'Yes'} label2={'No'} />
+							<RadioButton label1={'Yes'} label2={'No'} role={''} setRole={function (args: any): void {
+								throw new Error('Function not implemented.');
+							} } />
 						</p>
 						<label>Customer Details</label>
 						<li>Generate Demo QR Code</li>

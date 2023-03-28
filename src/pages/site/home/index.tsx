@@ -164,7 +164,7 @@ get paid immediately`,
 
 			<Section2
 				title={' we provider the best service for your safety'}
-				subtitle={null}
+				subtitle={""}
 				array={safety}
 			/>
 			<SectionJob />

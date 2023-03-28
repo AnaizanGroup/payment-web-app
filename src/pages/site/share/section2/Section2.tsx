@@ -5,7 +5,7 @@ import './Section2.scss';
 interface Props {
 	title: string;
 	subtitle: string;
-	array: [];
+	array: Array<{img:any;title:string;text:string}>;
 }
 
 export const Section2: React.FC<Props> = ({ title, subtitle, array }) => {
