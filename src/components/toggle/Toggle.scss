@@ -1,0 +1,64 @@
+.box-checkboxs {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: max-content !important;
+
+	.box-child {
+		width: 50px;
+		height: 22px;
+		display: block;
+		position: relative;
+		cursor: pointer !important;
+
+		label {
+			font-size: 13px;
+			color: var(--dark);
+			margin-left: 5rem;
+		}
+
+		input {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			opacity: 0;
+			z-index: 2000;
+
+			&:checked + .slider {
+				background: rgb(100, 100, 246);
+			}
+
+			&:checked + .slider::before {
+				transform: translateX(22px);
+				-webkit-transform: translateX(22px);
+				-ms-transform: translateX(22px);
+			}
+		}
+
+		.slider {
+			cursor: pointer;
+			position: absolute;
+			top: 0%;
+			bottom: 0%;
+			left: 0%;
+			right: 0%;
+			background-color: var(--dark-500);
+			border-radius: 25px;
+			-webkit-transition: 0.4s;
+			transition: 0.4s;
+
+			&::before {
+				position: absolute;
+				left: 5px;
+				content: '';
+				height: 17px;
+				width: 17px;
+				border-radius: 50%;
+				background-color: white;
+				-webkit-transition: 0.4s;
+				transition: 0.4s;
+				margin-top: 2px;
+			}
+		}
+	}
+}

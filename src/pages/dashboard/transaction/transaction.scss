@@ -1,0 +1,58 @@
+@import '../../../globals/mixins.scss';
+
+.home-dashboard-buyer {
+	width: 100%;
+	height: max-content;
+	display: flex;
+	flex-direction: column;
+
+	.block-dashboard {
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
+
+		@include phone {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+	.card {
+		padding: 12px;
+		width: 95%;
+		height: 140px;
+		background-color: white;
+		border-radius: 10px;
+		display: inline-block;
+		justify-content: space-between;
+		position: relative;
+		overflow: hidden;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.154);
+		b {
+			font-size: 25px;
+			font-weight: 500;
+			color: var(--orange);
+		}
+
+		p {
+			width: 100%;
+			padding: 5px 1rem 5px;
+			background: var(--dark);
+			position: absolute;
+			bottom: 0%;
+			right: 0%;
+			font-size: 14px;
+			color: white;
+			display: flex;
+			justify-content: end;
+
+			svg {
+				margin-right: 5px;
+				font-size: 17px;
+			}
+		}
+
+		@include phone {
+			height: 100px;
+		}
+	}
+}

@@ -1,0 +1,82 @@
+@import '../../globals/mixins.scss';
+
+.pagination {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2rem;
+
+	.btn-group {
+		display: flex;
+		button {
+			font-size: 13px;
+			margin: 0 6px;
+			border-radius: 50%;
+			height: 37px;
+			width: 37px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: var(--whitesmoke);
+			border: 1px solid var(--whitesmoke-500);
+
+			&:first-child,
+			&:last-child {
+				font-size: 20px;
+				background-color: var(--dark);
+				color: white;
+			}
+		}
+	}
+
+	.page {
+		display: flex;
+		align-items: center;
+		margin-left: 3rem;
+
+		span {
+			font-size: 14px;
+			color: var(--dark);
+		}
+
+		p {
+			display: flex;
+			align-items: center;
+			margin-left: 1rem;
+			height: 28px;
+
+			input {
+				width: 40px;
+				height: 100%;
+				font-size: 13px;
+				color: var(--dark);
+				text-align: center;
+				background: var(--whitesmoke);
+				border: 1px solid var(--whitesmoke-500);
+			}
+
+			button {
+				height: 100%;
+				padding: 0 10px 0 10px;
+				font-size: 14px;
+				color: white;
+				background-color: var(--dark);
+				margin-left: 1rem;
+				border: 1px solid var(--dark);
+			}
+		}
+	}
+
+	@include small {
+		.btn-group {
+			button {
+				height: 30px;
+				width: 30px;
+			}
+		}
+		.page {
+			display: none;
+		}
+	}
+}

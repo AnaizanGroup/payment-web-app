@@ -1,0 +1,113 @@
+import React from 'react';
+import { FaApple, FaArrowRight, FaGooglePay } from 'react-icons/fa';
+
+import './Section.scss';
+
+import app1 from '../../../assets/images/png/app1.png';
+import app2 from '../../../assets/images/png/app2.png';
+import blog1 from '../../../assets/images/png/blog1.png';
+import blog2 from '../../../assets/images/png/blog2.png';
+import blog3 from '../../../assets/images/png/blog3.png';
+import blog4 from '../../../assets/images/png/blog4.png';
+
+export const SectionShare: React.FC = () => {
+	const blogs = [
+		{
+			img: blog1,
+			date: '29 December 20222',
+			link: 'Start an online business and work from home',
+			desc: `
+                ohodiheiofdhe fdeoihfdpoiehfe piohpoehdfe phjpfde
+                oiedhoeihpifdepihfd
+            `,
+		},
+		{
+			img: blog2,
+			date: '29 December 20222',
+			link: 'Start an online business and work from home',
+			desc: `
+                ohodiheiofdhe fdeoihfdpoiehfe piohpoehdfe phjpfde
+                oiedhoeihpifdepihfd
+            `,
+		},
+		{
+			img: blog3,
+			date: '29 December 20222',
+			link: 'Start an online business and work from home',
+			desc: `
+                ohodiheiofdhe fdeoihfdpoiehfe piohpoehdfe phjpfde
+                oiedhoeihpifdepihfd
+            `,
+		},
+		{
+			img: blog4,
+			date: '29 December 20222',
+			link: 'Start an online business and work from home',
+			desc: `
+                ohodiheiofdhe fdeoihfdpoiehfe piohpoehdfe phjpfde
+                oiedhoeihpifdepihfd
+            `,
+		},
+	];
+	return (
+		<>
+			<section className="section-eight section">
+				<div className="div-parent-s8">
+					<div className="div-left-s8">
+						<button> Start Today </button>
+						<h3> Download the App</h3>
+						<p>
+							Take classes on the go with the AnaizanPay app. Stream or download
+						</p>
+						<div className="div-btn-s8">
+							<div>
+								<FaApple />
+								<p>
+									<span>
+										Download of the <br />
+										<b>Apple Store</b>
+									</span>
+								</p>
+							</div>
+							<div>
+								<FaGooglePay />
+								<p>
+									<span>
+										Download of the <br />
+										<b>Apple Store</b>
+									</span>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div className="div-right-s9">
+						<img src={app1} />
+						<img src={app2} />
+					</div>
+				</div>
+			</section>
+
+			<section className="section-nine section">
+				<h2 className="section-title">Our blog</h2>
+				<p>
+					See how you can up your career status
+					<li>
+						All Categorie <FaArrowRight />{' '}
+					</li>
+				</p>
+				<div className="group-card-s9">
+					{blogs?.map((list, index) => {
+						return (
+							<div className="card-s9" key={index}>
+								<img src={list.img} />
+								<span> {list.date} </span>
+								<h4> {list.link} </h4>
+								<p>A complete guide to starting a small business online</p>
+							</div>
+						);
+					})}
+				</div>
+			</section>
+		</>
+	);
+};

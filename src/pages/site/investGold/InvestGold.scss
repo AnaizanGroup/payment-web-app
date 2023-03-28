@@ -1,0 +1,116 @@
+.first-section {
+	width: 100%;
+	height: 100vh !important;
+	display: flex;
+	justify-content: space-around;
+	background: none !important;
+	position: relative;
+	background: url(../../../assets/images/png/gold-back.png) !important;
+	background-size: 100%;
+
+	.right-div-invest-gold {
+		width: 40%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		img {
+			width: 45%;
+			position: absolute;
+			top: -10%;
+			right: 0%;
+		}
+	}
+}
+
+.section-five-gold {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.card-s5-gold {
+		width: 290px;
+		border-radius: 8px;
+		background-color: var(--blue2);
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		padding: 1rem;
+		margin-bottom: 1.3rem;
+
+		.icon {
+			width: 18%;
+			height: 30px;
+			border-radius: 6px;
+
+			background-color: white;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			img {
+				width: 40%;
+			}
+		}
+
+		.text-div-g {
+			width: 75%;
+			display: flex;
+			flex-direction: column;
+
+			h4 {
+				font-size: 14px;
+				font-weight: 500;
+				margin-bottom: 13px;
+				color: var(--white);
+			}
+
+			p {
+				color: var(--white);
+			}
+		}
+	}
+
+	.top-block {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+
+		.groups-card-s5-gold {
+			width: 50%;
+
+			.card-s5-gold {
+				&:nth-child(1),
+				&:nth-child(3) {
+					margin-left: 4rem;
+				}
+			}
+		}
+
+		.right-content {
+			width: 60%;
+
+			h5 {
+				color: var(--red);
+				margin-bottom: 1rem;
+			}
+		}
+	}
+
+	.center-block {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.end-block {
+		width: max-content;
+		display: flex;
+		justify-content: center;
+
+		.card-s5-gold {
+			margin: 0 12px;
+		}
+	}
+}
